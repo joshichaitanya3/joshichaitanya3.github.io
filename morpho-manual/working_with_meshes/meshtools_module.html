@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The meshtools module - Morpho Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../beginning.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="../overview.html"><strong aria-hidden="true">2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installing_morpho.html"><strong aria-hidden="true">3.</strong> Installing Morpho</a></li><li class="chapter-item expanded "><a href="../using_morpho.html"><strong aria-hidden="true">4.</strong> Using Morpho</a></li><li class="chapter-item expanded "><a href="../tutorial.html"><strong aria-hidden="true">5.</strong> Tutorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorial/importing_modules.html"><strong aria-hidden="true">5.1.</strong> Importing Modules</a></li><li class="chapter-item expanded "><a href="../tutorial/morpho_language.html"><strong aria-hidden="true">5.2.</strong> Morpho Language</a></li><li class="chapter-item expanded "><a href="../tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">5.3.</strong> Creating the initial mesh</a></li><li class="chapter-item expanded "><a href="../tutorial/selections.html"><strong aria-hidden="true">5.4.</strong> Selections</a></li><li class="chapter-item expanded "><a href="../tutorial/fields.html"><strong aria-hidden="true">5.5.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../tutorial/defining_the_problem.html"><strong aria-hidden="true">5.6.</strong> Defining the problem</a></li><li class="chapter-item expanded "><a href="../tutorial/performing_the_optimization.html"><strong aria-hidden="true">5.7.</strong> Performing the optimization</a></li><li class="chapter-item expanded "><a href="../tutorial/visualizing_the_results.html"><strong aria-hidden="true">5.8.</strong> Visualizing the results</a></li><li class="chapter-item expanded "><a href="../tutorial/refinement.html"><strong aria-hidden="true">5.9.</strong> Refinement</a></li><li class="chapter-item expanded "><a href="../tutorial/next_steps.html"><strong aria-hidden="true">5.10.</strong> Next steps</a></li></ol></li><li class="chapter-item expanded "><a href="../working_with_meshes.html"><strong aria-hidden="true">6.</strong> Working with meshes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../working_with_meshes/meshgen_module.html"><strong aria-hidden="true">6.1.</strong> The meshgen module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/meshtools_module.html" class="active"><strong aria-hidden="true">6.2.</strong> The meshtools module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/vtk_module.html"><strong aria-hidden="true">6.3.</strong> The vtk module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/merging_meshes.html"><strong aria-hidden="true">6.4.</strong> Merging meshes</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">6.5.</strong> Slicing meshes</a></li></ol></li><li class="chapter-item expanded "><a href="../visualization.html"><strong aria-hidden="true">7.</strong> Visualization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../visualization/plot_module.html"><strong aria-hidden="true">7.1.</strong> The plot module</a></li><li class="chapter-item expanded "><a href="../visualization/graphics_module.html"><strong aria-hidden="true">7.2.</strong> The graphics module</a></li><li class="chapter-item expanded "><a href="../visualization/povray_module.html"><strong aria-hidden="true">7.3.</strong> The povray module</a></li></ol></li><li class="chapter-item expanded "><a href="../examples.html"><strong aria-hidden="true">8.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../examples/catenoid.html"><strong aria-hidden="true">8.1.</strong> Catenoid</a></li><li class="chapter-item expanded "><a href="../examples/cholesteric.html"><strong aria-hidden="true">8.2.</strong> Cholesteric</a></li><li class="chapter-item expanded "><a href="../examples/cube.html"><strong aria-hidden="true">8.3.</strong> Cube</a></li><li class="chapter-item expanded "><a href="../examples/delaunay.html"><strong aria-hidden="true">8.4.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="../examples/dla.html"><strong aria-hidden="true">8.5.</strong> DLA</a></li><li class="chapter-item expanded "><a href="../examples/electrostatics.html"><strong aria-hidden="true">8.6.</strong> Electrostatics</a></li><li class="chapter-item expanded "><a href="../examples/implicitmesh.html"><strong aria-hidden="true">8.7.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="../examples/meshgen.html"><strong aria-hidden="true">8.8.</strong> Meshgen</a></li><li class="chapter-item expanded "><a href="../examples/meshslice.html"><strong aria-hidden="true">8.9.</strong> Meshslice</a></li><li class="chapter-item expanded "><a href="../examples/plot.html"><strong aria-hidden="true">8.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="../examples/povray.html"><strong aria-hidden="true">8.11.</strong> Povray</a></li><li class="chapter-item expanded "><a href="../examples/qtensor.html"><strong aria-hidden="true">8.12.</strong> QTensor</a></li><li class="chapter-item expanded "><a href="../examples/thomson.html"><strong aria-hidden="true">8.13.</strong> Thomson</a></li><li class="chapter-item expanded "><a href="../examples/wrap.html"><strong aria-hidden="true">8.14.</strong> Wrap</a></li></ol></li><li class="chapter-item expanded "><a href="../reference.html"><strong aria-hidden="true">9.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/language.html"><strong aria-hidden="true">9.1.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/syntax.html"><strong aria-hidden="true">9.1.1.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../reference/nested/values.html"><strong aria-hidden="true">9.1.2.</strong> Values</a></li><li class="chapter-item expanded "><a href="../reference/nested/variables.html"><strong aria-hidden="true">9.1.3.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../reference/nested/controlflow.html"><strong aria-hidden="true">9.1.4.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../reference/nested/functions.html"><strong aria-hidden="true">9.1.5.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../reference/nested/classes.html"><strong aria-hidden="true">9.1.6.</strong> Classes</a></li><li class="chapter-item expanded "><a href="../reference/nested/modules.html"><strong aria-hidden="true">9.1.7.</strong> Modules</a></li><li class="chapter-item expanded "><a href="../reference/nested/help.html"><strong aria-hidden="true">9.1.8.</strong> Help</a></li><li class="chapter-item expanded "><a href="../reference/nested/builtin.html"><strong aria-hidden="true">9.1.9.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/data_types.html"><strong aria-hidden="true">9.2.</strong> Data Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/array.html"><strong aria-hidden="true">9.2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="../reference/nested/complex.html"><strong aria-hidden="true">9.2.2.</strong> Complex</a></li><li class="chapter-item expanded "><a href="../reference/nested/list.html"><strong aria-hidden="true">9.2.3.</strong> List</a></li><li class="chapter-item expanded "><a href="../reference/nested/matrix.html"><strong aria-hidden="true">9.2.4.</strong> Matrix</a></li><li class="chapter-item expanded "><a href="../reference/nested/range.html"><strong aria-hidden="true">9.2.5.</strong> Range</a></li><li class="chapter-item expanded "><a href="../reference/nested/sparse.html"><strong aria-hidden="true">9.2.6.</strong> Sparse</a></li><li class="chapter-item expanded "><a href="../reference/nested/string.html"><strong aria-hidden="true">9.2.7.</strong> String</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/computational_geometry.html"><strong aria-hidden="true">9.3.</strong> Computational Geometry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/field.html"><strong aria-hidden="true">9.3.1.</strong> Field</a></li><li class="chapter-item expanded "><a href="../reference/nested/functionals.html"><strong aria-hidden="true">9.3.2.</strong> Functionals</a></li><li class="chapter-item expanded "><a href="../reference/nested/mesh.html"><strong aria-hidden="true">9.3.3.</strong> Mesh</a></li><li class="chapter-item expanded "><a href="../reference/nested/selection.html"><strong aria-hidden="true">9.3.4.</strong> Selection</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/io.html"><strong aria-hidden="true">9.4.</strong> I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/file.html"><strong aria-hidden="true">9.4.1.</strong> File</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/modules.html"><strong aria-hidden="true">9.5.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/color.html"><strong aria-hidden="true">9.5.1.</strong> Color</a></li><li class="chapter-item expanded "><a href="../reference/nested/delaunay.html"><strong aria-hidden="true">9.5.2.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="../reference/nested/graphics.html"><strong aria-hidden="true">9.5.3.</strong> Graphics</a></li><li class="chapter-item expanded "><a href="../reference/nested/implicitmesh.html"><strong aria-hidden="true">9.5.4.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="../reference/nested/kdtree.html"><strong aria-hidden="true">9.5.5.</strong> KDTree</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshgen.html"><strong aria-hidden="true">9.5.6.</strong> MeshGen</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshslice.html"><strong aria-hidden="true">9.5.7.</strong> MeshSlice</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshtools.html"><strong aria-hidden="true">9.5.8.</strong> Meshtools</a></li><li class="chapter-item expanded "><a href="../reference/nested/optimize.html"><strong aria-hidden="true">9.5.9.</strong> Optimize</a></li><li class="chapter-item expanded "><a href="../reference/nested/plot.html"><strong aria-hidden="true">9.5.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="../reference/nested/povray.html"><strong aria-hidden="true">9.5.11.</strong> POVRay</a></li><li class="chapter-item expanded "><a href="../reference/nested/vtk.html"><strong aria-hidden="true">9.5.12.</strong> VTK</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Morpho Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="the-meshtools-module"><a class="header" href="#the-meshtools-module">The meshtools module</a></h2>
+<p>Meshtools provides many useful functions for working with Meshes,
+including constructors to create certain kinds of Mesh and also classes
+for refining, coarsening and merging Meshes.</p>
+<h4 id="linemesh"><a class="header" href="#linemesh">LineMesh</a></h4>
+<p>The <code>LineMesh</code> function is a convenient way to create a Mesh from a
+one-parameter parametric function. You must specify the function to use
+and a Range of points to generate. <code>LineMesh</code> then evaluates each point
+in the Range and joins them together with a line element.</p>
+<p>This is useful to generate meshes such as a simple straight line (Fig.
+<a href="#fig:LineMesh">5.4</a>{reference-type="ref" reference="fig:LineMesh"},
+left panel):</p>
+<pre><code>var m = LineMesh(fn (t) [t,0], -1..1:0.1)
+</code></pre>
+<p>You can also request the ends of the Mesh be joined together to form a
+loop by specifying <code>closed</code>. This code generates a circle (Fig.
+<a href="#fig:LineMesh">5.4</a>{reference-type="ref" reference="fig:LineMesh"},
+center panel):</p>
+<pre><code>var m = LineMesh(fn (t) [cos(t),sin(t)], -Pi...Pi:2*Pi/10, closed=true)
+</code></pre>
+<p>You can increase the resolution of the circle by changing the stepsize
+in the Range, for example to <code>2``*``Pi/20</code> to double the number of
+points. Note the use of the exclusive Range operator here, <code>...</code>, rather
+than <code>..</code>to avoid duplicating the point at (1,0).</p>
+<p>The output Mesh can be of any dimension, such as this helix in 3D (Fig.
+<a href="#fig:LineMesh">5.4</a>{reference-type="ref" reference="fig:LineMesh"},
+right panel). Notice that here we use a regular function rather than an
+anonymous function:</p>
+<pre><code>fn helix(t) { 
+  return [cos(2*Pi*t),t/2,sin(2*Pi*t)] 
+}
+var m = LineMesh(helix, -2..2:1/20)
+</code></pre>
+<figure id="fig:LineMesh">
+<p><img src="../Figures/MeshChapter/LineMesh/line.png" style="width:2in"
+alt="image" /><img src="../Figures/MeshChapter/LineMesh/circle.png"
+style="width:2in" alt="image" /><img
+src="../Figures/MeshChapter/LineMesh/helix.png" style="width:2in"
+alt="image" /></p>
+<figcaption><span id="fig:LineMesh" label="fig:LineMesh"></span>Using
+LineMesh to create meshes from parametric functions: A straight line, a
+circle and a helix.</figcaption>
+</figure>
+<h4 id="areamesh"><a class="header" href="#areamesh">AreaMesh</a></h4>
+<p><code>AreaMesh</code> is similar to <code>LineMesh</code> function creates a Mesh from a
+parametric function, which now takes two parameters. To create a square,</p>
+<pre><code>var m = AreaMesh(fn (u,v) [u,v,0], -1..1:0.2, -1..1:0.2)
+</code></pre>
+<p>where notice that a separate Range is required for \(u\) and \(v\). By
+default, the output of AreaMesh only contains grade 0 and grade 2
+elements, i.e. vertices and facets, as is visible in Fig.
+<a href="#fig:AreaMesh-1">5.5</a>{reference-type="ref"
+reference="fig:AreaMesh-1"}(left). To add in grade 1 elements if
+required, call the <code>addgrade</code> method on the Mesh:</p>
+<pre><code>m.addgrade(1)
+</code></pre>
+<p>This gives the result shown in Fig.
+<a href="#fig:AreaMesh-1">5.5</a>{reference-type="ref"
+reference="fig:AreaMesh-1"}(right).</p>
+<figure id="fig:AreaMesh-1">
+<p><img src="../Figures/MeshChapter/AreaMesh/square.png" style="width:3in"
+alt="image" /><img src="../Figures/MeshChapter/AreaMesh/square2.png"
+style="width:3in" alt="image" /></p>
+<figcaption><span id="fig:AreaMesh-1"
+label="fig:AreaMesh-1"></span>Using AreaMesh to create a flat square
+mesh. Left: By default, only grade 0 and 2 elements are generated.
+Right: The grade 1 elements can be added in with
+<code>addgrade</code>.</figcaption>
+</figure>
+<p>As with LineMesh, the Meshes can be closed in one or both directions,
+enabling the creation of a cylinder,</p>
+<pre><code>m = AreaMesh(fn (u, v) [v, cos(u), sin(u)], 
+               -Pi...Pi:Pi/16,
+               -2..2:0.1, closed=[true, false])
+</code></pre>
+<p>and a torus,</p>
+<pre><code>var c=1, a=0.5 m = AreaMesh(fn (u, v) [(c + a*cos(v))*cos(u), 
+                                       (c + a*cos(v))*sin(u),  
+                                        a*sin(v)],
+                            0...2*Pi:Pi/16,
+                            0...2*Pi:Pi/8, closed=true)
+</code></pre>
+<p>The results of these are displayed in Fig.
+<a href="#fig:AreaMesh-2">5.6</a>{reference-type="ref" reference="fig:AreaMesh-2"}.
+Note that the meshes generated by more modules that incorporate some
+degree of quality control, e.g. <code>implicitmesh</code> or <code>meshgen</code>, are
+generally better and should be used in preference to those created by
+AreaMesh.</p>
+<figure id="fig:AreaMesh-2">
+<p><img src="../Figures/MeshChapter/AreaMesh/tube.png" style="width:3in"
+alt="image" /><img src="../Figures/MeshChapter/AreaMesh/torus.png"
+style="width:3in" alt="image" /></p>
+<figcaption><span id="fig:AreaMesh-2" label="fig:AreaMesh-2"></span>A
+cylinder and torus created with AreaMesh.</figcaption>
+</figure>
+<h4 id="polyhedronmesh"><a class="header" href="#polyhedronmesh">PolyhedronMesh</a></h4>
+<figure id="fig:PolyhedronMesh">
+<p><img src="../Figures/MeshChapter/PolyhedronMesh/cubevertices.png"
+style="width:2in" alt="image" /><img
+src="../Figures/MeshChapter/PolyhedronMesh/cubeface.png" style="width:2in"
+alt="image" /><img src="../Figures/MeshChapter/PolyhedronMesh/cube.png"
+style="width:2in" alt="image" /></p>
+<figcaption><span id="fig:PolyhedronMesh"
+label="fig:PolyhedronMesh"></span>Creating a cube with PolyhedronMesh.
+(Left) First the vertices are specified. (Center) Faces are specified as
+an ordered sequence of points. (Right) PolyhedronMesh adds additional
+vertices to create</figcaption>
+</figure>
+<p>PolyhedronMesh helps to create Meshes corresponding to polyhedra. To
+make a cube, for example, we specify the eight vertices (see Fig.
+<a href="#fig:PolyhedronMesh">5.7</a>{reference-type="ref"
+reference="fig:PolyhedronMesh"}, left),</p>
+<pre><code>var vertices = [[-0.5, -0.5, -0.5],
+                [ 0.5, -0.5, -0.5],
+                [-0.5,  0.5, -0.5],
+                [ 0.5,  0.5, -0.5], 
+                [-0.5, -0.5,  0.5],
+                [ 0.5, -0.5,  0.5],
+                [-0.5,  0.5,  0.5],
+                [ 0.5,  0.5,  0.5]]
+</code></pre>
+<p>and the six faces,</p>
+<pre><code>var faces = [ [0,1,3,2], [4,5,7,6],
+              [0,1,5,4], [3,2,6,7],
+              [0,2,6,4], [1,3,7,5] ]
+</code></pre>
+<p>Note that the vertex ids must be given <em>in order</em> going around each face
+(see Fig. <a href="#fig:PolyhedronMesh">5.7</a>{reference-type="ref"
+reference="fig:PolyhedronMesh"}, center). Once the faces are specified,
+we can create the mesh,</p>
+<pre><code>var m = PolyhedronMesh(vertices, faces)
+m.addgrade(1)
+</code></pre>
+<p>Note that PolyhedronMesh automatically creates additional vertices and
+generates triangles to complete the mesh (Fig.
+<a href="#fig:PolyhedronMesh">5.7</a>{reference-type="ref"
+reference="fig:PolyhedronMesh"}, right). We then added line elements
+(grade 1) as these are not automatically created by PolyhedronMesh.</p>
+<h4 id="delaunaymesh"><a class="header" href="#delaunaymesh">DelaunayMesh</a></h4>
+<figure id="fig:DelaunayMesh">
+<p><img src="../Figures/MeshChapter/DelaunayMesh/points.png"
+style="width:3in" alt="image" /><img
+src="../Figures/MeshChapter/DelaunayMesh/mesh.png" style="width:3in"
+alt="image" /></p>
+<figcaption><span id="fig:DelaunayMesh"
+label="fig:DelaunayMesh"></span>Delaunay triangulation of (left) a
+random oint cloud gives (right) a tetrahedralization.</figcaption>
+</figure>
+<p>The DelaunayMesh constructor function performs a delaunay
+"triangulation" of a point set. For example, creating a random cloud of
+points (Fig. <a href="#fig:DelaunayMesh">5.8</a>{reference-type="ref"
+reference="fig:DelaunayMesh"}, left panel):</p>
+<pre><code>var pts = []
+for (i in 0...100) pts.append(Matrix([2*random()-1, 2*random()-1, 2*random()-1])) 
+</code></pre>
+<p>we can then call DelaunayMesh to construct a tetrahedralization.
+DelaunayMesh only generates elements of the highest grade (in 2D, area
+elements, in 3D volume elements) so if edges are needed these can be
+added with <code>addgrade</code>.</p>
+<pre><code>var m=DelaunayMesh(pts)
+m.addgrade(1)
+</code></pre>
+<p>The resulting tetrahedralization is shown in Fig.
+<a href="#fig:DelaunayMesh">5.8</a>{reference-type="ref"
+reference="fig:DelaunayMesh"}, right panel.</p>
+<h4 id="subsec:ChangeMeshDimension" label="&quot;subsec:ChangeMeshDimension&quot;">ChangeMeshDimension[]</h4>
+<p>Occasionally, one wishes to take a mesh embedded in one space, say two
+dimensions, and embed it in a space of different dimensionality. For
+example, you may wish to use a 2D mesh generated with MeshGen in 3D
+space. The function <code>ChangeMeshDimension</code> provides a convenient way to
+do this:</p>
+<pre><code>var new = ChangeMeshDimension(mesh, dim)
+</code></pre>
+<p>where <code>dim</code> is the target dimension of the new mesh.</p>
+<h4 id="meshbuilder"><a class="header" href="#meshbuilder">MeshBuilder</a></h4>
+<p>The MeshBuilder class facilitates manual construction of a Mesh object.
+It is primarily intended to be used by other mesh building algorithms,
+but is occasionally useful. To begin, create a MeshBuilder object:</p>
+<pre><code>var mb = MeshBuilder()
+</code></pre>
+<p>You can then add vertices and other elements one by one by calling
+appropriate methods. Let's build a tetrahedron by first adding the
+vertices:</p>
+<pre><code>mb.addvertex([0, 0, 0.612372])
+mb.addvertex([-0.288675, -0.5, -0.204124])
+mb.addvertex([-0.288675, 0.5, -0.204124])
+mb.addvertex([0.57735, 0, -0.204124])
+</code></pre>
+<p>We then need to add edges connecting these vertices, and faces as well.
+We could do this one by one, giving a list of vertex ids for each
+element in turn,</p>
+<pre><code>mb.addedge([0,1])
+mb.addedge([0,2]) 
+// ... etc. 
+</code></pre>
+<p>but there's a smarter way for this case. Notice that the vertex ids
+corresponding to the edges of the tetrahedron correspond to the sets of
+size 2 generated from the list <code>[``0,1,2,3``]</code> as can be seen by running
+this code:</p>
+<pre><code>var vids = [0,1,2,3]
+for (s in vids.sets(2)) print s 
+</code></pre>
+<p>We can therefore generate the edges automatically,</p>
+<pre><code>var vids = [0,1,2,3]
+for (s in vids.sets(2)) mb.addedge(s)
+</code></pre>
+<p>and the faces as well, which are the sets of size 3,</p>
+<pre><code>for (s in vids.sets(3)) mb.addface(s)
+</code></pre>
+<p>We can finish by adding a single grade 3 element corresponding to the
+volume:</p>
+<pre><code>mb.addvolume(vids)
+</code></pre>
+<p>Once all these have been added, call the <code>build</code> method to create a Mesh
+object:</p>
+<pre><code>var m = mb.build()
+</code></pre>
+<p>and the resulting Mesh is shown in Fig.
+<a href="#fig:MeshBuilder">5.9</a>.</p>
+<figure id="fig:MeshBuilder">
+<div class="centering">
+<img src="../Figures/MeshChapter/MeshBuilder/tetrahedron.png" style="width:3.5in" />
+</div>
+<figcaption><span id="fig:MeshBuilder"
+label="fig:MeshBuilder"></span>Tetrahedron created with
+MeshBuilder.</figcaption>
+</figure>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../working_with_meshes/meshgen_module.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../working_with_meshes/vtk_module.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../working_with_meshes/meshgen_module.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../working_with_meshes/vtk_module.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Electrostatics - Morpho Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../beginning.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="../overview.html"><strong aria-hidden="true">2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../installing_morpho.html"><strong aria-hidden="true">3.</strong> Installing Morpho</a></li><li class="chapter-item expanded "><a href="../using_morpho.html"><strong aria-hidden="true">4.</strong> Using Morpho</a></li><li class="chapter-item expanded "><a href="../tutorial.html"><strong aria-hidden="true">5.</strong> Tutorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tutorial/importing_modules.html"><strong aria-hidden="true">5.1.</strong> Importing Modules</a></li><li class="chapter-item expanded "><a href="../tutorial/morpho_language.html"><strong aria-hidden="true">5.2.</strong> Morpho Language</a></li><li class="chapter-item expanded "><a href="../tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">5.3.</strong> Creating the initial mesh</a></li><li class="chapter-item expanded "><a href="../tutorial/selections.html"><strong aria-hidden="true">5.4.</strong> Selections</a></li><li class="chapter-item expanded "><a href="../tutorial/fields.html"><strong aria-hidden="true">5.5.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../tutorial/defining_the_problem.html"><strong aria-hidden="true">5.6.</strong> Defining the problem</a></li><li class="chapter-item expanded "><a href="../tutorial/performing_the_optimization.html"><strong aria-hidden="true">5.7.</strong> Performing the optimization</a></li><li class="chapter-item expanded "><a href="../tutorial/visualizing_the_results.html"><strong aria-hidden="true">5.8.</strong> Visualizing the results</a></li><li class="chapter-item expanded "><a href="../tutorial/refinement.html"><strong aria-hidden="true">5.9.</strong> Refinement</a></li><li class="chapter-item expanded "><a href="../tutorial/next_steps.html"><strong aria-hidden="true">5.10.</strong> Next steps</a></li></ol></li><li class="chapter-item expanded "><a href="../working_with_meshes.html"><strong aria-hidden="true">6.</strong> Working with meshes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../working_with_meshes/meshgen_module.html"><strong aria-hidden="true">6.1.</strong> The meshgen module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/meshtools_module.html"><strong aria-hidden="true">6.2.</strong> The meshtools module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/vtk_module.html"><strong aria-hidden="true">6.3.</strong> The vtk module</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/merging_meshes.html"><strong aria-hidden="true">6.4.</strong> Merging meshes</a></li><li class="chapter-item expanded "><a href="../working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">6.5.</strong> Slicing meshes</a></li></ol></li><li class="chapter-item expanded "><a href="../visualization.html"><strong aria-hidden="true">7.</strong> Visualization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../visualization/plot_module.html"><strong aria-hidden="true">7.1.</strong> The plot module</a></li><li class="chapter-item expanded "><a href="../visualization/graphics_module.html"><strong aria-hidden="true">7.2.</strong> The graphics module</a></li><li class="chapter-item expanded "><a href="../visualization/povray_module.html"><strong aria-hidden="true">7.3.</strong> The povray module</a></li></ol></li><li class="chapter-item expanded "><a href="../examples.html"><strong aria-hidden="true">8.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../examples/catenoid.html"><strong aria-hidden="true">8.1.</strong> Catenoid</a></li><li class="chapter-item expanded "><a href="../examples/cholesteric.html"><strong aria-hidden="true">8.2.</strong> Cholesteric</a></li><li class="chapter-item expanded "><a href="../examples/cube.html"><strong aria-hidden="true">8.3.</strong> Cube</a></li><li class="chapter-item expanded "><a href="../examples/delaunay.html"><strong aria-hidden="true">8.4.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="../examples/dla.html"><strong aria-hidden="true">8.5.</strong> DLA</a></li><li class="chapter-item expanded "><a href="../examples/electrostatics.html" class="active"><strong aria-hidden="true">8.6.</strong> Electrostatics</a></li><li class="chapter-item expanded "><a href="../examples/implicitmesh.html"><strong aria-hidden="true">8.7.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="../examples/meshgen.html"><strong aria-hidden="true">8.8.</strong> Meshgen</a></li><li class="chapter-item expanded "><a href="../examples/meshslice.html"><strong aria-hidden="true">8.9.</strong> Meshslice</a></li><li class="chapter-item expanded "><a href="../examples/plot.html"><strong aria-hidden="true">8.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="../examples/povray.html"><strong aria-hidden="true">8.11.</strong> Povray</a></li><li class="chapter-item expanded "><a href="../examples/qtensor.html"><strong aria-hidden="true">8.12.</strong> QTensor</a></li><li class="chapter-item expanded "><a href="../examples/thomson.html"><strong aria-hidden="true">8.13.</strong> Thomson</a></li><li class="chapter-item expanded "><a href="../examples/wrap.html"><strong aria-hidden="true">8.14.</strong> Wrap</a></li></ol></li><li class="chapter-item expanded "><a href="../reference.html"><strong aria-hidden="true">9.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/language.html"><strong aria-hidden="true">9.1.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/syntax.html"><strong aria-hidden="true">9.1.1.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../reference/nested/values.html"><strong aria-hidden="true">9.1.2.</strong> Values</a></li><li class="chapter-item expanded "><a href="../reference/nested/variables.html"><strong aria-hidden="true">9.1.3.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../reference/nested/controlflow.html"><strong aria-hidden="true">9.1.4.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../reference/nested/functions.html"><strong aria-hidden="true">9.1.5.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../reference/nested/classes.html"><strong aria-hidden="true">9.1.6.</strong> Classes</a></li><li class="chapter-item expanded "><a href="../reference/nested/modules.html"><strong aria-hidden="true">9.1.7.</strong> Modules</a></li><li class="chapter-item expanded "><a href="../reference/nested/help.html"><strong aria-hidden="true">9.1.8.</strong> Help</a></li><li class="chapter-item expanded "><a href="../reference/nested/builtin.html"><strong aria-hidden="true">9.1.9.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/data_types.html"><strong aria-hidden="true">9.2.</strong> Data Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/array.html"><strong aria-hidden="true">9.2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="../reference/nested/complex.html"><strong aria-hidden="true">9.2.2.</strong> Complex</a></li><li class="chapter-item expanded "><a href="../reference/nested/list.html"><strong aria-hidden="true">9.2.3.</strong> List</a></li><li class="chapter-item expanded "><a href="../reference/nested/matrix.html"><strong aria-hidden="true">9.2.4.</strong> Matrix</a></li><li class="chapter-item expanded "><a href="../reference/nested/range.html"><strong aria-hidden="true">9.2.5.</strong> Range</a></li><li class="chapter-item expanded "><a href="../reference/nested/sparse.html"><strong aria-hidden="true">9.2.6.</strong> Sparse</a></li><li class="chapter-item expanded "><a href="../reference/nested/string.html"><strong aria-hidden="true">9.2.7.</strong> String</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/computational_geometry.html"><strong aria-hidden="true">9.3.</strong> Computational Geometry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/field.html"><strong aria-hidden="true">9.3.1.</strong> Field</a></li><li class="chapter-item expanded "><a href="../reference/nested/functionals.html"><strong aria-hidden="true">9.3.2.</strong> Functionals</a></li><li class="chapter-item expanded "><a href="../reference/nested/mesh.html"><strong aria-hidden="true">9.3.3.</strong> Mesh</a></li><li class="chapter-item expanded "><a href="../reference/nested/selection.html"><strong aria-hidden="true">9.3.4.</strong> Selection</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/io.html"><strong aria-hidden="true">9.4.</strong> I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/file.html"><strong aria-hidden="true">9.4.1.</strong> File</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/modules.html"><strong aria-hidden="true">9.5.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/nested/color.html"><strong aria-hidden="true">9.5.1.</strong> Color</a></li><li class="chapter-item expanded "><a href="../reference/nested/delaunay.html"><strong aria-hidden="true">9.5.2.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="../reference/nested/graphics.html"><strong aria-hidden="true">9.5.3.</strong> Graphics</a></li><li class="chapter-item expanded "><a href="../reference/nested/implicitmesh.html"><strong aria-hidden="true">9.5.4.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="../reference/nested/kdtree.html"><strong aria-hidden="true">9.5.5.</strong> KDTree</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshgen.html"><strong aria-hidden="true">9.5.6.</strong> MeshGen</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshslice.html"><strong aria-hidden="true">9.5.7.</strong> MeshSlice</a></li><li class="chapter-item expanded "><a href="../reference/nested/meshtools.html"><strong aria-hidden="true">9.5.8.</strong> Meshtools</a></li><li class="chapter-item expanded "><a href="../reference/nested/optimize.html"><strong aria-hidden="true">9.5.9.</strong> Optimize</a></li><li class="chapter-item expanded "><a href="../reference/nested/plot.html"><strong aria-hidden="true">9.5.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="../reference/nested/povray.html"><strong aria-hidden="true">9.5.11.</strong> POVRay</a></li><li class="chapter-item expanded "><a href="../reference/nested/vtk.html"><strong aria-hidden="true">9.5.12.</strong> VTK</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Morpho Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="electrostatics"><a class="header" href="#electrostatics">Electrostatics</a></h2>
+<p>This example shows how to solve a simple electrostatics problem with
+adaptive refinement, and provides a useful example of how to cast a
+problem that is normally thought of as solving a PDE as an optimization
+problem.</p>
+<p>Suppose we want to solve Laplace's equation, $$\nabla^{2}\phi=0$$ on a
+square domain \(C\) defined by \(-L/2\leq x\leq L/2\) and
+\(-L/2\leq y\leq L/2\). An equivalent formulation suitable for <em>morpho</em> is
+to minimize, $$\int_{C}\left|\nabla\phi\right|^{2}dA\label{eq:el1}$$
+with respect to \(\phi\).</p>
+<p>We can show the two are equivalent by applying calculus of
+variations[^9] to the expression Eq.
+(<a href="#eq:el1">[eq:el1]</a>{reference-type="ref" reference="eq:el1"}),
+$$\begin{aligned}
+\delta\int_{C}\left|\nabla\phi\right|^{2}dA &amp; =\int_{C}\delta\left|\nabla\phi\right|^{2}dA\
+&amp; =\int_{C}\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\cdot\delta\nabla\phi dA,
+\end{aligned}$$ and integrating by parts, $$\begin{aligned}
+\int_{C}\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\cdot\delta\nabla\phi dA &amp; =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla\cdot\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\delta\phi dA\nonumber \
+&amp; =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla^{2}\phi\delta\phi dA,\label{eq:bulkvariations}
+\end{aligned}$$ where \(\hat{\mathbf{s}}\) is the outward normal. Hence,
+allowing for arbitrary variations \(\delta\phi\), in order for the bulk
+integrand to vanish Laplace's equation \(\nabla^{2}\phi=0\) must be
+satisfied. Similarly requiring the boundary integrand to vanish yields
+the "natural" boundary condition \(\nabla\phi\cdot\hat{\mathbf{s}}=0\),
+known as the Neumann boundary condition. In the absence of boundary
+energies, solving \(\nabla^{2}\phi=0\) in \(C\) subject to
+\(\nabla\phi\cdot\hat{\mathbf{s}}=0\) on \(\partial C\) yields the family of
+uniform constant solutions \(\phi=\text{const}.\)</p>
+<p>To impose boundary data, we will supplement Eq.
+(<a href="#eq:el1">[eq:el1]</a>{reference-type="ref" reference="eq:el1"}) with
+the additional functional,
+$$\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl\label{eq:anchoring}$$
+where the function \(\phi_{0}\) represents some imposed boundary
+potential. Taking variations of this functional, $$\begin{aligned}
+\delta\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl &amp; =\lambda\int_{\partial C}\frac{\partial}{\partial\phi}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}\delta\phi dl\nonumber \
+&amp; =\lambda\int_{\partial C}2\left[\phi-\phi_{0}(\mathbf{x})\right]\delta\phi dl\label{eq:boundary}
+\end{aligned}$$</p>
+<p>Collecting the boundary terms from Eq.
+(<a href="#eq:bulkvariations">[eq:bulkvariations]</a>{reference-type="ref"
+reference="eq:bulkvariations"}) and Eq.
+(<a href="#eq:boundary">[eq:boundary]</a>{reference-type="ref"
+reference="eq:boundary"}), we obtain the equivalent boundary condition
+on \(\phi\),
+$$\nabla\phi\cdot\hat{\mathbf{s}}+2\lambda(\phi-\phi_{0})=0,$$ which is
+known as a Robin boundary condition. As \(\lambda\to\infty\),
+\(\phi\to\phi_{0}\) on the boundary, recovering a fixed boundary or
+Dirichlet condition, while as \(\lambda\to0\), we recover the Neumann
+conditions discussed earlier.</p>
+<p>In the example, we will set \(\phi_{0}=0\) on the left and lower boundary
+and \(\phi_{0}=1\) on the right and upper boundary, and use \(\lambda=100\).</p>
+<p>The code illustrates a few <em>morpho</em> tricks. First, the following code is
+used to select the left/bottom and upper/right sides of the mesh:</p>
+<pre><code>var bnd = Selection(mesh, boundary=true)
+var bnd1 = Selection(mesh, fn (x,y,z) abs(x+L/2)&lt;0.01 || abs(y+L/2)&lt;0.01)
+var bnd2 = Selection(mesh, fn (x,y,z) abs(x-L/2)&lt;0.01 || abs(y-L/2)&lt;0.01)
+for (b in [bnd1, bnd2]) b.addgrade(1)
+bnd1=bnd.intersection(bnd1)
+bnd2=bnd.intersection(bnd2)
+</code></pre>
+<p>What's happening here is that we select the whole boundary in the first
+line and then select relevant vertices in the next two lines. The edges
+are then added to the selection with <code>addgrade</code>, but this also selects
+some interior edges. To ensure we only have boundary edges in our
+selections, we find the intersection of <code>bnd1</code> and <code>bnd</code>, and similarly
+for <code>bnd2</code>.</p>
+<p>The problem setup involves adding the electrostatic energy Eq.
+(<a href="#eq:el1">[eq:el1]</a>{reference-type="ref" reference="eq:el1"}) using
+<code>GradSq</code> and the boundary terms Eq.
+(<a href="#eq:anchoring">[eq:anchoring]</a>{reference-type="ref"
+reference="eq:anchoring"}) as <code>LineIntegral</code>s.</p>
+<pre><code>var problem = OptimizationProblem(mesh)
+var le = GradSq(phi)
+problem.addenergy(le)
+var v1 = 0, v2 = 1
+var lt1 = LineIntegral(fn (x, v) (v-v1)^2, phi)
+problem.addenergy(lt1, selection=bnd1, prefactor=100)
+var lt2 = LineIntegral(fn (x, v) (v-v2)^2, phi)
+problem.addenergy(lt2, selection=bnd2, prefactor=100) 
+</code></pre>
+<p>Optimization is done with a <code>FieldOptimizer</code>:</p>
+<pre><code>var opt = FieldOptimizer(problem, phi)
+opt.conjugategradient(100)
+</code></pre>
+<p>The problem as posed requires \(\phi\) to very sharply change in the upper
+left and lower right cornes as the imposed potential changes, but far
+away from these \(\phi\) changes much more slowly. We would like therefore
+to perform <em>adaptive refinement</em>, refining the mesh only in places where
+\(\phi\) is rapidly changing and using coarse elements elsewhere.</p>
+<p>To identify elements to refine, we compute the electrostatic energy in
+each elementwe'll use this as a heuristic measure of how rapidly \(\phi\)
+is changingand find the mean energy per element. We then create a
+Selection and manually select elements that have an electrostatic energy
+more than \(1.5\times\) the mean.</p>
+<pre><code>// Select elements that have an above average contribution to the energy 
+var en = le.integrand(phi) // energy in each element
+var mean = en.sum()/en.count() // mean energy per element
+var srefine = Selection(mesh)
+for (id in 0...en.count()) if (en[0,id]&gt;1.5*mean) srefine[2,id]=true 
+// identify large contributions
+</code></pre>
+<p>Refinement is then performed with a MeshRefiner object from the
+<code>meshtools</code> module, which we create with a list of both the mesh to
+refine <em>and</em> all quantities that refer to the mesh:</p>
+<pre><code>var ref = MeshRefiner([mesh, phi, bnd, bnd1, bnd2])
+</code></pre>
+<p>The refinement is performed using the selection <code>srefine</code> just created</p>
+<pre><code>var refmap = ref.refine(selection=srefine)
+</code></pre>
+<p>which returns a Dictionary mapping the old quantities to the new refined
+ones. We use this dictionary to update the OptimizationProblem and
+FieldOptimizer,</p>
+<pre><code>for (el in [problem, opt]) el.update(refmap)
+</code></pre>
+<p>and finally update our variables</p>
+<pre><code>mesh = refmap[mesh]
+phi = refmap[phi]
+bnd = refmap[bnd]
+bnd1 = refmap[bnd1]
+bnd2 = refmap[bnd2]
+</code></pre>
+<p>Finally, we equiangulate the mesh to help avoid narrow elements,</p>
+<pre><code>equiangulate(mesh)
+</code></pre>
+<p>Once refinement is complete, further optimization can occur on the newly
+refined mesh</p>
+<pre><code>opt.conjugategradient(1000)
+</code></pre>
+<p>The process of refinement and optimization just described takes place in
+a loop. The resulting mesh after 10 iterations is shown in Fig.
+<a href="#fig:Electrostatics">7.6</a>{reference-type="ref"
+reference="fig:Electrostatics"}, together with the solution \(\phi\). The
+code runs in a few seconds, providing a considerable speedup over
+optimizing on a fine grid to get comparable accuracy.</p>
+<figure id="fig:Electrostatics">
+<div class="centering">
+<p><img
+src="../Figures/ExamplesChapter/electrostatics/electrostatics-mesh.png"
+style="width:3in" alt="image" /><img
+src="../Figures/ExamplesChapter/electrostatics/electrostatics-result.png"
+style="width:3in" alt="image" /></p>
+</div>
+<figcaption><span id="fig:Electrostatics"
+label="fig:Electrostatics"></span><strong>Electrostatics problem on a
+square domain</strong> (left) mesh after 10 iterations of adaptive
+refinement and optimization and (right) the resulting solution. Grade 1
+elements are shown to emphasize the mesh structure.</figcaption>
+</figure>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../examples/dla.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../examples/implicitmesh.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../examples/dla.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../examples/implicitmesh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

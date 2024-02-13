@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Installing Morpho - Morpho Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="beginning.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installing_morpho.html" class="active"><strong aria-hidden="true">3.</strong> Installing Morpho</a></li><li class="chapter-item expanded "><a href="using_morpho.html"><strong aria-hidden="true">4.</strong> Using Morpho</a></li><li class="chapter-item expanded "><a href="tutorial.html"><strong aria-hidden="true">5.</strong> Tutorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial/importing_modules.html"><strong aria-hidden="true">5.1.</strong> Importing Modules</a></li><li class="chapter-item expanded "><a href="tutorial/morpho_language.html"><strong aria-hidden="true">5.2.</strong> Morpho Language</a></li><li class="chapter-item expanded "><a href="tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">5.3.</strong> Creating the initial mesh</a></li><li class="chapter-item expanded "><a href="tutorial/selections.html"><strong aria-hidden="true">5.4.</strong> Selections</a></li><li class="chapter-item expanded "><a href="tutorial/fields.html"><strong aria-hidden="true">5.5.</strong> Fields</a></li><li class="chapter-item expanded "><a href="tutorial/defining_the_problem.html"><strong aria-hidden="true">5.6.</strong> Defining the problem</a></li><li class="chapter-item expanded "><a href="tutorial/performing_the_optimization.html"><strong aria-hidden="true">5.7.</strong> Performing the optimization</a></li><li class="chapter-item expanded "><a href="tutorial/visualizing_the_results.html"><strong aria-hidden="true">5.8.</strong> Visualizing the results</a></li><li class="chapter-item expanded "><a href="tutorial/refinement.html"><strong aria-hidden="true">5.9.</strong> Refinement</a></li><li class="chapter-item expanded "><a href="tutorial/next_steps.html"><strong aria-hidden="true">5.10.</strong> Next steps</a></li></ol></li><li class="chapter-item expanded "><a href="working_with_meshes.html"><strong aria-hidden="true">6.</strong> Working with meshes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="working_with_meshes/meshgen_module.html"><strong aria-hidden="true">6.1.</strong> The meshgen module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/meshtools_module.html"><strong aria-hidden="true">6.2.</strong> The meshtools module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/vtk_module.html"><strong aria-hidden="true">6.3.</strong> The vtk module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/merging_meshes.html"><strong aria-hidden="true">6.4.</strong> Merging meshes</a></li><li class="chapter-item expanded "><a href="working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">6.5.</strong> Slicing meshes</a></li></ol></li><li class="chapter-item expanded "><a href="visualization.html"><strong aria-hidden="true">7.</strong> Visualization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="visualization/plot_module.html"><strong aria-hidden="true">7.1.</strong> The plot module</a></li><li class="chapter-item expanded "><a href="visualization/graphics_module.html"><strong aria-hidden="true">7.2.</strong> The graphics module</a></li><li class="chapter-item expanded "><a href="visualization/povray_module.html"><strong aria-hidden="true">7.3.</strong> The povray module</a></li></ol></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">8.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/catenoid.html"><strong aria-hidden="true">8.1.</strong> Catenoid</a></li><li class="chapter-item expanded "><a href="examples/cholesteric.html"><strong aria-hidden="true">8.2.</strong> Cholesteric</a></li><li class="chapter-item expanded "><a href="examples/cube.html"><strong aria-hidden="true">8.3.</strong> Cube</a></li><li class="chapter-item expanded "><a href="examples/delaunay.html"><strong aria-hidden="true">8.4.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="examples/dla.html"><strong aria-hidden="true">8.5.</strong> DLA</a></li><li class="chapter-item expanded "><a href="examples/electrostatics.html"><strong aria-hidden="true">8.6.</strong> Electrostatics</a></li><li class="chapter-item expanded "><a href="examples/implicitmesh.html"><strong aria-hidden="true">8.7.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="examples/meshgen.html"><strong aria-hidden="true">8.8.</strong> Meshgen</a></li><li class="chapter-item expanded "><a href="examples/meshslice.html"><strong aria-hidden="true">8.9.</strong> Meshslice</a></li><li class="chapter-item expanded "><a href="examples/plot.html"><strong aria-hidden="true">8.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="examples/povray.html"><strong aria-hidden="true">8.11.</strong> Povray</a></li><li class="chapter-item expanded "><a href="examples/qtensor.html"><strong aria-hidden="true">8.12.</strong> QTensor</a></li><li class="chapter-item expanded "><a href="examples/thomson.html"><strong aria-hidden="true">8.13.</strong> Thomson</a></li><li class="chapter-item expanded "><a href="examples/wrap.html"><strong aria-hidden="true">8.14.</strong> Wrap</a></li></ol></li><li class="chapter-item expanded "><a href="reference.html"><strong aria-hidden="true">9.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/language.html"><strong aria-hidden="true">9.1.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/syntax.html"><strong aria-hidden="true">9.1.1.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="reference/nested/values.html"><strong aria-hidden="true">9.1.2.</strong> Values</a></li><li class="chapter-item expanded "><a href="reference/nested/variables.html"><strong aria-hidden="true">9.1.3.</strong> Variables</a></li><li class="chapter-item expanded "><a href="reference/nested/controlflow.html"><strong aria-hidden="true">9.1.4.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="reference/nested/functions.html"><strong aria-hidden="true">9.1.5.</strong> Functions</a></li><li class="chapter-item expanded "><a href="reference/nested/classes.html"><strong aria-hidden="true">9.1.6.</strong> Classes</a></li><li class="chapter-item expanded "><a href="reference/nested/modules.html"><strong aria-hidden="true">9.1.7.</strong> Modules</a></li><li class="chapter-item expanded "><a href="reference/nested/help.html"><strong aria-hidden="true">9.1.8.</strong> Help</a></li><li class="chapter-item expanded "><a href="reference/nested/builtin.html"><strong aria-hidden="true">9.1.9.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item expanded "><a href="reference/data_types.html"><strong aria-hidden="true">9.2.</strong> Data Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/array.html"><strong aria-hidden="true">9.2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="reference/nested/complex.html"><strong aria-hidden="true">9.2.2.</strong> Complex</a></li><li class="chapter-item expanded "><a href="reference/nested/list.html"><strong aria-hidden="true">9.2.3.</strong> List</a></li><li class="chapter-item expanded "><a href="reference/nested/matrix.html"><strong aria-hidden="true">9.2.4.</strong> Matrix</a></li><li class="chapter-item expanded "><a href="reference/nested/range.html"><strong aria-hidden="true">9.2.5.</strong> Range</a></li><li class="chapter-item expanded "><a href="reference/nested/sparse.html"><strong aria-hidden="true">9.2.6.</strong> Sparse</a></li><li class="chapter-item expanded "><a href="reference/nested/string.html"><strong aria-hidden="true">9.2.7.</strong> String</a></li></ol></li><li class="chapter-item expanded "><a href="reference/computational_geometry.html"><strong aria-hidden="true">9.3.</strong> Computational Geometry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/field.html"><strong aria-hidden="true">9.3.1.</strong> Field</a></li><li class="chapter-item expanded "><a href="reference/nested/functionals.html"><strong aria-hidden="true">9.3.2.</strong> Functionals</a></li><li class="chapter-item expanded "><a href="reference/nested/mesh.html"><strong aria-hidden="true">9.3.3.</strong> Mesh</a></li><li class="chapter-item expanded "><a href="reference/nested/selection.html"><strong aria-hidden="true">9.3.4.</strong> Selection</a></li></ol></li><li class="chapter-item expanded "><a href="reference/io.html"><strong aria-hidden="true">9.4.</strong> I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/file.html"><strong aria-hidden="true">9.4.1.</strong> File</a></li></ol></li><li class="chapter-item expanded "><a href="reference/modules.html"><strong aria-hidden="true">9.5.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/color.html"><strong aria-hidden="true">9.5.1.</strong> Color</a></li><li class="chapter-item expanded "><a href="reference/nested/delaunay.html"><strong aria-hidden="true">9.5.2.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="reference/nested/graphics.html"><strong aria-hidden="true">9.5.3.</strong> Graphics</a></li><li class="chapter-item expanded "><a href="reference/nested/implicitmesh.html"><strong aria-hidden="true">9.5.4.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="reference/nested/kdtree.html"><strong aria-hidden="true">9.5.5.</strong> KDTree</a></li><li class="chapter-item expanded "><a href="reference/nested/meshgen.html"><strong aria-hidden="true">9.5.6.</strong> MeshGen</a></li><li class="chapter-item expanded "><a href="reference/nested/meshslice.html"><strong aria-hidden="true">9.5.7.</strong> MeshSlice</a></li><li class="chapter-item expanded "><a href="reference/nested/meshtools.html"><strong aria-hidden="true">9.5.8.</strong> Meshtools</a></li><li class="chapter-item expanded "><a href="reference/nested/optimize.html"><strong aria-hidden="true">9.5.9.</strong> Optimize</a></li><li class="chapter-item expanded "><a href="reference/nested/plot.html"><strong aria-hidden="true">9.5.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="reference/nested/povray.html"><strong aria-hidden="true">9.5.11.</strong> POVRay</a></li><li class="chapter-item expanded "><a href="reference/nested/vtk.html"><strong aria-hidden="true">9.5.12.</strong> VTK</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Morpho Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="installing-morpho"><a class="header" href="#installing-morpho">Installing <em>Morpho</em></a></h1>
+<p><em>Morpho</em> is hosted on a publicly available github repository
+<a href="https://github.com/Morpho-lang/morpho">https://github.com/Morpho-lang/morpho</a>. We are continuously working on
+improving <em>morpho</em> installation. With this release, <em>morpho</em> on macOS
+now has a streamlined installation process using homebrew. Other
+platforms must be installed from source and we hope to provide packages
+for future releases. Instructions for different platforms are provided
+below.</p>
+<h3 id="where-morpho-installation-puts-things"><a class="header" href="#where-morpho-installation-puts-things">Where <em>morpho</em> installation puts things</a></h3>
+<p>A <em>morpho</em> installation includes help files, modules, and other
+resources. By default, these are installed in the <strong>/usr/local/</strong> file
+structure<sup class="footnote-reference"><a href="#1">1</a></sup>, including in the following places:</p>
+<p><strong>/usr/local/bin</strong> : The morpho and morphoview executables are placed here.</p>
+<p><strong>/usr/local/share/morpho</strong> : Help files and modules are stored here.</p>
+<p><strong>/usr/local/include/morpho</strong> : Morpho header files for building extensions.</p>
+<p><strong>/usr/local/lib/morpho</strong> : Morpho extensions.</p>
+<p>It's possible to build <em>morpho</em> to use different locations for resources
+and the binary. To do so, set the <code>MORPHORESOURCESDIR</code> option when you
+run make, e.g.</p>
+<pre><code>sudo make MORPHORESOURCESDIR=X install
+</code></pre>
+<p>where X is the base folder you wish to use, i.e. the replacement for
+<strong>/usr/local</strong>. Subfolders will be created by the installer. To control
+where the <em>morpho</em> binary is placed, also set the <code>DESTDIR</code> option,</p>
+<pre><code>sudo make MORPHORESOURCESDIR=X DESTDIR=Y install
+</code></pre>
+<h3 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h3>
+<p><em>Morpho</em> leverages a few libraries to provide certain functionality:</p>
+<p><strong>glfw</strong> : is used to provide gui functionality for an interactive visualization application, <code>morphoview</code>.</p>
+<p><strong>blas/lapack</strong> : are used for dense linear algebra.</p>
+<p><strong>suitesparse</strong> : is used for sparse linear algebra[^2].</p>
+<p><strong>freetype</strong> : provides text display.</p>
+<p><strong>povray</strong> : is a ray-tracer that is used for publication-quality graphics.</p>
+<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
+<p>The recommended approach to installing morpho on macOS is to use the
+<a href="https://brew.sh">Homebrew</a> package manager.</p>
+<ol>
+<li>
+<p>If you have a previous installation of morpho, we recommend you
+remove it by following the instructions for uninstalling <em>morpho</em>
+below.</p>
+</li>
+<li>
+<p>Install <a href="https://brew.sh">Homebrew</a>, following instructions on the
+homebrew site.</p>
+</li>
+<li>
+<p>In the terminal type:</p>
+<pre><code>brew update
+brew tap morpho-lang/morpho
+brew install morpho
+</code></pre>
+<p>You may be prompted by homebrew to install additional components.
+For some users, it may be necessary to install XCode from the App
+Store.</p>
+</li>
+<li>
+<p>We also recommend that you obtain the morpho git repository, because
+it contains the manual, examples and other useful materials that
+aren't installed by homebrew.</p>
+<pre><code>git clone https://github.com/Morpho-lang/morpho.git
+</code></pre>
+</li>
+</ol>
+<h3 id="macos-manual-installation"><a class="header" href="#macos-manual-installation">macOS (Manual Installation)</a></h3>
+<p>If you ever need to do a manual installation, for example if you want to
+use the cutting edge <code>dev</code> branch of morpho, you should follow these
+instructions. If you have an Intel mac, you should omit the
+<code>-f Makefile.m1</code> flags in the make command below. Note also that some
+users may need to preface</p>
+<pre><code>make install
+</code></pre>
+<p>with the sudo command:</p>
+<pre><code>sudo make install
+</code></pre>
+<ol>
+<li>
+<p>Install the <a href="https://brew.sh">Homebrew</a> package manager, following
+instructions on the homebrew site.</p>
+</li>
+<li>
+<p><strong>If you previously installed morpho using homebrew, you must first
+remove it. This step is vitally important as the two installed
+versions may cause conflicts.</strong></p>
+<pre><code>brew uninstall morpho
+</code></pre>
+</li>
+<li>
+<p>Install dependencies. Open the Terminal application and type:</p>
+<pre><code>brew update
+brew install glfw suite-sparse freetype povray
+</code></pre>
+</li>
+<li>
+<p>Obtain the source by cloning the github public repository:</p>
+<pre><code>git clone https://github.com/Morpho-lang/morpho.git
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morpho5</code> folder within the downloaded repository
+and build the application[^3]</p>
+<pre><code>cd morpho/morpho5
+make -f Makefile.m1 install
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morphoview</code> folder and build the viewer application</p>
+<pre><code>cd morpho/morphoview
+make -f Makefile.m1 install
+</code></pre>
+</li>
+<li>
+<p>Check that the application works by typing</p>
+<pre><code>morpho5
+</code></pre>
+</li>
+</ol>
+<p><strong>If you wish to switch back to a homebrew install, follow the
+instructions below to uninstall morpho to prevent version conflicts.</strong></p>
+<h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
+<p>Building on Linux is similar to the macOS manual install. Here we give
+commands for Ubuntu, which uses the <code>apt</code> package manager. On other
+distributions you will need to find the equivalent packages.</p>
+<ol>
+<li>
+<p>Make sure your version of apt is up to date.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+</li>
+<li>
+<p>Ensure you have basic developer tools installed. Some distributions
+omit these to save space.</p>
+<pre><code>sudo apt install build-essential
+</code></pre>
+</li>
+<li>
+<p>Install <em>morpho</em>'s dependencies using your distribution's package
+manager (or manually if you prefer):</p>
+<pre><code>sudo apt install libglfw3-dev libsuitesparse-dev liblapacke povraylibfreetype6-dev
+</code></pre>
+</li>
+<li>
+<p>Obtain the source by cloning the github public repository:</p>
+<pre><code>git clone https://github.com/Morpho-lang/morpho.git
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morpho5</code> folder within the downloaded repository
+and build the application:</p>
+<pre><code>cd morpho/morpho5
+sudo make -f Makefile.linux install
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morphoview</code> folder and build the viewer
+application:</p>
+<pre><code>cd ../morphoview
+sudo make -f Makefile.linux install
+</code></pre>
+</li>
+<li>
+<p>Check that the application works by typing</p>
+<pre><code>morpho5
+</code></pre>
+</li>
+</ol>
+<h3 id="windows-via-windows-subsystem-for-linux-wsl"><a class="header" href="#windows-via-windows-subsystem-for-linux-wsl">Windows via Windows Subsystem for Linux (WSL)</a></h3>
+<h4 id="install-wsl"><a class="header" href="#install-wsl">Install WSL</a></h4>
+<p>If you don't have WSL2 installed on your Windows computer, <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview">follow the
+instructions to install the Ubuntu
+App</a>.
+Follow all the steps in this link to ensure that graphics are working.</p>
+<h4 id="install-morpho"><a class="header" href="#install-morpho">Install Morpho</a></h4>
+<p>Once the Ubuntu terminal is working in Windows, you can install <em>morpho</em>
+the same way as in Linux by running the commands in the instructions in
+the Ubuntu terminal.</p>
+<p><strong>If you are using WSL2, then the installation is complete.</strong></p>
+<h4 id="graphics-on-wsl1"><a class="header" href="#graphics-on-wsl1">Graphics On WSL1</a></h4>
+<p>If you instead are working on WSL1, then you need to follow these
+instructions to get graphics running. Unless mentioned otherwise, all
+the commands below are run in the Ubuntu terminal.</p>
+<ol>
+<li>
+<p>A window manager must be installed so that the WSL can create
+windows. On Windows, install
+<a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>. It shows up as
+XLaunch in the Windows start menu.</p>
+</li>
+<li>
+<p>Open Xlaunch. Then,</p>
+<ol>
+<li>
+<p>choose 'Multiple windows', set display number to 0, and hit
+'Next'</p>
+</li>
+<li>
+<p>choose 'start no client' and hit 'Next'</p>
+</li>
+<li>
+<p><strong>Unselect</strong> 'native opengl' and hit 'Next'</p>
+</li>
+<li>
+<p>Hit 'Finish'</p>
+</li>
+</ol>
+</li>
+<li>
+<p>In Ubuntu download a package containing a full suite of desktop
+utilities that allows for the use of windows.</p>
+<pre><code>sudo apt install ubuntu-desktop mesa-utils
+</code></pre>
+<p>Tell ubuntu which display to use</p>
+<pre><code>export DISPLAY=localhost:0
+</code></pre>
+<p>To set the DISPLAY variable on login type</p>
+<pre><code>echo export DISPLAY=localhost:0 &gt;&gt; ~/.bashrc 
+</code></pre>
+<p><em>[Note that this assumes you are using bash as your terminal; you
+will may to adjust this line for other terminals].</em></p>
+</li>
+<li>
+<p>Test that the window system is working by running</p>
+<pre><code>glxgears
+</code></pre>
+<p>which should open a window with some gears.</p>
+</li>
+<li>
+<p><strong>Test the thomson example program.</strong> Navigate to the thomson
+example in the examples directory and run it. If you are in the
+<code>morphoview</code> directory.</p>
+<pre><code>cd ../examples/thomson
+morpho5 thomson.morpho
+</code></pre>
+<p>This example starts with randomly distributed charges on a sphere
+and minimizing electric potential. It should generate an interactive
+figure of points on a sphere.</p>
+</li>
+</ol>
+<h3 id="updating-morpho"><a class="header" href="#updating-morpho">Updating <em>morpho</em></a></h3>
+<p>As new versions of <em>morpho</em> are released, you will likely want to
+upgrade to the latest version. From the terminal:</p>
+<ul>
+<li>
+<p>If you used homebrew to install morpho, simply type,</p>
+<pre><code>brew upgrade morpho
+</code></pre>
+</li>
+<li>
+<p>If you installed <em>morpho</em> manually, and still have the git
+repository folder on your computer, navigate to this with <code>cd</code> and
+type,</p>
+<pre><code>git pull
+</code></pre>
+<p>which downloads any updates. You can then follow the above
+instructions to recompile <em>morpho.</em> It's not necessary to reinstall
+dependencies, but note that some new releases of <em>morpho</em> may
+require additional dependencies.</p>
+</li>
+<li>
+<p>If you no longer have the original <em>morpho</em> git repository folder
+from which you installed morpho, simply rerun the installation from
+scratch as above. You shouldn't need to reinstall dependencies.</p>
+</li>
+</ul>
+<h3 id="uninstalling-morpho"><a class="header" href="#uninstalling-morpho">Uninstalling <em>morpho</em></a></h3>
+<p>If you wish to uninstall morpho, you can do so simply from the terminal
+application.</p>
+<ul>
+<li>
+<p>If you used homebrew to install morpho, simply type</p>
+<pre><code>brew uninstall morpho
+</code></pre>
+</li>
+<li>
+<p>Alternatively, if you did a manual install, you can remove
+everything with</p>
+<pre><code>rm /usr/local/bin/morpho
+rm /usr/local/bin/morphoview
+rm -r /usr/local/share/morpho
+rm -r /usr/local/lib/morpho
+</code></pre>
+<p>You may need to prefix these with <code>sudo</code>.</p>
+</li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>On the macOS, these files are contained within the homebrew system</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="using_morpho.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="using_morpho.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
