@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Capturing and returning the C outputs - Design document for the Morpho Gmsh Extension</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation Instructions</a></li><li class="chapter-item expanded "><a href="../anatomy_of_extension.html"><strong aria-hidden="true">3.</strong> Anatomy of the Gmsh Extension</a></li><li class="chapter-item expanded "><a href="../gmsh_api.html"><strong aria-hidden="true">4.</strong> The Gmsh API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../gmshApi/gen.html"><strong aria-hidden="true">4.1.</strong> gen.py</a></li><li class="chapter-item expanded "><a href="../gmshApi/genApi.html"><strong aria-hidden="true">4.2.</strong> genApi.py</a></li></ol></li><li class="chapter-item expanded "><a href="../api_autogeneration.html"><strong aria-hidden="true">5.</strong> API auto-generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../apiAutogeneration/skeleton.html"><strong aria-hidden="true">5.1.</strong> Skeleton of a Morpho wrapper extension</a></li><li class="chapter-item expanded "><a href="../apiAutogeneration/arg.html"><strong aria-hidden="true">5.2.</strong> The arg class</a></li><li class="chapter-item expanded "><a href="../apiAutogeneration/capturing_inputs.html"><strong aria-hidden="true">5.3.</strong> Capturing inputs</a></li><li class="chapter-item expanded "><a href="../apiAutogeneration/capturing_and_returning_outputs.html" class="active"><strong aria-hidden="true">5.4.</strong> Capturing and returning the C outputs</a></li><li class="chapter-item expanded "><a href="../apiAutogeneration/autodoc.html"><strong aria-hidden="true">5.5.</strong> Auto-generating inline documentation</a></li><li class="chapter-item expanded "><a href="../apiAutogeneration/write_module.html"><strong aria-hidden="true">5.6.</strong> Writing it all to the files</a></li></ol></li><li class="chapter-item expanded "><a href="../gmsh_in_morpho.html"><strong aria-hidden="true">6.</strong> Implementation of the Gmsh Module in Morpho</a></li><li class="chapter-item expanded "><a href="../to_dos.html"><strong aria-hidden="true">7.</strong> Some To-do's</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Design document for the Morpho Gmsh Extension</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="capturing-and-returning-the-c-outputs"><a class="header" href="#capturing-and-returning-the-c-outputs">Capturing and returning the C outputs</a></h1>
+<p>Handling outputs is going to be a <em>little</em> more involved than the inputs. We need to do three things:</p>
+<ol>
+<li>Initialize pointers to the outputs so that they can be passed to the <code>gmsh</code> C functions.</li>
+<li>Capture the outputs from the C functions into a Morpho value format.</li>
+<li>Return the captured outputs.</li>
+</ol>
+<p>Similar to the input, we create an <code>outputArg</code> object, inheriting from <code>arg</code>, that defines methods for each of these operations:</p>
+<pre><code class="language-python"># GenApi.py
+class outputArg(arg):
+    """
+    Basic datatype for an output argument, inherited from `arg`.
+    Defines some extra methods to process the output.
+    """
+
+    # Initialize pointers to the outputs so that they can be passed to the gmsh C functions.
+    def init_output(self):
+        return str("")
+
+    # Capture the outputs from the C functions into a Morpho value format.
+    def capture_output(self):
+        return str("")
+
+    # Return the captured outputs.
+    def return_output(self):
+        return str("")
+</code></pre>
+<p>The specific output types then inherit from <code>outputArg</code> and override the corresponding methods.</p>
+<p>We will again choose a simple function to illustrate this, albeit with a composite return object: a list of integers:</p>
+<pre><code class="language-c">/* Get the list of all fields. */
+GMSH_API void gmshModelMeshFieldList(int ** tags, size_t * tags_n,
+                                     int * ierr);
+</code></pre>
+<p>Here, we have no inputs and a single output <code>tags</code> that's a list of integers. Here is how it is added to the API from <code>gen.py</code>:</p>
+<pre><code class="language-python"># gen.py
+doc = '''Get the list of all fields.'''
+field.add('list', doc, None, ovectorint('tags'))
+</code></pre>
+<p>The <code>oarg</code> class is initialized with certain handy attributes to help with the output processing. In addition to the ones we have seen before, we add a new <code>self.cToMorphoConverter</code> attribute to help convert the C outputs to Morpho outputs. E.g.:</p>
+<pre><code class="language-python"># GenApi.py
+class ovectorint(oint):
+    def __init__(self, name, value=None, python_value=None, julia_value=None):
+        arg.__init__(self, name, value, python_value, julia_value, "std::vector&lt;int&gt; &amp;",
+                "int **", True)
+        self.c = "int ** " + self.name + ", size_t * " + self.name + "_n"
+        self.morpho = "&amp;" + self.name + ", &amp;" + self.name + "_n"
+        self.texi_type = "vector of integers"
+        self.morpho_object = self.name + "_list"
+        self.elementType = "int"
+        self.cToMorphoConverter = "MORPHO_INTEGER"
+
+</code></pre>
+<p>The <code>init_output</code> method initializes pointers to the outputs so that they can be passed to the gmsh C functions:</p>
+<pre><code class="language-python"># GenApi.py, class ovectorint
+    def init_output(self):
+        return INDENTL1 \
+                + f"{self.elementType}* {self.name};\n" \
+                + INDENTL1 \
+                + f"size_t {self.name}_n;\n"
+</code></pre>
+<p>The above will generate the C code:</p>
+<pre><code class="language-c">    int* tags;
+    size_t tags_n;
+</code></pre>
+<p>The <code>capture_output</code> method captures the outputs from the C functions into a Morpho value format:</p>
+<pre><code class="language-python"># GenApi.py, class ovectorint
+    def capture_output(self):
+        return INDENTL1 + f"value {self.name}_value[(int) {self.name}_n];\n" \
+            + INDENTL1 + f"for (size_t j=0; j&lt;{self.name}_n; j++) " +"{ \n" \
+            + INDENTL2 + f"{self.name}_value[j] = {self.cToMorphoConverter}({self.name}[j]);\n" \
+            + INDENTL1 + "}\n" \
+            + INDENTL1 + f"objectlist* {self.morpho_object} = object_newlist((int) {self.name}_n, {self.name}_value);\n"
+</code></pre>
+<p>The above will generate the C code:</p>
+<pre><code class="language-c">    value tags_value[(int) tags_n];
+    for (size_t j=0; j&lt;tags_n; j++) {
+        tags_value[j] = MORPHO_INTEGER(tags[j]);
+    }
+    objectlist* tags_list = object_newlist((int) tags_n, tags_value);
+</code></pre>
+<p>The <code>return_output</code> method returns the captured outputs:</p>
+<pre><code class="language-python"># GenApi.py, class ovectorint
+    def return_output(self):
+        return INDENTL1 + "value out;\n" \
+            + INDENTL1 + f"if ({self.name}_list) " + "{\n" \
+            + INDENTL2 + f"out = MORPHO_OBJECT({self.name}_list);\n" \
+            + INDENTL2 + f"morpho_bindobjects(v, 1, &amp;out);\n" \
+            + INDENTL1 + "}\n" \
+            + INDENTL1 + "return out;\n"
+</code></pre>
+<p>which generates</p>
+<pre><code class="language-c">    value out;
+    if (tags_list) {
+        out = MORPHO_OBJECT(tags_list);
+        morpho_bindobjects(v, 1, &amp;out);
+    }
+    return out;
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: A few Gmsh C functions have a non-void return type, and hence return &gt;something directly instead of through pointers. For example,</p>
+<pre><code class="language-c">/* Return 1 if the Gmsh API is initialized, and 0 if not. */
+GMSH_API int gmshIsInitialized(int * ierr);
+</code></pre>
+<p>These are handled directly while writing the module.</p>
+</blockquote>
+<div class="warning">
+<p>The handling of cases where the function returns outputs both directly and via pointers is not implemented yet. But as of 4.12.2 (at the time of writing), there is only one function, <code>gmshFltkSelectEntities</code>, in the entire API that does this, and since it is an FLTK-related function, we will probably not use it through the API in Morpho. This should still be implemented in the future.</p>
+</div>
+<p>Here are the Morpho values types returned for the corresponding C types:</p>
+<div class="table-wrapper"><table><thead><tr><th>C-Type</th><th>Morpho-Type</th></tr></thead><tbody>
+<tr><td><code>int</code></td><td><code>MORPHO_INTEGER</code></td></tr>
+<tr><td><code>size_t</code></td><td><code>MORPHO_INTEGER</code></td></tr>
+<tr><td><code>double</code></td><td><code>MORPHO_FLOAT</code></td></tr>
+<tr><td><code>char *</code></td><td><code>MORPHO_STRING</code></td></tr>
+</tbody></table>
+</div>
+<p>All vector outputs are returned as Morpho <code>List</code>'s. For example, an <code>ovectordouble</code> would be returned as a Morpho <code>List</code> of Morpho <code>Float</code>s, <code>ovectorvectorint</code> would be <code>List</code> of <code>List</code> of <code>MORPHO_INTEGER</code>'s, and so on. For the list of lists, we need a separate operation to collect all the outputs and return it. We write functions for this inside our <code>write_morpho</code> method:</p>
+<pre><code class="language-python">def collect_list_of_outputs(oargs):
+    l = INDENTL1 + f"value outval[{len(oargs)}];\n"
+    for j, oarg in enumerate(oargs):
+        l += INDENTL1 + f"outval[{j}] = MORPHO_OBJECT({oarg.morpho_object});\n"
+    l += INDENTL1 + f"objectlist* outlist = object_newlist({len(oargs)}, outval);\n"
+    self.fwrite(f, l)
+    return
+
+def return_list_of_outputs():
+    l = INDENTL1 + "value out;\n" \
+      + INDENTL1 + f"if (outlist) " + "{\n" \
+      + INDENTL2 + f"out = MORPHO_OBJECT(outlist);\n" \
+      + INDENTL2 + f"morpho_bindobjects(v, 1, &amp;out);\n" \
+      + INDENTL1 + "}\n" \
+      + INDENTL1 + "return out;\n"
+    self.fwrite(f, l)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../apiAutogeneration/capturing_inputs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../apiAutogeneration/autodoc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../apiAutogeneration/capturing_inputs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../apiAutogeneration/autodoc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
