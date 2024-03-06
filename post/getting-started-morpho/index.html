@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="leading-relaxed text-base mx-auto mt-2 w-11/12 sm:w-2/3 sm:max-w-lg font-sans bg-slate-900 text-slate-50 no-underline">
+
+<head>
+  <meta charset="utf-8">
+  
+<title>Getting started with Morpho development | thewhyolinist</title>
+
+  <link rel="shortcut icon" type="image/png" href="&#x2F;images&#x2F;favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="/main.css">
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="/typography.css">
+  <link rel="stylesheet" href="/foundation.min.css">
+  <script src="/highlight.min.js"></script>
+  <script defer>hljs.highlightAll();</script>
+</head>
+
+<div class="flex items-start border-slate-50">
+  <a href="/">
+    <div class="rounded-full">
+      <img class="rounded-full" width="60" height="auto" src="&#x2F;images&#x2F;logo.png" alt="thewhyolinist">
+    </div>
+  </a>
+  <div class="ml-auto">
+    <a class="no-underline text-slate-50" href="/">thewhyolinist</a>
+  </div>
+</div>
+<div class="flex justify-end">
+  <a class="flex items-start text-slate-50" href="/about">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+      <path fill-rule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z"
+        clip-rule="evenodd" />
+    </svg>
+    about</a>
+</div>
+<hr class="border-amber-200" />
+
+<body onload="getTheme()">
+  <section>
+    <div>
+      
+<p>
+  <div class="text-3xl">Getting started with Morpho development</div>
+</p>
+<p>
+  <div class="text-sm mb-2 text-right">2024-03-06</div>
+  <div class="text-right">
+  
+      
+      &ensp;<a class="text-slate-50" href="https://emily-zola-theme.netlify.app/categories/code/">/code</a>
+      
+  
+  
+      
+      &ensp;<a class="text-slate-50" href="https://emily-zola-theme.netlify.app/tags/open-source/">#open-source</a>
+      
+  
+  </div>
+</p>
+
+<p>
+  <p><em>As a postdoctoral scholar, I started working on <a href="https://github.com/Morpho-lang/morpho">Morpho</a> in August 2021. At the time, I had little experience in software development / engineering. I had written a lot of Python/C based scientific computing code, but it was mostly meant to just perform the simulations/analysis faithfully, with little thought towards the documentation, maintenance, best practices, etc. regarding the codebase. I <strong>wanted</strong> to contribute to Morpho, understand how it works, and in general improve it. Not having a background in software engineering, it took me a while to learn things on my own. The hope with this blog post is that if you find yourselves at a similar juncture, it should kickstart your exploration into Morpho much quicker.</em></p>
+<h2 id="what-is-morpho">What is Morpho?</h2>
+<p>Morpho is a light-weight object-oriented programming enviromnemt for solving optimization problems in soft matter physics and beyond. You can think of it as a more modern <a href="https://en.wikipedia.org/wiki/Surface_Evolver">Surface Evolver</a> --- we use simplicial meshes (and fields defined on them as well, unlike Surface Evolver) and perform direct optimization on the vertices, connectivities and field values. The scripting language can be used to write arbitrary prorams like in Python, but the main horse-power comes from data-structures implemented in C. Oh, yes, Morpho is written in C (we will get to this later).</p>
+<h2 id="where-can-i-find-documentation">Where can I find documentation?</h2>
+<p>Morpho ships with an extensive User Manual, that is currently hosted on the main GitHub repository. I am <a href="https://github.com/joshichaitanya3/morpho-manual">undertaking a project</a> to additionally provide it as a website for better accessibility. This would <em>also</em> be a great avenue to contribute to Morpho!</p>
+<p>In addition to the User Manual, which is meant for end-users, Morpho also provides a <a href="https://github.com/Morpho-lang/morpho-devguide">developer's guide</a> which is a great (in progress) reference for Morpho internals. (See <a href="https://emily-zola-theme.netlify.app/post/getting-started-morpho/#what-is-not-documented">below</a> for a collection of things that aren't documented well yet.)</p>
+<h2 id="what-is-not-documented">What is not documented?</h2>
+<p>Here are a bunch of things that I would love if we get documentation on. They are in no particular order, and might be of interest to physicists, mathematicians and/or experienced programmers.</p>
+<ul>
+<li>
+<p>The central <code>Mesh</code> data-structure that representes the shapes we optimize is not well-documented. The code has some comments, but an explainer for how the data structure works hasn't been jotted down in ink yet.</p>
+</li>
+<li>
+<p>Similarly, the <code>Functional</code> objects like <code>Area</code>, <code>VolumeEnclosed</code>, <code>Nematic</code>, etc. need documentation on what disrete representations are used under the hood, etc.</p>
+</li>
+<li>
+<p>The <code>optimize</code> module uses various algorithms such as plain gradient descent (the <code>relax</code> method of the <code>Optimizer</code>), line searches (<code>linesearch</code>), the conjugate gradient algorithm (<code>conjugategradient</code>) are not documented. Some of the more <a href="https://github.com/Morpho-lang/morpho-optimize3">cutting edge optimization routines</a> being developed in collaboration with Prof. James Adler's lab are documented in the form of <a href="https://arxiv.org/abs/2310.04022v1">research papers</a>, but a detailed account of the optimization module is not available.</p>
+</li>
+<li>
+<p>Morpho uses several integrators to carry out <code>AreaIntegral</code>s or <code>VolumeIntegrals</code>, etc. These are not documented.</p>
+</li>
+<li>
+<p>The Morpho language <a href="https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars">grammar</a> is not written down, even in the devguide.</p>
+</li>
+</ul>
+
+</p>
+<hr class="mb-4 border-amber-200" />
+
+
+
+
+    </div>
+  </section>
+</body>
+
+<div class="flex justify-end my-4">
+  <div class="flex flex-col">
+    <div><a class="underline text-slate-50" href="/">thewhyolinist</a>&ensp;&copy; Chaitanya Joshi
+    </div>
+    <div>powered by <a class="text-slate-50" href="https://www.getzola.org/">zola</a>, theme <a class="text-slate-50"
+        href="https://github.com/kyoheiu/emily_zola_theme">emily</a></div>
+  </div>
+</div>
+
+</html>

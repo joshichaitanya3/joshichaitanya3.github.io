@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="leading-relaxed text-base mx-auto mt-2 w-11/12 sm:w-2/3 sm:max-w-lg font-sans bg-slate-900 text-slate-50 no-underline">
+
+<head>
+  <meta charset="utf-8">
+  
+<title>Morpho manual on the web | thewhyolinist</title>
+
+  <link rel="shortcut icon" type="image/png" href="&#x2F;images&#x2F;favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="/main.css">
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="/typography.css">
+  <link rel="stylesheet" href="/foundation.min.css">
+  <script src="/highlight.min.js"></script>
+  <script defer>hljs.highlightAll();</script>
+</head>
+
+<div class="flex items-start border-slate-50">
+  <a href="/">
+    <div class="rounded-full">
+      <img class="rounded-full" width="60" height="auto" src="&#x2F;images&#x2F;logo.png" alt="thewhyolinist">
+    </div>
+  </a>
+  <div class="ml-auto">
+    <a class="no-underline text-slate-50" href="/">thewhyolinist</a>
+  </div>
+</div>
+<div class="flex justify-end">
+  <a class="flex items-start text-slate-50" href="/about">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+      <path fill-rule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z"
+        clip-rule="evenodd" />
+    </svg>
+    about</a>
+</div>
+<hr class="border-amber-200" />
+
+<body onload="getTheme()">
+  <section>
+    <div>
+      
+<p>
+  <div class="text-3xl">Morpho manual on the web</div>
+</p>
+<p>
+  <div class="text-sm mb-2 text-right">2024-03-06</div>
+  <div class="text-right">
+  
+      
+      &ensp;<a class="text-slate-50" href="https://emily-zola-theme.netlify.app/categories/code/">/code</a>
+      
+  
+  
+      
+      &ensp;<a class="text-slate-50" href="https://emily-zola-theme.netlify.app/tags/open-source/">##open-source</a>
+      
+      &ensp;<a class="text-slate-50" href="https://emily-zola-theme.netlify.app/tags/documentation/">##documentation</a>
+      
+  
+  </div>
+</p>
+
+<p>
+  <p>I am working on converting the <a href="https://github.com/Morpho-lang/morpho">Morpho</a> manual, currently in <a href="https://github.com/Morpho-lang/morpho/tree/main/manual/">PDF format hosted on GitHub and written in LyX</a>, into an accessible <a href="https://github.com/rust-lang/mdBook">mdbook</a> format.</p>
+<p>You can find the resulting website <a href="https://joshichaitanya3.github.io/morpho-manual/">here</a> and the code on GitHub <a href="https://github.com/joshichaitanya3/morpho-manual">here</a>.</p>
+<p>I am still deciding on the design principle for the mdBook manual, whether to have it always auto-converted from LyX when the manual is updated, or to have the bulk of it auto-converted and the new edits manually. In the first case, the authoring ease need not be emphasized, but would get trickier with the auto-conversion (think formatting equations correctly, handling footnotes, etc.) In the latter case, the authoring needs to be easy while still maintaining quality and accessibility (think inserting a figure with the proper Figure environment, captions and alt-texts.) I would love to hear your thoughts! Reach out on the GitHub, contributions of all kinds are very welcome!</p>
+
+</p>
+<hr class="mb-4 border-amber-200" />
+
+
+
+
+    </div>
+  </section>
+</body>
+
+<div class="flex justify-end my-4">
+  <div class="flex flex-col">
+    <div><a class="underline text-slate-50" href="/">thewhyolinist</a>&ensp;&copy; Chaitanya Joshi
+    </div>
+    <div>powered by <a class="text-slate-50" href="https://www.getzola.org/">zola</a>, theme <a class="text-slate-50"
+        href="https://github.com/kyoheiu/emily_zola_theme">emily</a></div>
+  </div>
+</div>
+
+</html>
