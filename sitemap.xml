@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://emily-zola-theme.netlify.app/</loc>
+        <loc>https://joshichaitanya3.github.io/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/about/</loc>
+        <loc>https://joshichaitanya3.github.io/about/</loc>
         <lastmod>2020-01-01</lastmod>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/categories/</loc>
+        <loc>https://joshichaitanya3.github.io/categories/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/categories/code/</loc>
+        <loc>https://joshichaitanya3.github.io/categories/code/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/post/</loc>
+        <loc>https://joshichaitanya3.github.io/post/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/post/getting-started-morpho/</loc>
+        <loc>https://joshichaitanya3.github.io/post/getting-started-morpho/</loc>
         <lastmod>2024-03-06</lastmod>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/post/morpho-manual-mdbook/</loc>
+        <loc>https://joshichaitanya3.github.io/post/morpho-manual-mdbook/</loc>
         <lastmod>2024-03-06</lastmod>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/tags/</loc>
+        <loc>https://joshichaitanya3.github.io/tags/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/tags/documentation/</loc>
+        <loc>https://joshichaitanya3.github.io/tags/documentation/</loc>
     </url>
     <url>
-        <loc>https://emily-zola-theme.netlify.app/tags/open-source/</loc>
+        <loc>https://joshichaitanya3.github.io/tags/open-source/</loc>
     </url>
 </urlset>
