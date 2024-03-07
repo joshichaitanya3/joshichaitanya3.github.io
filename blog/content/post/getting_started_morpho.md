@@ -60,11 +60,9 @@ Here are a bunch of things that I would love if we get documentation on. They ar
 
 If any of these topics interest you, or you want to write about them, please reach out to me on the GitHub repository!
 
-1. {% fnt(num=1) %}
-It can be thought of as a domain-specific language.
-{% end %} 
+1. {{ fnt(num=1,
+          footnote="It can be thought of as a domain-specific language.") 
+    }}
 
-
-2. {% fnt(num=2) %}
-This is developed by my friend Matthew Peterson, who is an alumni of Tufts and a super-early user of Morpho.
-{% end %}
+2. {{ fnt(num=2,
+          footnote="This is developed by my friend Matthew Peterson, who is an alumni of Tufts and a super-early user of Morpho.") }}
