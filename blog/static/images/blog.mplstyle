@@ -1,0 +1,21 @@
+# Matplotlib style file for the plots generated my website
+
+# Font and plot settings
+font.family : Helvetica
+font.size : 7
+text.color: white
+axes.labelcolor: white
+xtick.color: white
+ytick.color: white
+lines.linewidth : 1
+lines.markersize : 2
+axes.formatter.use_mathtext : True
+xtick.direction : in
+ytick.direction : in
+# Figure properties
+
+# Figure width is 8.3 cm (half column width in Soft Matter)
+# The height is set to 3/4th of the width by default
+
+figure.figsize : 3.26772, 2.4507874 
+figure.dpi : 300

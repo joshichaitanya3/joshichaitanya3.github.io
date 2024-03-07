@@ -60,35 +60,69 @@
 </p>
 
 <p>
-  <p><em>As a postdoctoral scholar, I started working on <a href="https://github.com/Morpho-lang/morpho">Morpho</a> in August 2021. At the time, I had little experience in software development / engineering. I had written a lot of Python/C based scientific computing code, but it was mostly meant to just perform the simulations/analysis faithfully, with little thought towards the documentation, maintenance, best practices, etc. regarding the codebase. I <strong>wanted</strong> to contribute to Morpho, understand how it works, and in general improve it. Not having a background in software engineering, it took me a while to learn things on my own. The hope with this blog post is that if you find yourselves at a similar juncture, it should kickstart your exploration into Morpho much quicker.</em></p>
+  <p><em>As a postdoctoral scholar, I started working on <a href="https://github.com/Morpho-lang/morpho">Morpho</a> in August 2021. At the time, I had little experience in software development. I <strong>wanted</strong> to contribute to Morpho, understand how it works, and in general improve it. Not having a background in software engineering, it took me a while to learn things on my own. The hope with this blog post is that if you find yourselves at a similar juncture, it should kickstart your exploration into Morpho much quicker.</em></p>
 <h2 id="what-is-morpho">What is Morpho?</h2>
-<p>Morpho is a light-weight object-oriented programming enviromnemt for solving optimization problems in soft matter physics and beyond. You can think of it as a more modern <a href="https://en.wikipedia.org/wiki/Surface_Evolver">Surface Evolver</a> --- we use simplicial meshes (and fields defined on them as well, unlike Surface Evolver) and perform direct optimization on the vertices, connectivities and field values. The scripting language can be used to write arbitrary prorams like in Python, but the main horse-power comes from data-structures implemented in C. Oh, yes, Morpho is written in C (we will get to this later).</p>
+<p>Morpho is an open-source, light-weight object-oriented programming environment <!-- Footnote with hyperlink -->
+<a href="#fn1" id="ft1">[1]</a> for solving optimization problems in soft matter physics and beyond. You can think of it as a more modern <a href="https://en.wikipedia.org/wiki/Surface_Evolver">Surface Evolver</a> --- we use simplicial meshes (and fields defined on them as well, unlike Surface Evolver) and perform direct optimization on the vertices, connectivities and field values. The scripting language can be used to write arbitrary programs like in Python, but the main horse-power comes from data-structures implemented in C. Oh, yes, Morpho itself is written in C.</p>
+<h2 id="what-can-i-find-the-source-code">What can I find the source code?</h2>
+<p>The source code is hosted on GitHub at <a href="https://github.com/Morpho-lang/morpho">Morpho-lang/morpho</a>. The code is fully open-source and is licensed under the MIT License. This means that it is free to use and modify. If you are not familiar with GitHub, it is a platform for hosting and maintaining code collaboratively. It is a great place to learn about version control, code review, and other best practices in software development. The <a href="https://github.com/Morpho-lang/morpho/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> file in the repository documents guidelines and avenues for contributing to Morpho. With this series of blog posts, I hope to provide additional pointers and details that were not obvious to me when I started.</p>
 <h2 id="where-can-i-find-documentation">Where can I find documentation?</h2>
-<p>Morpho ships with an extensive User Manual, that is currently hosted on the main GitHub repository. I am <a href="https://github.com/joshichaitanya3/morpho-manual">undertaking a project</a> to additionally provide it as a website for better accessibility. This would <em>also</em> be a great avenue to contribute to Morpho!</p>
-<p>In addition to the User Manual, which is meant for end-users, Morpho also provides a <a href="https://github.com/Morpho-lang/morpho-devguide">developer's guide</a> which is a great (in progress) reference for Morpho internals. (See <a href="https://joshichaitanya3.github.io/post/getting-started-morpho/#what-is-not-documented">below</a> for a collection of things that aren't documented well yet.)</p>
-<h2 id="what-is-not-documented">What is not documented?</h2>
-<p>Here are a bunch of things that I would love if we get documentation on. They are in no particular order, and might be of interest to physicists, mathematicians and/or experienced programmers.</p>
+<p>Morpho ships with an extensive User Manual, that is currently hosted on the main GitHub repository. I am <a href="../morpho-manual-mdbook/">converting it to a website</a> to provide additional accessibility. This would <em>also</em> be a great avenue to contribute to Morpho!</p>
+<p>In addition to the User Manual, which is meant for end-users, Morpho also provides a <a href="https://github.com/Morpho-lang/morpho-devguide">developer's guide</a> which is a great (in progress) reference for Morpho internals. (See <a href="https://joshichaitanya3.github.io/post/getting-started-morpho/#future-posts">below</a> for a collection of things I hope to write about that is not covered in the developer's guide.)</p>
+<h2 id="are-there-any-language-tools-available">Are there any language tools available?</h2>
+<p>Since the language is in its early stage, there are no language servers or linters available. However, there is a <a href="https://marketplace.visualstudio.com/items?itemName=mattsep.morpho">syntax highlighting extension for Morpho</a> for the Visual Studio Code editor <!-- Footnote with hyperlink -->
+<a href="#fn2" id="ft2">[2]</a>. This turns a code like this</p>
+<p><img src="/images/no-highlight.png" alt="Sample Morpho code without syntax highlighting" /></p>
+<p>to like this:</p>
+<p><img src="/images/highlight.png" alt="Sample Morpho code with syntax highlighting" /></p>
+<p>This is a great tool to have if you are writing Morpho code, and as such, I would recommend using Visual Studio Code for writing Morpho code for the time-being.</p>
+<h2 id="how-is-a-language-like-morpho-invented">How is a language like Morpho invented?</h2>
+<p>A great reference is the book Crafting Interpreters by Robert Nystrom, which is cited in the <a href="https://doi.org/10.48550/arXiv.2208.07859">preprint paper describing Morpho</a>. The best thing? You can <a href="http://craftinginterpreters.com/">read the book online</a> on his website, for free! </p>
+<p>The book walks the reader through the process of writing an interpreter for a language called Lox. It showcases two implementations of the interpreter, one in Java (easier to write, focusing on concepts) and the other in C (faster, focusing on performance). Morpho is similar to the C implementation of Lox, but with a lot of additional features and certain implementation differences (these also would be great to document!). </p>
+<h2 id="future-posts">Future posts</h2>
+<p>Here are a bunch of things that I would love if we get documentation on. They are in no particular order, and might be of interest to physicists, mathematicians and / or experienced programmers. I am hoping to write some of these on my own.</p>
 <ul>
 <li>
-<p>The central <code>Mesh</code> data-structure that representes the shapes we optimize is not well-documented. The code has some comments, but an explainer for how the data structure works hasn't been jotted down in ink yet.</p>
+<p>The central <code>Mesh</code> data-structure that representes the shapes we optimize.</p>
 </li>
 <li>
-<p>Similarly, the <code>Functional</code> objects like <code>Area</code>, <code>VolumeEnclosed</code>, <code>Nematic</code>, etc. need documentation on what disrete representations are used under the hood, etc.</p>
+<p>Similarly, the <code>Functional</code> objects like <code>Area</code>, <code>VolumeEnclosed</code>, <code>Nematic</code>, etc. and their disrete representations used under the hood.</p>
 </li>
 <li>
-<p>The <code>optimize</code> module uses various algorithms such as plain gradient descent (the <code>relax</code> method of the <code>Optimizer</code>), line searches (<code>linesearch</code>), the conjugate gradient algorithm (<code>conjugategradient</code>) are not documented. Some of the more <a href="https://github.com/Morpho-lang/morpho-optimize3">cutting edge optimization routines</a> being developed in collaboration with Prof. James Adler's lab are documented in the form of <a href="https://arxiv.org/abs/2310.04022v1">research papers</a>, but a detailed account of the optimization module is not available.</p>
+<p>The various optimization algorithms used by the <code>optimize</code> module (such as plain gradient descent, line searches and the conjugate gradient algorithm). </p>
 </li>
 <li>
-<p>Morpho uses several integrators to carry out <code>AreaIntegral</code>s or <code>VolumeIntegrals</code>, etc. These are not documented.</p>
+<p>The integrators used to carry out <code>AreaIntegral</code>s or <code>VolumeIntegrals</code>, etc. </p>
 </li>
 <li>
-<p>The Morpho language <a href="https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars">grammar</a> is not written down, even in the devguide.</p>
+<p>The <code>graphics</code> module that is used to visualize the shapes and fields.</p>
+</li>
+<li>
+<p>The Morpho language <a href="https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars">grammar</a>.</p>
 </li>
 </ul>
+<p>If any of these topics interest you, or you want to write about them, please reach out to me on the GitHub repository!</p>
+<ol>
+<li><!-- Footnote text with backlink to the footnote location -->
+<p>It can be thought of as a domain-specific language. <a href="#ft1" id="fn1">↩</a></p> </li>
+<li><!-- Footnote text with backlink to the footnote location -->
+<p>This is developed by my friend Matthew Peterson, who is an alumni of Tufts and a super-early user of Morpho. <a href="#ft2" id="fn2">↩</a></p></li>
+</ol>
 
 </p>
 <hr class="mb-4 border-amber-200" />
 
+
+<script>
+  MathJax = {
+    tex: {
+      tags: "ams"
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
 
 

@@ -1,0 +1,15 @@
+import meshtools
+import plot
+import povray
+
+// Create a mesh
+var m = LineMesh(fn(t) [cos(t), sin(t), 0], 0...2*Pi:Pi/10, closed=true)
+
+// Create a plot
+var g = plotmesh(m, grade=[0,1])
+g.background = White
+// Create a povray object
+var pov = POVRaytracer(g)
+pov.viewpoint = [0,0,40]
+pov.viewangle = 5
+pov.render("ring.pov", transparent=true)
