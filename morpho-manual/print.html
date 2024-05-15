@@ -30,8 +30,18 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/language-picker.css">
 
         <!-- MathJax -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            TeX: { 
+                equationNumbers: { 
+                    autoNumber: "AMS",
+                }
+            }
+        });
+        </script>
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body class="sidebar-visible no-js">
@@ -91,7 +101,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="installing_morpho.html"><strong aria-hidden="true">2.</strong> Installing Morpho</a></li><li class="chapter-item expanded "><a href="using_morpho.html"><strong aria-hidden="true">3.</strong> Using Morpho</a></li><li class="chapter-item expanded "><a href="tutorial.html"><strong aria-hidden="true">4.</strong> Tutorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tutorial/importing_modules.html"><strong aria-hidden="true">4.1.</strong> Importing Modules</a></li><li class="chapter-item expanded "><a href="tutorial/morpho_language.html"><strong aria-hidden="true">4.2.</strong> Morpho Language</a></li><li class="chapter-item expanded "><a href="tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">4.3.</strong> Creating the initial mesh</a></li><li class="chapter-item expanded "><a href="tutorial/selections.html"><strong aria-hidden="true">4.4.</strong> Selections</a></li><li class="chapter-item expanded "><a href="tutorial/fields.html"><strong aria-hidden="true">4.5.</strong> Fields</a></li><li class="chapter-item expanded "><a href="tutorial/defining_the_problem.html"><strong aria-hidden="true">4.6.</strong> Defining the problem</a></li><li class="chapter-item expanded "><a href="tutorial/performing_the_optimization.html"><strong aria-hidden="true">4.7.</strong> Performing the optimization</a></li><li class="chapter-item expanded "><a href="tutorial/visualizing_the_results.html"><strong aria-hidden="true">4.8.</strong> Visualizing the results</a></li><li class="chapter-item expanded "><a href="tutorial/refinement.html"><strong aria-hidden="true">4.9.</strong> Refinement</a></li><li class="chapter-item expanded "><a href="tutorial/next_steps.html"><strong aria-hidden="true">4.10.</strong> Next steps</a></li></ol></li><li class="chapter-item expanded "><a href="working_with_meshes.html"><strong aria-hidden="true">5.</strong> Working with meshes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="working_with_meshes/meshgen_module.html"><strong aria-hidden="true">5.1.</strong> The meshgen module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/meshtools_module.html"><strong aria-hidden="true">5.2.</strong> The meshtools module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/vtk_module.html"><strong aria-hidden="true">5.3.</strong> The vtk module</a></li><li class="chapter-item expanded "><a href="working_with_meshes/merging_meshes.html"><strong aria-hidden="true">5.4.</strong> Merging meshes</a></li><li class="chapter-item expanded "><a href="working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">5.5.</strong> Slicing meshes</a></li></ol></li><li class="chapter-item expanded "><a href="visualization.html"><strong aria-hidden="true">6.</strong> Visualization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="visualization/plot_module.html"><strong aria-hidden="true">6.1.</strong> The plot module</a></li><li class="chapter-item expanded "><a href="visualization/graphics_module.html"><strong aria-hidden="true">6.2.</strong> The graphics module</a></li><li class="chapter-item expanded "><a href="visualization/povray_module.html"><strong aria-hidden="true">6.3.</strong> The povray module</a></li></ol></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">7.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/catenoid.html"><strong aria-hidden="true">7.1.</strong> Catenoid</a></li><li class="chapter-item expanded "><a href="examples/cholesteric.html"><strong aria-hidden="true">7.2.</strong> Cholesteric</a></li><li class="chapter-item expanded "><a href="examples/cube.html"><strong aria-hidden="true">7.3.</strong> Cube</a></li><li class="chapter-item expanded "><a href="examples/delaunay.html"><strong aria-hidden="true">7.4.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="examples/dla.html"><strong aria-hidden="true">7.5.</strong> DLA</a></li><li class="chapter-item expanded "><a href="examples/electrostatics.html"><strong aria-hidden="true">7.6.</strong> Electrostatics</a></li><li class="chapter-item expanded "><a href="examples/implicitmesh.html"><strong aria-hidden="true">7.7.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="examples/meshgen.html"><strong aria-hidden="true">7.8.</strong> Meshgen</a></li><li class="chapter-item expanded "><a href="examples/meshslice.html"><strong aria-hidden="true">7.9.</strong> Meshslice</a></li><li class="chapter-item expanded "><a href="examples/plot.html"><strong aria-hidden="true">7.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="examples/povray.html"><strong aria-hidden="true">7.11.</strong> Povray</a></li><li class="chapter-item expanded "><a href="examples/qtensor.html"><strong aria-hidden="true">7.12.</strong> QTensor</a></li><li class="chapter-item expanded "><a href="examples/thomson.html"><strong aria-hidden="true">7.13.</strong> Thomson</a></li><li class="chapter-item expanded "><a href="examples/wrap.html"><strong aria-hidden="true">7.14.</strong> Wrap</a></li></ol></li><li class="chapter-item expanded "><a href="reference.html"><strong aria-hidden="true">8.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/language.html"><strong aria-hidden="true">8.1.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/syntax.html"><strong aria-hidden="true">8.1.1.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="reference/nested/values.html"><strong aria-hidden="true">8.1.2.</strong> Values</a></li><li class="chapter-item expanded "><a href="reference/nested/variables.html"><strong aria-hidden="true">8.1.3.</strong> Variables</a></li><li class="chapter-item expanded "><a href="reference/nested/controlflow.html"><strong aria-hidden="true">8.1.4.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="reference/nested/functions.html"><strong aria-hidden="true">8.1.5.</strong> Functions</a></li><li class="chapter-item expanded "><a href="reference/nested/classes.html"><strong aria-hidden="true">8.1.6.</strong> Classes</a></li><li class="chapter-item expanded "><a href="reference/nested/modules.html"><strong aria-hidden="true">8.1.7.</strong> Modules</a></li><li class="chapter-item expanded "><a href="reference/nested/help.html"><strong aria-hidden="true">8.1.8.</strong> Help</a></li><li class="chapter-item expanded "><a href="reference/nested/builtin.html"><strong aria-hidden="true">8.1.9.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item expanded "><a href="reference/data_types.html"><strong aria-hidden="true">8.2.</strong> Data Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/array.html"><strong aria-hidden="true">8.2.1.</strong> Array</a></li><li class="chapter-item expanded "><a href="reference/nested/complex.html"><strong aria-hidden="true">8.2.2.</strong> Complex</a></li><li class="chapter-item expanded "><a href="reference/nested/list.html"><strong aria-hidden="true">8.2.3.</strong> List</a></li><li class="chapter-item expanded "><a href="reference/nested/matrix.html"><strong aria-hidden="true">8.2.4.</strong> Matrix</a></li><li class="chapter-item expanded "><a href="reference/nested/range.html"><strong aria-hidden="true">8.2.5.</strong> Range</a></li><li class="chapter-item expanded "><a href="reference/nested/sparse.html"><strong aria-hidden="true">8.2.6.</strong> Sparse</a></li><li class="chapter-item expanded "><a href="reference/nested/string.html"><strong aria-hidden="true">8.2.7.</strong> String</a></li></ol></li><li class="chapter-item expanded "><a href="reference/computational_geometry.html"><strong aria-hidden="true">8.3.</strong> Computational Geometry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/field.html"><strong aria-hidden="true">8.3.1.</strong> Field</a></li><li class="chapter-item expanded "><a href="reference/nested/functionals.html"><strong aria-hidden="true">8.3.2.</strong> Functionals</a></li><li class="chapter-item expanded "><a href="reference/nested/mesh.html"><strong aria-hidden="true">8.3.3.</strong> Mesh</a></li><li class="chapter-item expanded "><a href="reference/nested/selection.html"><strong aria-hidden="true">8.3.4.</strong> Selection</a></li></ol></li><li class="chapter-item expanded "><a href="reference/io.html"><strong aria-hidden="true">8.4.</strong> I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/file.html"><strong aria-hidden="true">8.4.1.</strong> File</a></li></ol></li><li class="chapter-item expanded "><a href="reference/modules.html"><strong aria-hidden="true">8.5.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/nested/color.html"><strong aria-hidden="true">8.5.1.</strong> Color</a></li><li class="chapter-item expanded "><a href="reference/nested/delaunay.html"><strong aria-hidden="true">8.5.2.</strong> Delaunay</a></li><li class="chapter-item expanded "><a href="reference/nested/graphics.html"><strong aria-hidden="true">8.5.3.</strong> Graphics</a></li><li class="chapter-item expanded "><a href="reference/nested/implicitmesh.html"><strong aria-hidden="true">8.5.4.</strong> Implicitmesh</a></li><li class="chapter-item expanded "><a href="reference/nested/kdtree.html"><strong aria-hidden="true">8.5.5.</strong> KDTree</a></li><li class="chapter-item expanded "><a href="reference/nested/meshgen.html"><strong aria-hidden="true">8.5.6.</strong> MeshGen</a></li><li class="chapter-item expanded "><a href="reference/nested/meshslice.html"><strong aria-hidden="true">8.5.7.</strong> MeshSlice</a></li><li class="chapter-item expanded "><a href="reference/nested/meshtools.html"><strong aria-hidden="true">8.5.8.</strong> Meshtools</a></li><li class="chapter-item expanded "><a href="reference/nested/optimize.html"><strong aria-hidden="true">8.5.9.</strong> Optimize</a></li><li class="chapter-item expanded "><a href="reference/nested/plot.html"><strong aria-hidden="true">8.5.10.</strong> Plot</a></li><li class="chapter-item expanded "><a href="reference/nested/povray.html"><strong aria-hidden="true">8.5.11.</strong> POVRay</a></li><li class="chapter-item expanded "><a href="reference/nested/vtk.html"><strong aria-hidden="true">8.5.12.</strong> VTK</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item "><a href="installing_morpho.html"><strong aria-hidden="true">2.</strong> Installing Morpho</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="installing/homebrew.html"><strong aria-hidden="true">2.1.</strong> Install with homebrew</a></li><li class="chapter-item "><a href="installing/source.html"><strong aria-hidden="true">2.2.</strong> Install with source</a></li><li class="chapter-item "><a href="installing/wsl.html"><strong aria-hidden="true">2.3.</strong> Windows via Windows Subsystem for Linux (WSL)</a></li><li class="chapter-item "><a href="installing/updating.html"><strong aria-hidden="true">2.4.</strong> Updating morpho</a></li><li class="chapter-item "><a href="installing/uninstalling.html"><strong aria-hidden="true">2.5.</strong> Uninstalling morpho</a></li></ol></li><li class="chapter-item "><a href="using_morpho.html"><strong aria-hidden="true">3.</strong> Using Morpho</a></li><li class="chapter-item "><a href="tutorial.html"><strong aria-hidden="true">4.</strong> Tutorial</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tutorial/importing_modules.html"><strong aria-hidden="true">4.1.</strong> Importing Modules</a></li><li class="chapter-item "><a href="tutorial/morpho_language.html"><strong aria-hidden="true">4.2.</strong> Morpho Language</a></li><li class="chapter-item "><a href="tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">4.3.</strong> Creating the initial mesh</a></li><li class="chapter-item "><a href="tutorial/selections.html"><strong aria-hidden="true">4.4.</strong> Selections</a></li><li class="chapter-item "><a href="tutorial/fields.html"><strong aria-hidden="true">4.5.</strong> Fields</a></li><li class="chapter-item "><a href="tutorial/defining_the_problem.html"><strong aria-hidden="true">4.6.</strong> Defining the problem</a></li><li class="chapter-item "><a href="tutorial/performing_the_optimization.html"><strong aria-hidden="true">4.7.</strong> Performing the optimization</a></li><li class="chapter-item "><a href="tutorial/visualizing_the_results.html"><strong aria-hidden="true">4.8.</strong> Visualizing the results</a></li><li class="chapter-item "><a href="tutorial/refinement.html"><strong aria-hidden="true">4.9.</strong> Refinement</a></li><li class="chapter-item "><a href="tutorial/next_steps.html"><strong aria-hidden="true">4.10.</strong> Next steps</a></li></ol></li><li class="chapter-item "><a href="working_with_meshes.html"><strong aria-hidden="true">5.</strong> Working with meshes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="working_with_meshes/meshgen_module.html"><strong aria-hidden="true">5.1.</strong> The meshgen module</a></li><li class="chapter-item "><a href="working_with_meshes/meshtools_module.html"><strong aria-hidden="true">5.2.</strong> The meshtools module</a></li><li class="chapter-item "><a href="working_with_meshes/vtk_module.html"><strong aria-hidden="true">5.3.</strong> The vtk module</a></li><li class="chapter-item "><a href="working_with_meshes/merging_meshes.html"><strong aria-hidden="true">5.4.</strong> Merging meshes</a></li><li class="chapter-item "><a href="working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">5.5.</strong> Slicing meshes</a></li></ol></li><li class="chapter-item "><a href="visualization.html"><strong aria-hidden="true">6.</strong> Visualization</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="visualization/plot_module.html"><strong aria-hidden="true">6.1.</strong> The plot module</a></li><li class="chapter-item "><a href="visualization/graphics_module.html"><strong aria-hidden="true">6.2.</strong> The graphics module</a></li><li class="chapter-item "><a href="visualization/povray_module.html"><strong aria-hidden="true">6.3.</strong> The povray module</a></li></ol></li><li class="chapter-item "><a href="examples.html"><strong aria-hidden="true">7.</strong> Examples</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="examples/catenoid.html"><strong aria-hidden="true">7.1.</strong> Catenoid</a></li><li class="chapter-item "><a href="examples/cholesteric.html"><strong aria-hidden="true">7.2.</strong> Cholesteric</a></li><li class="chapter-item "><a href="examples/cube.html"><strong aria-hidden="true">7.3.</strong> Cube</a></li><li class="chapter-item "><a href="examples/delaunay.html"><strong aria-hidden="true">7.4.</strong> Delaunay</a></li><li class="chapter-item "><a href="examples/dla.html"><strong aria-hidden="true">7.5.</strong> DLA</a></li><li class="chapter-item "><a href="examples/electrostatics.html"><strong aria-hidden="true">7.6.</strong> Electrostatics</a></li><li class="chapter-item "><a href="examples/implicitmesh.html"><strong aria-hidden="true">7.7.</strong> Implicitmesh</a></li><li class="chapter-item "><a href="examples/meshgen.html"><strong aria-hidden="true">7.8.</strong> Meshgen</a></li><li class="chapter-item "><a href="examples/meshslice.html"><strong aria-hidden="true">7.9.</strong> Meshslice</a></li><li class="chapter-item "><a href="examples/plot.html"><strong aria-hidden="true">7.10.</strong> Plot</a></li><li class="chapter-item "><a href="examples/povray.html"><strong aria-hidden="true">7.11.</strong> Povray</a></li><li class="chapter-item "><a href="examples/qtensor.html"><strong aria-hidden="true">7.12.</strong> QTensor</a></li><li class="chapter-item "><a href="examples/thomson.html"><strong aria-hidden="true">7.13.</strong> Thomson</a></li><li class="chapter-item "><a href="examples/wrap.html"><strong aria-hidden="true">7.14.</strong> Wrap</a></li></ol></li><li class="chapter-item "><a href="reference.html"><strong aria-hidden="true">8.</strong> Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/language.html"><strong aria-hidden="true">8.1.</strong> Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/nested/syntax.html"><strong aria-hidden="true">8.1.1.</strong> Syntax</a></li><li class="chapter-item "><a href="reference/nested/values.html"><strong aria-hidden="true">8.1.2.</strong> Values</a></li><li class="chapter-item "><a href="reference/nested/variables.html"><strong aria-hidden="true">8.1.3.</strong> Variables</a></li><li class="chapter-item "><a href="reference/nested/controlflow.html"><strong aria-hidden="true">8.1.4.</strong> Control Flow</a></li><li class="chapter-item "><a href="reference/nested/functions.html"><strong aria-hidden="true">8.1.5.</strong> Functions</a></li><li class="chapter-item "><a href="reference/nested/classes.html"><strong aria-hidden="true">8.1.6.</strong> Classes</a></li><li class="chapter-item "><a href="reference/nested/modules.html"><strong aria-hidden="true">8.1.7.</strong> Modules</a></li><li class="chapter-item "><a href="reference/nested/help.html"><strong aria-hidden="true">8.1.8.</strong> Help</a></li><li class="chapter-item "><a href="reference/nested/errors.html"><strong aria-hidden="true">8.1.9.</strong> Errors</a></li><li class="chapter-item "><a href="reference/nested/builtin.html"><strong aria-hidden="true">8.1.10.</strong> Built-in Functions</a></li></ol></li><li class="chapter-item "><a href="reference/data_types.html"><strong aria-hidden="true">8.2.</strong> Data Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/nested/array.html"><strong aria-hidden="true">8.2.1.</strong> Array</a></li><li class="chapter-item "><a href="reference/nested/complex.html"><strong aria-hidden="true">8.2.2.</strong> Complex</a></li><li class="chapter-item "><a href="reference/nested/list.html"><strong aria-hidden="true">8.2.3.</strong> List</a></li><li class="chapter-item "><a href="reference/nested/matrix.html"><strong aria-hidden="true">8.2.4.</strong> Matrix</a></li><li class="chapter-item "><a href="reference/nested/range.html"><strong aria-hidden="true">8.2.5.</strong> Range</a></li><li class="chapter-item "><a href="reference/nested/sparse.html"><strong aria-hidden="true">8.2.6.</strong> Sparse</a></li><li class="chapter-item "><a href="reference/nested/string.html"><strong aria-hidden="true">8.2.7.</strong> String</a></li><li class="chapter-item "><a href="reference/nested/tuple.html"><strong aria-hidden="true">8.2.8.</strong> Tuple</a></li></ol></li><li class="chapter-item "><a href="reference/computational_geometry.html"><strong aria-hidden="true">8.3.</strong> Computational Geometry</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/nested/field.html"><strong aria-hidden="true">8.3.1.</strong> Field</a></li><li class="chapter-item "><a href="reference/nested/functionals.html"><strong aria-hidden="true">8.3.2.</strong> Functionals</a></li><li class="chapter-item "><a href="reference/nested/mesh.html"><strong aria-hidden="true">8.3.3.</strong> Mesh</a></li><li class="chapter-item "><a href="reference/nested/selection.html"><strong aria-hidden="true">8.3.4.</strong> Selection</a></li></ol></li><li class="chapter-item "><a href="reference/io.html"><strong aria-hidden="true">8.4.</strong> I/O</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/nested/file.html"><strong aria-hidden="true">8.4.1.</strong> File</a></li><li class="chapter-item "><a href="reference/nested/json.html"><strong aria-hidden="true">8.4.2.</strong> JSON</a></li></ol></li><li class="chapter-item "><a href="reference/modules.html"><strong aria-hidden="true">8.5.</strong> Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference/nested/color.html"><strong aria-hidden="true">8.5.1.</strong> Color</a></li><li class="chapter-item "><a href="reference/nested/constants.html"><strong aria-hidden="true">8.5.2.</strong> Constants</a></li><li class="chapter-item "><a href="reference/nested/delaunay.html"><strong aria-hidden="true">8.5.3.</strong> Delaunay</a></li><li class="chapter-item "><a href="reference/nested/graphics.html"><strong aria-hidden="true">8.5.4.</strong> Graphics</a></li><li class="chapter-item "><a href="reference/nested/implicitmesh.html"><strong aria-hidden="true">8.5.5.</strong> Implicitmesh</a></li><li class="chapter-item "><a href="reference/nested/kdtree.html"><strong aria-hidden="true">8.5.6.</strong> KDTree</a></li><li class="chapter-item "><a href="reference/nested/meshgen.html"><strong aria-hidden="true">8.5.7.</strong> MeshGen</a></li><li class="chapter-item "><a href="reference/nested/meshslice.html"><strong aria-hidden="true">8.5.8.</strong> MeshSlice</a></li><li class="chapter-item "><a href="reference/nested/meshtools.html"><strong aria-hidden="true">8.5.9.</strong> Meshtools</a></li><li class="chapter-item "><a href="reference/nested/optimize.html"><strong aria-hidden="true">8.5.10.</strong> Optimize</a></li><li class="chapter-item "><a href="reference/nested/plot.html"><strong aria-hidden="true">8.5.11.</strong> Plot</a></li><li class="chapter-item "><a href="reference/nested/povray.html"><strong aria-hidden="true">8.5.12.</strong> POVRay</a></li><li class="chapter-item "><a href="reference/nested/vtk.html"><strong aria-hidden="true">8.5.13.</strong> VTK</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item "><a href="mdbook_notes.html">About this online version</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -180,34 +190,29 @@
                 <div id="content" class="content">
                     <main>
                         <p><img src="Figures/morphologo.pdf" alt="image" /></p>
-<h2 id="version-057"><a class="header" href="#version-057">Version 0.5.7</a></h2>
+<h2 id="version-060"><a class="header" href="#version-060">Version 0.6.0</a></h2>
 <p><em>In nova fert animus mutatas dicere formas</em></p>
 <p><em>corpora; di, coeptis (nam vos mutastis et illas)</em></p>
 <p><em>adspirate meis primaque ab origine mundi</em></p>
 <p><em>ad mea perpetuum deducite tempora carmen!</em></p>
-<p>Ovid, <em>Metamorphoses</em></p>
+<p>--- Ovid, <em>Metamorphoses</em></p>
 <h2 id="acknowledgements" class="unnumbered"><a class="header" href="#acknowledgements">Acknowledgements</a></h2>
 <p>The principal architect of <em>morpho</em>, T J Atherton, wishes to thank the
 many people who have used various versions of the program or otherwise
 contributed to the project:</p>
-<p>Andrew DeBenedictis</p>
-<p>Danny Goldstein</p>
-<p>Ian Hunter</p>
-<p>Chaitanya Joshi</p>
-<p>Cole Wennerholm</p>
-<p>Eoghan Downey</p>
-<p>Allison Culbert</p>
-<p>Abigail Wilson</p>
-<p>Zhaoyu Xie</p>
-<p>Matthew Peterson</p>
-<p>Chris Burke</p>
-<p>Badel Mbanga</p>
-<p>Anca Andrei</p>
-<p>Mathew Giso</p>
-<p>Sam Hocking</p>
-<p>Emmett Hamilton</p>
-<p>Hudson Ramirez</p>
-<p>Paco Navarro</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>Andrew DeBenedictis</td><td>Danny Goldstein</td></tr>
+<tr><td>Ian Hunter</td><td>Chaitanya Joshi</td></tr>
+<tr><td>Cole Wennerholm</td><td>Eoghan Downey</td></tr>
+<tr><td>Allison Culbert</td><td>Abigail Wilson</td></tr>
+<tr><td>Zhaoyu Xie</td><td>Matthew Peterson</td></tr>
+<tr><td>Chris Burke</td><td>Badel Mbanga</td></tr>
+<tr><td>Anca Andrei</td><td>Mathew Giso</td></tr>
+<tr><td>Sam Hocking</td><td>Emmett Hamilton</td></tr>
+<tr><td>Hudson Ramirez</td><td>Paco Navarro</td></tr>
+<tr><td>Emmanuel Flores</td><td></td></tr>
+</tbody></table>
+</div>
 <p><em>This material is based upon work supported by the National Science
 Foundation under grants DMR-1654283 and OAC-2003820.</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
@@ -241,182 +246,181 @@ second part of the manual, provide a reference guide for all areas of
 <em>morpho</em> functionality.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing-morpho"><a class="header" href="#installing-morpho">Installing <em>Morpho</em></a></h1>
 <p><em>Morpho</em> is hosted on a publicly available github repository
-<a href="https://github.com/Morpho-lang/morpho">https://github.com/Morpho-lang/morpho</a>. We are continuously working on
-improving <em>morpho</em> installation. With this release, <em>morpho</em> on macOS
-now has a streamlined installation process using homebrew. Other
-platforms must be installed from source and we hope to provide packages
-for future releases. Instructions for different platforms are provided
-below.</p>
-<h3 id="where-morpho-installation-puts-things"><a class="header" href="#where-morpho-installation-puts-things">Where <em>morpho</em> installation puts things</a></h3>
-<p>A <em>morpho</em> installation includes help files, modules, and other
-resources. By default, these are installed in the <strong>/usr/local/</strong> file
-structure<sup class="footnote-reference"><a href="#1">1</a></sup>, including in the following places:</p>
-<p><strong>/usr/local/bin</strong> : The morpho and morphoview executables are placed here.</p>
-<p><strong>/usr/local/share/morpho</strong> : Help files and modules are stored here.</p>
-<p><strong>/usr/local/include/morpho</strong> : Morpho header files for building extensions.</p>
-<p><strong>/usr/local/lib/morpho</strong> : Morpho extensions.</p>
-<p>It's possible to build <em>morpho</em> to use different locations for resources
-and the binary. To do so, set the <code>MORPHORESOURCESDIR</code> option when you
-run make, e.g.</p>
-<pre><code>sudo make MORPHORESOURCESDIR=X install
-</code></pre>
-<p>where X is the base folder you wish to use, i.e. the replacement for
-<strong>/usr/local</strong>. Subfolders will be created by the installer. To control
-where the <em>morpho</em> binary is placed, also set the <code>DESTDIR</code> option,</p>
-<pre><code>sudo make MORPHORESOURCESDIR=X DESTDIR=Y install
-</code></pre>
-<h3 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h3>
-<p><em>Morpho</em> leverages a few libraries to provide certain functionality:</p>
-<p><strong>glfw</strong> : is used to provide gui functionality for an interactive visualization application, <code>morphoview</code>.</p>
-<p><strong>blas/lapack</strong> : are used for dense linear algebra.</p>
-<p><strong>suitesparse</strong> : is used for sparse linear algebra[^2].</p>
-<p><strong>freetype</strong> : provides text display.</p>
-<p><strong>povray</strong> : is a ray-tracer that is used for publication-quality graphics.</p>
-<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
-<p>The recommended approach to installing morpho on macOS is to use the
-<a href="https://brew.sh">Homebrew</a> package manager.</p>
+<a href="https://github.com/Morpho-lang/morpho">https://github.com/Morpho-lang/morpho</a>. <em>Morpho</em> also requires two
+subsidiary programs, a terminal app hosted in
+<a href="https://github.com/Morpho-lang/morpho-cli">https://github.com/Morpho-lang/morpho-cli</a>, and a viewer application
+<a href="https://github.com/Morpho-lang/morpho-morphoview">https://github.com/Morpho-lang/morpho-morphoview</a>. <em>Morpho</em> is
+extendable, and packages providing additional functionality are hosted
+in git repositories.</p>
+<p>For this release, <em>morpho</em> can be installed on all supported platforms
+using the homebrew package manager. Alternatively, the program can be
+installed from source as described below. We are continuously working on
+improving <em>morpho</em> installation, and hope to provide additional
+mechanisms for installation in upcoming releases.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="install-with-homebrew"><a class="header" href="#install-with-homebrew">Install with homebrew</a></h2>
+<p>The simplest way to install <em>morpho</em> is through the <a href="https://brew.sh">homebrew package
+manager</a>. To do so:</p>
 <ol>
 <li>
-<p>If you have a previous installation of morpho, we recommend you
-remove it by following the instructions for uninstalling <em>morpho</em>
-below.</p>
+<p>If not already installed, install homebrew on your machine as
+described on the <a href="https://brew.sh">homebrew website</a>.</p>
 </li>
 <li>
-<p>Install <a href="https://brew.sh">Homebrew</a>, following instructions on the
-homebrew site.</p>
-</li>
-<li>
-<p>In the terminal type:</p>
+<p>Open a terminal and type:</p>
 <pre><code>brew update
 brew tap morpho-lang/morpho
 brew install morpho
 </code></pre>
-<p>You may be prompted by homebrew to install additional components.
-For some users, it may be necessary to install XCode from the App
-Store.</p>
-</li>
-<li>
-<p>We also recommend that you obtain the morpho git repository, because
-it contains the manual, examples and other useful materials that
-aren't installed by homebrew.</p>
-<pre><code>git clone https://github.com/Morpho-lang/morpho.git
-</code></pre>
 </li>
 </ol>
-<h3 id="macos-manual-installation"><a class="header" href="#macos-manual-installation">macOS (Manual Installation)</a></h3>
-<p>If you ever need to do a manual installation, for example if you want to
-use the cutting edge <code>dev</code> branch of morpho, you should follow these
-instructions. If you have an Intel mac, you should omit the
-<code>-f Makefile.m1</code> flags in the make command below. Note also that some
-users may need to preface</p>
-<pre><code>make install
-</code></pre>
-<p>with the sudo command:</p>
-<pre><code>sudo make install
-</code></pre>
-<ol>
+<p>If you need to uninstall morpho, simply open a terminal and type
+<code>brew uninstall morpho</code>. It's very important to uninstall the homebrew
+morpho in this way <em>before</em> attempting to install from source as below.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="install-from-source"><a class="header" href="#install-from-source">Install from source</a></h2>
+<p>The second way to install morpho is by compiling the source code
+directly. Morpho now leverages the <a href="https://cmake.org">CMake</a> build
+system, which enables platform independent builds.</p>
+<h4 id="where-a-morpho-source-installation-puts-things"><a class="header" href="#where-a-morpho-source-installation-puts-things">Where a <em>morpho</em> source installation puts things</a></h4>
+<p>A <em>morpho</em> installation includes help files, modules, and other
+resources. By default, these are installed in the <strong>/usr/local/</strong> file
+structure as follows:</p>
+<p><strong>/usr/local/bin</strong> : The morpho and morphoview executables are placed here.</p>
+<p><strong>/usr/local/share/morpho</strong> : Help files and modules are stored here.</p>
+<p><strong>/usr/local/include/morpho</strong> : Morpho header files for building extensions.</p>
+<p><strong>/usr/local/lib/morpho</strong> : Morpho extensions.</p>
+<h3 id="collect-dependencies"><a class="header" href="#collect-dependencies">Collect Dependencies</a></h3>
+<p><em>Morpho</em> requires a few libraries to provide certain functionality:</p>
+<p><strong>blas/lapack</strong> : are used for dense linear algebra.</p>
+<p><strong>suitesparse</strong> : is used for sparse linear algebra.</p>
+<blockquote>
+<p>See <a href="https://people.engr.tamu.edu/davis/suitesparse.html">https://people.engr.tamu.edu/davis/suitesparse.html</a> and publications for details</p>
+</blockquote>
+<p><strong>povray</strong> : is a ray-tracer that is used for publication-quality graphics (only
+required by the <code>povray</code> module).</p>
+<p>The terminal application uses</p>
+<p><strong>libgrapheme</strong> <em>or</em>,</p>
+<p><strong>libunistring</strong>: for unicode grapheme support.</p>
+<p><em>Morphoview</em> additionally requires</p>
+<p><strong>glfw</strong> : to provide gui functionality.</p>
+<p><strong>freetype</strong> : provides text display.</p>
+<p>Each of these dependencies can be installed using any appropriate
+package manager.</p>
+<ul>
 <li>
-<p>Install the <a href="https://brew.sh">Homebrew</a> package manager, following
-instructions on the homebrew site.</p>
-</li>
-<li>
-<p><strong>If you previously installed morpho using homebrew, you must first
-remove it. This step is vitally important as the two installed
-versions may cause conflicts.</strong></p>
-<pre><code>brew uninstall morpho
-</code></pre>
-</li>
-<li>
-<p>Install dependencies. Open the Terminal application and type:</p>
+<p>Homebrew (preferred on macOS):</p>
 <pre><code>brew update
-brew install glfw suite-sparse freetype povray
+brew install glfw suite-sparse freetype povray libgrapheme
 </code></pre>
 </li>
 <li>
-<p>Obtain the source by cloning the github public repository:</p>
-<pre><code>git clone https://github.com/Morpho-lang/morpho.git
-</code></pre>
-</li>
-<li>
-<p>Navigate to the <code>morpho5</code> folder within the downloaded repository
-and build the application[^3]</p>
-<pre><code>cd morpho/morpho5
-make -f Makefile.m1 install
-</code></pre>
-</li>
-<li>
-<p>Navigate to the <code>morphoview</code> folder and build the viewer application</p>
-<pre><code>cd morpho/morphoview
-make -f Makefile.m1 install
-</code></pre>
-</li>
-<li>
-<p>Check that the application works by typing</p>
-<pre><code>morpho5
-</code></pre>
-</li>
-</ol>
-<p><strong>If you wish to switch back to a homebrew install, follow the
-instructions below to uninstall morpho to prevent version conflicts.</strong></p>
-<h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
-<p>Building on Linux is similar to the macOS manual install. Here we give
-commands for Ubuntu, which uses the <code>apt</code> package manager. On other
-distributions you will need to find the equivalent packages.</p>
-<ol>
-<li>
-<p>Make sure your version of apt is up to date.</p>
+<p>Apt (preferred on Ubuntu):</p>
 <pre><code>sudo apt update
 sudo apt upgrade
+sudo apt install build-essential
+sudo apt install libglfw3-dev libsuitesparse-dev liblapacke-dev povray libfreetype6-dev libunistring-dev
 </code></pre>
 </li>
-<li>
-<p>Ensure you have basic developer tools installed. Some distributions
-omit these to save space.</p>
-<pre><code>sudo apt install build-essential
-</code></pre>
-</li>
-<li>
-<p>Install <em>morpho</em>'s dependencies using your distribution's package
-manager (or manually if you prefer):</p>
-<pre><code>sudo apt install libglfw3-dev libsuitesparse-dev liblapacke povraylibfreetype6-dev
-</code></pre>
-</li>
+</ul>
+<h4 id="build-the-morpho-shared-library"><a class="header" href="#build-the-morpho-shared-library">Build the morpho shared library</a></h4>
+<p>The core piece of <em>morpho</em> is a shared library, that can then be used by
+multiple applications. To build it,</p>
+<ol>
 <li>
 <p>Obtain the source by cloning the github public repository:</p>
 <pre><code>git clone https://github.com/Morpho-lang/morpho.git
 </code></pre>
 </li>
 <li>
-<p>Navigate to the <code>morpho5</code> folder within the downloaded repository
-and build the application:</p>
-<pre><code>cd morpho/morpho5
-sudo make -f Makefile.linux install
+<p>Navigate to the <code>morpho</code> folder and build the library:</p>
+<pre><code>cd morpho
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+sudo make install
 </code></pre>
 </li>
 <li>
-<p>Navigate to the <code>morphoview</code> folder and build the viewer
-application:</p>
-<pre><code>cd ../morphoview
-sudo make -f Makefile.linux install
-</code></pre>
-</li>
-<li>
-<p>Check that the application works by typing</p>
-<pre><code>morpho5
+<p>Navigate back out of the morpho folder:</p>
+<pre><code>cd ../../
 </code></pre>
 </li>
 </ol>
-<h3 id="windows-via-windows-subsystem-for-linux-wsl"><a class="header" href="#windows-via-windows-subsystem-for-linux-wsl">Windows via Windows Subsystem for Linux (WSL)</a></h3>
-<h4 id="install-wsl"><a class="header" href="#install-wsl">Install WSL</a></h4>
-<p>If you don't have WSL2 installed on your Windows computer, <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview">follow the
-instructions to install the Ubuntu
-App</a>.
-Follow all the steps in this link to ensure that graphics are working.</p>
-<h4 id="install-morpho"><a class="header" href="#install-morpho">Install Morpho</a></h4>
-<p>Once the Ubuntu terminal is working in Windows, you can install <em>morpho</em>
-the same way as in Linux by running the commands in the instructions in
-the Ubuntu terminal.</p>
-<p><strong>If you are using WSL2, then the installation is complete.</strong></p>
+<h4 id="build-the-morpho-terminal-app"><a class="header" href="#build-the-morpho-terminal-app">Build the morpho terminal app</a></h4>
+<p>The terminal app provides an interactive interface to <em>morpho</em>, and can
+also run morpho files.</p>
+<ol>
+<li>
+<p>Obtain the source by cloning the github public repository:</p>
+<pre><code>git clone https://github.com/Morpho-lang/morpho-cli.git
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morpho-cli</code> folder and build the library:</p>
+<pre><code>cd morpho-cli
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+sudo make install
+</code></pre>
+</li>
+<li>
+<p>Check it works by typing:</p>
+<pre><code>morpho6
+</code></pre>
+</li>
+<li>
+<p>Assuming that the morpho terminal app starts correctly, type <code>quit</code>
+to return to the shell and then</p>
+<pre><code>cd ../../
+</code></pre>
+<p>to navigate back out of the morpho-cli folder.</p>
+</li>
+</ol>
+<h4 id="build-the-morphoview-viewer-application"><a class="header" href="#build-the-morphoview-viewer-application">Build the morphoview viewer application</a></h4>
+<p><em>Morphoview</em> is a simple viewer application to visualize <em>morpho</em>
+results.</p>
+<ol>
+<li>
+<p>Obtain the source by cloning the github public repository:</p>
+<pre><code>git clone https://github.com/Morpho-lang/morpho-morphoview.git
+</code></pre>
+</li>
+<li>
+<p>Navigate to the <code>morpho-cli</code> folder and build the library:</p>
+<pre><code>cd morpho-morphoview
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+sudo make install
+</code></pre>
+</li>
+<li>
+<p>Check it works by typing:</p>
+<pre><code>morphoview
+</code></pre>
+<p>which should simply run and quit normally. You can then type</p>
+<pre><code>cd ../../
+</code></pre>
+<p>to navigate back out of the morpho-morphoview folder.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="windows-via-windows-subsystem-for-linux-wsl"><a class="header" href="#windows-via-windows-subsystem-for-linux-wsl">Windows via Windows Subsystem for Linux (WSL)</a></h2>
+<p>Windows support is provided through Windows Subsystem for Linux (WSL),
+which is an environment that enables windows to run linux applications.
+We highly recommend using WSL2, which is the most recent version and
+provides better support for GUI applications; some instructions for WSL1
+are provided below.</p>
+<ol>
+<li>
+<p>Begin by installing the <a href="https://ubuntu.com/desktop/wsl">Ubuntu App</a>
+from the Microsoft store. Follow all the steps in this link to
+ensure that graphics are working.</p>
+</li>
+<li>
+<p>Once the Ubuntu terminal is working in Windows, you can install
+<em>morpho</em> either through homebrew or by building from source.</p>
+</li>
+</ol>
 <h4 id="graphics-on-wsl1"><a class="header" href="#graphics-on-wsl1">Graphics On WSL1</a></h4>
 <p>If you instead are working on WSL1, then you need to follow these
 instructions to get graphics running. Unless mentioned otherwise, all
@@ -466,19 +470,8 @@ will may to adjust this line for other terminals].</em></p>
 </code></pre>
 <p>which should open a window with some gears.</p>
 </li>
-<li>
-<p><strong>Test the thomson example program.</strong> Navigate to the thomson
-example in the examples directory and run it. If you are in the
-<code>morphoview</code> directory.</p>
-<pre><code>cd ../examples/thomson
-morpho5 thomson.morpho
-</code></pre>
-<p>This example starts with randomly distributed charges on a sphere
-and minimizing electric potential. It should generate an interactive
-figure of points on a sphere.</p>
-</li>
 </ol>
-<h3 id="updating-morpho"><a class="header" href="#updating-morpho">Updating <em>morpho</em></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="updating-morpho"><a class="header" href="#updating-morpho">Updating <em>morpho</em></a></h2>
 <p>As new versions of <em>morpho</em> are released, you will likely want to
 upgrade to the latest version. From the terminal:</p>
 <ul>
@@ -504,7 +497,7 @@ from which you installed morpho, simply rerun the installation from
 scratch as above. You shouldn't need to reinstall dependencies.</p>
 </li>
 </ul>
-<h3 id="uninstalling-morpho"><a class="header" href="#uninstalling-morpho">Uninstalling <em>morpho</em></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="uninstalling-morpho"><a class="header" href="#uninstalling-morpho">Uninstalling <em>morpho</em></a></h2>
 <p>If you wish to uninstall morpho, you can do so simply from the terminal
 application.</p>
 <ul>
@@ -514,19 +507,17 @@ application.</p>
 </code></pre>
 </li>
 <li>
-<p>Alternatively, if you did a manual install, you can remove
+<p>Alternatively, if you built <em>morpho</em> from source, you can remove
 everything with</p>
-<pre><code>rm /usr/local/bin/morpho
+<pre><code>rm /usr/local/bin/morpho6
 rm /usr/local/bin/morphoview
+rm /usr/local/lib/libmorpho*
 rm -r /usr/local/share/morpho
 rm -r /usr/local/lib/morpho
 </code></pre>
 <p>You may need to prefix these with <code>sudo</code>.</p>
 </li>
 </ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>On the macOS, these files are contained within the homebrew system</p>
-</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-morpho"><a class="header" href="#using-morpho">Using <em>Morpho</em></a></h1>
 <p><em>Morpho</em> is a command line application, like <code>python</code> or <code>lua</code>. It can
 be used to run scripts or programs, which are generally given the
@@ -534,32 +525,24 @@ be used to run scripts or programs, which are generally given the
 commands.</p>
 <h2 id="running-a-program"><a class="header" href="#running-a-program">Running a program</a></h2>
 <p>To run a program, simply run morpho with the name of the file,</p>
-<pre><code>morpho5 script.morpho
+<pre><code>morpho6 script.morpho
 </code></pre>
 <p><em>Morpho</em> supports a number of switches:</p>
-<p>-w</p>
-<p>:   Run <em>morpho</em> with more than one worker thread, e.g. <code>-w 4</code> runs
-morpho with 4 threads.</p>
-<p>-D</p>
-<p>:   Display disassembly of the program without running it. <em>[See
-developer guide]</em></p>
-<p>-d</p>
-<p>:   Debugging mode. Morpho will stop and enter the debugger whenever a
-<code>@</code> is encountered in the source. <em>[See developer guide]</em></p>
-<p>-p</p>
-<p>:   Profile the program execution. Useful to identify performance
-bottlenecks. <em>[See developer guide]</em></p>
+<p><strong>-w</strong> : Run <em>morpho</em> with more than one worker thread, e.g. <code>-w 4</code> runs morpho with 4 threads.</p>
+<p><strong>-D</strong>: Display disassembly of the program without running it. <em>[See developer guide]</em></p>
+<p><strong>-d</strong> : Debugging mode. Morpho will stop and enter the debugger whenever a <code>@</code> is encountered in the source. <em>[See developer guide]</em></p>
+<p><strong>-p</strong> : Profile the program execution. Useful to identify performance bottlenecks. <em>[See developer guide]</em></p>
 <h2 id="interactive-mode"><a class="header" href="#interactive-mode">Interactive mode</a></h2>
 <p>To use <em>morpho</em> interactively, simply load the <em>Terminal</em> application
 (or equivalent on your system) and type</p>
-<pre><code>morpho5
+<pre><code>morpho6
 </code></pre>
 <h4 id="command-line-interface-for-morpho"><a class="header" href="#command-line-interface-for-morpho">Command line interface for Morpho</a></h4>
 <p><img src="./Figures/commandline.jpg" alt="Command line interface for Morpho" /></p>
-<p>As shown in the figure above, (Fig. <a href="using_morpho.html#Command-line-interface-for-Morpho">fig:cli</a>), you'll be greeted by a brief welcome and a
-prompt &gt; inviting you to enter <em>morpho</em> commands. For now, try a
+<p>As shown in the figure above, you'll be greeted by a brief welcome and a
+prompt <code>&gt;</code> inviting you to enter <em>morpho</em> commands. For now, try a
 classic:</p>
-<pre><code>print "Hello World"
+<pre><code class="language-javascript">print "Hello World"
 </code></pre>
 <p>which will display <code>Hello World</code> as output. More information about the
 <em>morpho</em> language is provided in the Reference section, especially
@@ -615,13 +598,21 @@ of, say, oil in water that form spheres, tactoids can adopt elongated
 shapes.</p>
 <p>The functional to be minimized, the free energy of the system, is quite
 complex,</p>
-<h4 id="free-energy"><a class="header" href="#free-energy">Free energy</a></h4>
-<p>$$ F = \underbrace{\frac{1}{2}\int_{C}K_{11}\left(\nabla\cdot\mathbf{n}\right)^{2}+K_{22}(\mathbf{n}\cdot\nabla\times\mathbf{n})^{2}+K_{33}\left|\mathbf{n}\times\nabla\times\mathbf{n}\right|^{2}dA} $$
-$$ \text{Liquid crystal elastic energy}$$</p>
-<p>$$ + \underbrace{\sigma\int dl}$$</p>
-<p>$$ \text{Surface tension} $$</p>
-<p>$$ - \underbrace{\frac{W}{2}\int\left(\mathbf{n}\cdot\mathbf{t}\right)^{2}dl}$$</p>
-<p>$$ \text{Anchoring} $$</p>
+<p>$$
+\begin{equation}
+F= \underbrace{\frac{1}{2}\int_{C}K_{11}\left(\nabla\cdot\mathbf{n}\right)^{2}+K_{22}(\mathbf{n}\cdot\nabla\times\mathbf{n})^{2}+K_{33}\left|\mathbf{n}\times\nabla\times\mathbf{n}\right|^{2}dA}_\text{Liquid crystal elastic energy}\label{eq:free}
+\end{equation}
+$$</p>
+<p>$$
+\begin{equation*}
+\quad + \underbrace{ \sigma\int dl }_\text{s.t.}
+\end{equation*}
+$$</p>
+<p>$$
+\begin{equation*}
+\quad + \underbrace{\frac{W}{2}\int\left(\mathbf{n}\cdot\mathbf{t}\right)^{2}dl}_\text{anchoring}
+\end{equation*}
+$$</p>
 <p>where the three terms include <strong>liquid crystal elasticity</strong> that drives elongation of the droplet, <strong>surface
 tension</strong> <em>(s.t.)</em> that opposes lengthening of the boundary and an
 <strong>anchoring term</strong> that imposes a preferred orientation at the boundary.
@@ -840,12 +831,12 @@ providing an <em>anonymous function</em> to <code>Field</code> like this:</p>
 <strong>fn</strong> keyword is used to define functions.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="defining-the-problem"><a class="header" href="#defining-the-problem">Defining the problem</a></h2>
 <p>We now turn to setting up the problem. Each term in the energy
-functional <a href="tutorial/../tutorial.html#free-energy">(1)</a> is represented by a corresponding <em>functional</em>
+functional <a href="tutorial/../tutorial.html#eq:free">(1)</a> is represented by a corresponding <em>functional</em>
 object, which acts on a <code>Mesh</code> (and possibly a <code>Field</code>) to calculate an
 integral quantity such as an energy; Functional objects are also
 responsible for calculating gradients of the energy with respect to
 vertex positions and components of Fields.</p>
-<p>Let's take the terms in <a href="tutorial/../tutorial.html#free-energy">(1)</a> one by one: To represent the nematic elasticity we
+<p>Let's take the terms in <a href="tutorial/../tutorial.html#eq:free">(1)</a> one by one: To represent the nematic elasticity we
 create a <code>Nematic</code> object:</p>
 <pre><code>var lf=Nematic(nn)
 </code></pre>
@@ -1004,24 +995,26 @@ refinement.</p>
 <li>Create a <code>MeshRefiner</code> object, providing it a list of all the
 <code>Mesh</code>, <code>Field</code> and <code>Selection</code> objects (i.e. the mesh and objects
 that directly depend on it) that need to be updated:
-<pre><code class="language-javascript">var mr=MeshRefiner([m, nn, bnd]) // Set the refiner up
+<pre><code class="language-javascript">var mr = MeshRefiner([m, nn, bnd]); // Set the refiner up
 </code></pre>
 </li>
 <li>Call the <code>refine</code> method on the <code>MeshRefiner</code> object to actually
 perform the refinement. This method returns a <code>Dictionary</code> object
 that maps the old objects to potentially newly created ones.
-<pre><code class="language-javascript">var refmap=mr.refine() // Perform the refinement
+<pre><code class="language-javascript">var refmap = mr.refine(); // Perform the refinement
 </code></pre>
 </li>
 <li>Tell any other objects that refer to the mesh, fields or selections
 to update their references using <code>refmap</code>. For example,
 <code>OptimizationProblem</code> and <code>Optimizer</code> objects are typically updated
 at this step.
-<pre><code class="language-javascript">for (el in [problem, sopt, fopt]) el.update(refmap) // Update the problem
+<pre><code class="language-javascript">for (el in [problem, sopt, fopt]) el.update(refmap); // Update the problem
 </code></pre>
 </li>
 <li>Update our own references
-<pre><code class="language-javascript">m=refmap[m]; nn=refmap[nn]; bnd=refmap[bnd] // Update variables
+<pre><code class="language-javascript">m = refmap[m];
+nn = refmap[nn];
+bnd = refmap[bnd]; // Update variables
 </code></pre>
 </li>
 </ol>
@@ -1035,18 +1028,21 @@ label="fig:Refinement"></span>Optimized mesh and director field at three
 successive levels of refinement.</figcaption>
 </figure>
 <p>We insert this code after our optimization section, which causes
-<em>morpho</em> to successively optimize and refine[^4]. The resulting
-optimized shapes are displayed in Fig.
-<a href="tutorial/refinement.html#fig:Refinement">4.6</a>.</p>
+<em>morpho</em> to successively optimize and refine.</p>
+<blockquote>
+<p>The complete code including refinement is in <code>examples/tutorial</code> folder inside the git repository as <code>tutorial2.morpho</code></p>
+</blockquote>
+<p>The resulting
+optimized shapes are displayed in Fig. <a href="tutorial/refinement.html#fig:Refinement">4.6</a>.</p>
 <pre><code>// Optimization loop
 var refmax = 3
 for (refiter in 1..refmax) {
   print "===Refinement level ${refiter}==="
   for (i in 1..100) {
-    fopt.linesearch(20)     
-    sopt.linesearch(20)   
+    fopt.linesearch(20)
+    sopt.linesearch(20)
   }
- 
+
   if (refiter==refmax) break
 
   // Refinement
@@ -1094,15 +1090,19 @@ is then created by calling the build method:</p>
 kinds of domain. It follows the builder pattern with a MeshGen helper
 object that performs the construction. To use <code>meshgen</code>, the user must
 provide a scalar function that is positive everywhere that they want to
-be meshed[^5]. For example, the interior of the unit disk in two
+be meshed.</p>
+<blockquote>
+<p><strong>Note</strong> One example is referred to in the literature as a <em>signed distance function</em>, which is the Euclidean distance of a given point \(x\) to the boundary of a set \(\Omega\) with the sign positive if \(x\) is in the interior of \(\Omega\). MeshGen does not require signed distance functions, but accepts any continuous and reasonably smooth function.</p>
+</blockquote>
+<p>For example, the interior of the unit disk in two
 dimensions, is described by the function $$f(x,y)=1-(x^{2}+y^{2}).$$ To
 create the corresponding Mesh, we must first specify a suitable <em>morpho</em>
 function that describes the domain. This function will be called
 repeatedly by MeshGen, which will pass it a position vector <code>x</code>. Hence,
 the \((x,y)\) components must be accessed from the argument <code>x</code> by
 indexing:</p>
-<pre><code class="language-javascript">fn disk(x) { 
-    return 1-(x[0]^2+x[1]^2) 
+<pre><code class="language-javascript">fn disk(x) {
+    return 1-(x[0]^2+x[1]^2)
 }
 </code></pre>
 <p>Now that the function is specified, we can create a MeshGen object:</p>
@@ -1113,7 +1113,7 @@ the domain to be meshed. Here we will use \(x,y\in[-1,1]\). By setting the
 stepsize, the user can provide MeshGen with an overall suggestion of the
 resolution.</p>
 <p>Finally, we create the Mesh by calling the build method:</p>
-<pre><code class="language-javascript">var m = mg.build() 
+<pre><code class="language-javascript">var m = mg.build();
 </code></pre>
 <p>The resulting Mesh is shown in Fig.
 <a href="working_with_meshes/meshgen_module.html#fig:MeshGen-disk">5.1</a>, left panel. A higher resolution Mesh can
@@ -1136,7 +1136,7 @@ provides a Domain class that accepts a scalar function in its
 constructor. For example, this code creates an ellipse as shown in Fig.
 <a href="working_with_meshes/meshgen_module.html#fig:MeshGen-2">5.2</a>,
 left panel:</p>
-<pre><code>var e0 = Domain(fn (x) -((x[0]/2)^2+x[1]^2-1)) 
+<pre><code>var e0 = Domain(fn (x) -((x[0]/2)^2+x[1]^2-1))
 var mg = MeshGen(e0, [-2..2:0.2, -1..1:0.2])
 var m = mg.build()
 </code></pre>
@@ -1168,7 +1168,7 @@ domains.</figcaption>
 <p>Three dimensional meshes are created very similarly. Here we create a
 spherical mesh, displayed in Fig.
 <a href="working_with_meshes/meshgen_module.html#fig:MeshGen-3">5.3</a></p>
-<pre><code>var dh = 0.2 
+<pre><code>var dh = 0.2
 var dom = Domain(fn (x) -(x[0]^2+x[1]^2+x[2]^2-1))
 var mg = MeshGen(dom, [-1..1:dh, -1..1:dh, -1..1:dh])
 var m = mg.build()
@@ -1180,7 +1180,8 @@ var m = mg.build()
 <figcaption><span id="fig:MeshGen-3"
 label="fig:MeshGen-3"></span>Spherical mesh created with
 MeshGen</figcaption>
-</figure><div style="break-before: page; page-break-before: always;"></div><h2 id="the-meshtools-module"><a class="header" href="#the-meshtools-module">The meshtools module</a></h2>
+</figure>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="the-meshtools-module"><a class="header" href="#the-meshtools-module">The meshtools module</a></h2>
 <p>Meshtools provides many useful functions for working with Meshes,
 including constructors to create certain kinds of Mesh and also classes
 for refining, coarsening and merging Meshes.</p>
@@ -1684,9 +1685,12 @@ objects. To illustrate this, we'll create an AreaMesh that has more
 points,</p>
 <pre><code>var m = AreaMesh(fn (u,v) [u, v, 0], -1..1:0.1, -1..1:0.1)
 </code></pre>
-<p>and a corresponding Field object[^6]:</p>
+<p>and a corresponding Field object:</p>
 <pre><code>var f = Field(m, fn (x,y,z) sin(Pi*x)*sin(Pi*y))
 </code></pre>
+<blockquote>
+<p>It's actually the third lowest energy eigenmode of a square drum, or equivalently the \((1,1)\) state of a 2D infinite square well in quantum mechanics.</p>
+</blockquote>
 <p>By default, <code>plotfield</code> draws points at which the Field is defined, and
 colors them by the value as in Fig.
 <a href="visualization/plot_module.html#fig:PlotField">6.4</a>A:</p>
@@ -1709,8 +1713,11 @@ position and size, as well as the number of ticks and text layout.</p>
 <p>The <code>color</code> module supplies a number of colormaps that you can try:
 ViridisMap is used by default, but PlasmaMap, MagmaMap and InfernoMap
 are also recommended and have been specially formulated to be accessible
-to users with limited color perception[^7]. GrayMap and HueMap are also
-available.</p>
+to users with limited color perception.</p>
+<blockquote>
+<p>The <em>morpho</em> versions are adapted from <em>Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). viridis(Lite) - Colorblind-Friendly Color Maps for R. viridis package version 0.6.2.</em></p>
+</blockquote>
+<p>GrayMap and HueMap are also available.</p>
 <figure id="fig:PlotField">
 <div class="centering">
 <p><span class="sans-serif">A</span><img
@@ -1737,9 +1744,12 @@ output from the <code>plot</code> module, which utilizes <code>graphics</code> i
 collection of things to be displayed.</p>
 <pre><code>var g = Graphics()
 </code></pre>
-<p>Once the Graphics object is created, we can add <em>display elements</em>[^8],
-objects specifying what is to be drawn, to the scene in turn. The
-graphics module supports the following kinds of element:</p>
+<p>Once the Graphics object is created, we can add <em>display elements</em>,
+objects specifying what is to be drawn, to the scene in turn.</p>
+<blockquote>
+<p>Sometimes referred to as graphics 'primitives'.</p>
+</blockquote>
+<p>The graphics module supports the following kinds of element:</p>
 <ul>
 <li>
 <p><strong>Cylinder</strong> specified by two points at each end of the cylinder on
@@ -1772,7 +1782,7 @@ unit=72 points), and the Font.</p>
 also specify if the tube is closed or not.</p>
 <pre><code>var pts = []
 for (phi in -Pi..Pi:Pi/32) {
-    pts.append([0.5*(1+0.3*sin(4*phi))*cos(phi), 0.5*(1+0.3*sin(4*phi))*sin(phi), 0]) 
+    pts.append([0.5*(1+0.3*sin(4*phi))*cos(phi), 0.5*(1+0.3*sin(4*phi))*sin(phi), 0])
 }
 g.display(Tube(pts, 0.05, color=Blue, closed=true))
 </code></pre>
@@ -1848,12 +1858,12 @@ var R = 1 // Separation of the charges
 var dx = 0.125 // Spacing of points to draw
 var eps = 1e-10 // Check for zero separation
 
-var g = Graphics() 
+var g = Graphics()
 </code></pre>
 <p>We'll now define the charges by creating two List objects: one contains
 the strength of each charge and the second stores their positions:</p>
 <pre><code>// Electric field due to a system of point charges
-var qq = [1,-1] 
+var qq = [1,-1]
 var xq = [ Matrix([-R/2, 0, 0]), Matrix([R/2, 0, 0])]
 </code></pre>
 <p>We'll also define a cutoff distance around each charge below which we
@@ -2027,7 +2037,11 @@ shown in Fig. <a href="examples/catenoid.html#fig:Catenoid">7.1</a>, right panel
 was considered in the tutorial in Chapter X, favors a twisted state. The
 liquid crystal elastic energy is modified to include a preferred chiral
 wavevector \(q_{0}\),
-$$F=\frac{1}{2}\int_{C}K_{11}\left(\nabla\cdot\mathbf{n}\right)^{2}+K_{22}(\mathbf{n}\cdot\nabla\times\mathbf{n}-q_{0})^{2}+K_{33}\left|\mathbf{n}\times\nabla\times\mathbf{n}\right|^{2}dA.\label{eq:CholestericFreeEnergy}$$
+$$
+\begin{equation}
+F=\frac{1}{2}\int_{C}K_{11}\left(\nabla\cdot\mathbf{n}\right)^{2}+K_{22}(\mathbf{n}\cdot\nabla\times\mathbf{n}-q_{0})^{2}+K_{33}\left|\mathbf{n}\times\nabla\times\mathbf{n}\right|^{2}dA.\label{eq:CholestericFreeEnergy}
+\end{equation}
+$$
 The cholesteric example minimizes the above equation in a square domain
 \((x,y)\in[-L,L]\), with \(L=1/2\), together with an anchoring energy,
 $$W\int(\mathbf{n}\cdot\mathbf{\hat{y}})^{2}dl,$$ imposed on the top and
@@ -2207,22 +2221,31 @@ adaptive refinement, and provides a useful example of how to cast a
 problem that is normally thought of as solving a PDE as an optimization
 problem.</p>
 <p>Suppose we want to solve Laplace's equation,</p>
-<h4 id="laplaces-equation"><a class="header" href="#laplaces-equation">Laplace's equation</a></h4>
 <p>$$\nabla^{2}\phi=0$$</p>
 <p>on a square domain \(C\) defined by \(-L/2\leq x\leq L/2\) and
 \(-L/2\leq y\leq L/2\). An equivalent formulation suitable for <em>morpho</em> is
 to minimize,</p>
-<h4 id="electrostatic-energy"><a class="header" href="#electrostatic-energy">Electrostatic energy</a></h4>
-<p>$$\int_{C}\left|\nabla\phi\right|^{2}dA\label{eq:el1}$$</p>
+<p>$$
+\begin{equation}
+\int_{C}\left|\nabla\phi\right|^{2}dA
+\label{eq:el1}
+\end{equation}
+$$</p>
 <p>with respect to \(\phi\).</p>
 <p>We can show the two are equivalent by applying calculus of
-variations[^9] to the <a href="examples/electrostatics.html#laplaces-equation">Laplace's equation</a>,</p>
-<p>$$ \delta\int_{C}\left|\nabla\phi\right|^{2}dA =\int_{C}\delta\left|\nabla\phi\right|^{2}dA $$
+variations to the \eqref{eq:el1},</p>
+<p>$$ \delta\int*{C}\left|\nabla\phi\right|^{2}dA =\int*{C}\delta\left|\nabla\phi\right|^{2}dA $$
 $$ =\int_{C}\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\cdot\delta\nabla\phi dA,$$</p>
 <p>and integrating by parts,</p>
-<h4 id="bulk-variations"><a class="header" href="#bulk-variations">Bulk variations</a></h4>
-<p>$$ \int_{C}\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\cdot\delta\nabla\phi dA =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla\cdot\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\delta\phi dA $$
-$$ =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla^{2}\phi\delta\phi dA,$$</p>
+<p>$$
+\begin{align}
+\int_{C}\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\cdot\delta\nabla\phi dA &amp; =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla\cdot\frac{\partial}{\partial\nabla\phi}\left|\nabla\phi\right|^{2}\delta\phi dA\nonumber \\
+&amp; =\int_{\partial C}\nabla\phi\cdot\hat{\mathbf{s}}\delta\phi dl-\int_{C}\nabla^{2}\phi\delta\phi dA,\label{eq:bulkvariations}
+\end{align}
+$$</p>
+<blockquote>
+<p><strong>Note</strong> If you're not familiar with calculus of variations, feel free to skip paragraphs that refer to "variations". The calculus of variations generalizes calculus from differentiating with respect to variables to differentiating with respect to functions.</p>
+</blockquote>
 <p>where \(\hat{\mathbf{s}}\) is the outward normal. Hence,
 allowing for arbitrary variations \(\delta\phi\), in order for the bulk
 integrand to vanish Laplace's equation \(\nabla^{2}\phi=0\) must be
@@ -2232,23 +2255,30 @@ known as the Neumann boundary condition. In the absence of boundary
 energies, solving \(\nabla^{2}\phi=0\) in \(C\) subject to
 \(\nabla\phi\cdot\hat{\mathbf{s}}=0\) on \(\partial C\) yields the family of
 uniform constant solutions \(\phi=\text{const}.\)</p>
-<p>To impose boundary data, we will supplement the <a href="examples/electrostatics.html#laplaces-equation">Laplace's equation</a> with
+<p>To impose boundary data, we will supplement \eqref{eq:el1} with
 the additional functional,</p>
-<h4 id="boundary"><a class="header" href="#boundary">Boundary</a></h4>
-<p>$$\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl\label{eq:anchoring}$$
-where the function \(\phi_{0}\) represents some imposed boundary
+<p>$$
+\begin{equation}
+\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl\label{eq:anchoring}
+\end{equation}
+$$</p>
+<p>where the function \(\phi_{0}\) represents some imposed boundary
 potential. Taking variations of this functional,</p>
-<p>$$\delta\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl  =\lambda\int_{\partial C}\frac{\partial}{\partial\phi}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}\delta\phi dl $$
-$$ =\lambda\int_{\partial C}2\left[\phi-\phi_{0}(\mathbf{x})\right]\delta\phi dl $$</p>
-<p>Collecting the boundary terms from the <a href="examples/electrostatics.html#bulk-variations">bulk variations</a> and the <a href="examples/electrostatics.html#boundary">boundary data</a>, we obtain the equivalent boundary condition
+<p>$$
+\begin{align}
+\delta\lambda\int_{\partial C}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}dl &amp; =\lambda\int_{\partial C}\frac{\partial}{\partial\phi}\left[\phi-\phi_{0}(\mathbf{x})\right]^{2}\delta\phi dl\nonumber \\
+&amp; =\lambda\int_{\partial C}2\left[\phi-\phi_{0}(\mathbf{x})\right]\delta\phi dl\label{eq:boundary}
+\end{align}
+$$</p>
+<p>Collecting the boundary terms from \eqref{eq:bulkvariations} and \eqref{eq:boundary}, we obtain the equivalent boundary condition
 on \(\phi\),
 $$\nabla\phi\cdot\hat{\mathbf{s}}+2\lambda(\phi-\phi_{0})=0,$$ which is
 known as a Robin boundary condition. As \(\lambda\to\infty\),
-\(\phi\to\phi_{0}\) on the boundary, recovering a fixed boundary or
+\(\phi\to\phi_0\) on the boundary, recovering a fixed boundary or
 Dirichlet condition, while as \(\lambda\to0\), we recover the Neumann
 conditions discussed earlier.</p>
-<p>In the example, we will set \(\phi_{0}=0\) on the left and lower boundary
-and \(\phi_{0}=1\) on the right and upper boundary, and use \(\lambda=100\).</p>
+<p>In the example, we will set \(\phi_0=0\) on the left and lower boundary
+and \(\phi_0=1\) on the right and upper boundary, and use \(\lambda=100\).</p>
 <p>The code illustrates a few <em>morpho</em> tricks. First, the following code is
 used to select the left/bottom and upper/right sides of the mesh:</p>
 <pre><code>var bnd = Selection(mesh, boundary=true)
@@ -2264,8 +2294,8 @@ are then added to the selection with <code>addgrade</code>, but this also select
 some interior edges. To ensure we only have boundary edges in our
 selections, we find the intersection of <code>bnd1</code> and <code>bnd</code>, and similarly
 for <code>bnd2</code>.</p>
-<p>The problem setup involves adding the <a href="examples/electrostatics.html#electrostatic-energy">electrostatic energy</a> using
-<code>GradSq</code> and the <a href="examples/electrostatics.html#boundary">boundary terms</a> as <code>LineIntegral</code>s.</p>
+<p>The problem setup involves adding the electrostatic energy Eq.\eqref{eq:el1} using
+<code>GradSq</code> and the boundary terms Eq.\eqref{eq:anchoring} as <code>LineIntegral</code>s.</p>
 <pre><code>var problem = OptimizationProblem(mesh)
 var le = GradSq(phi)
 problem.addenergy(le)
@@ -2273,7 +2303,7 @@ var v1 = 0, v2 = 1
 var lt1 = LineIntegral(fn (x, v) (v-v1)^2, phi)
 problem.addenergy(lt1, selection=bnd1, prefactor=100)
 var lt2 = LineIntegral(fn (x, v) (v-v2)^2, phi)
-problem.addenergy(lt2, selection=bnd2, prefactor=100) 
+problem.addenergy(lt2, selection=bnd2, prefactor=100)
 </code></pre>
 <p>Optimization is done with a <code>FieldOptimizer</code>:</p>
 <pre><code>var opt = FieldOptimizer(problem, phi)
@@ -2289,11 +2319,11 @@ each elementwe'll use this as a heuristic measure of how rapidly \(\phi\)
 is changingand find the mean energy per element. We then create a
 Selection and manually select elements that have an electrostatic energy
 more than \(1.5\times\) the mean.</p>
-<pre><code>// Select elements that have an above average contribution to the energy 
+<pre><code>// Select elements that have an above average contribution to the energy
 var en = le.integrand(phi) // energy in each element
 var mean = en.sum()/en.count() // mean energy per element
 var srefine = Selection(mesh)
-for (id in 0...en.count()) if (en[0,id]&gt;1.5*mean) srefine[2,id]=true 
+for (id in 0...en.count()) if (en[0,id]&gt;1.5*mean) srefine[2,id]=true
 // identify large contributions
 </code></pre>
 <p>Refinement is then performed with a MeshRefiner object from the
@@ -2917,6 +2947,20 @@ print "Hello"
 <p>Returns the largest integer smaller than or equal to its argument:</p>
 <pre><code class="language-javascript">print floor(1.3) // expect: 1
 </code></pre>
+<h2 id="format"><a class="header" href="#format">Format</a></h2>
+<p>The format method converts a number to a <code>String</code> using a given format specifier:</p>
+<pre><code class="language-javascript">print (1/3).format("%4.2g") // Outputs 0.33
+</code></pre>
+<p>The specifier must begin with '%' and may include:</p>
+<ul>
+<li>A minimum width, given as an integer.</li>
+<li>Number of decimal places to show, with '.' in front.</li>
+<li>A formatting option, either 'f' or 'g' where:</li>
+</ul>
+<pre><code class="language-javascript">- 'f' displays the number in decimal form, e.g. 0.01
+- 'g' uses scientific notation, e.g. 1e-2
+</code></pre>
+<p>The syntax for the formatting string is similar to that used in C and Python.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
 <p>Variables are defined using the <code>var</code> keyword followed by the variable name:</p>
 <pre><code class="language-javascript">var a
@@ -3159,7 +3203,7 @@ print q() // expect: 2
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="classes"><a class="header" href="#classes">Classes</a></h1>
 <p>Classes are defined using the <code>class</code> keyword followed by the name of the class.
-The definition includes methods  that the class responds to. The special <code>init</code> method
+The definition includes methods that the class responds to. The special <code>init</code> method
 is called whenever an object is created.</p>
 <pre><code class="language-javascript">class Cake {
     init(type) {
@@ -3174,9 +3218,8 @@ is called whenever an object is created.</p>
 <p>Objects are created by calling the class as if it was a function:</p>
 <pre><code class="language-javascript">var c = Cake("carrot")
 </code></pre>
-<p>Methods are called using the . operator:</p>
-<pre><code class="language-javascript">c.eat()
-</code></pre>
+<p>Note that all objects in Morpho inherit from a base <code>Object</code> class, which provides a set of standard methods.</p>
+<p>See also <code>Object</code>.</p>
 <h2 id="is"><a class="header" href="#is">Is</a></h2>
 <p>The <code>is</code> keyword is used to specify a class's superclass:</p>
 <pre><code class="language-javascript">class A is B {
@@ -3214,6 +3257,47 @@ is called whenever an object is created.</p>
 }
 </code></pre>
 <p>The subclass Soup uses <code>super</code> to call the original initializer.</p>
+<h1 id="objects"><a class="header" href="#objects">Objects</a></h1>
+<p>Objects in Morpho are created by calling a constructor function, which usually has the same name as the class of the object:</p>
+<pre><code class="language-javascript">var a = Color(0.5,0.5,0.5) // 50% gray 
+</code></pre>
+<p>You can store information in an object by assigning to its properties:</p>
+<pre><code class="language-javascript">a.prop = "Foo" 
+</code></pre>
+<p>and you can read from them similarly:</p>
+<pre><code class="language-javascript">print a.prop
+</code></pre>
+<p>An object's <code>class</code> determines the methods that can be used on the object. You call them using the . operator:</p>
+<pre><code class="language-javascript">print a.clone() 
+</code></pre>
+<p>See also <code>class</code>.</p>
+<h2 id="has"><a class="header" href="#has">Has</a></h2>
+<p>The <code>has</code> method is used to test if an object has a particular property:</p>
+<pre><code class="language-javascript">print a.has("foo")
+</code></pre>
+<p>If you call <code>has</code> with no parameters,</p>
+<pre><code class="language-javascript">print a.has()
+</code></pre>
+<p>it returns a list of all property labels that an object has.</p>
+<h2 id="respondsto"><a class="header" href="#respondsto">Respondsto</a></h2>
+<p>The <code>respondsto</code> method is used to test if an object provides a particular method:</p>
+<pre><code class="language-javascript">print a.respondsto("foo")
+</code></pre>
+<p>If you call <code>respondsto</code> with no parameters,</p>
+<pre><code class="language-javascript">print a.respondsto()
+</code></pre>
+<p>it returns a list of all methods that an object has available.</p>
+<h2 id="invoke"><a class="header" href="#invoke">Invoke</a></h2>
+<p>The <code>invoke</code> method is used to invoke a method from its label and a list of parameters:</p>
+<pre><code class="language-javascript">print a.invoke("has", "foo")
+</code></pre>
+<p>is equivalent to:</p>
+<pre><code class="language-javascript">print a.has("foo")
+</code></pre>
+<h2 id="clss"><a class="header" href="#clss">Clss</a></h2>
+<p>The <code>clss</code> method is used to get the class to which an object belongs.</p>
+<pre><code class="language-javascript">print a.clss() 
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="modules"><a class="header" href="#modules">Modules</a></h1>
 <p>Morpho is extensible and provides a convenient module system that works like standard libraries in other languages. Modules may define useful variables, functions and classes, and can be made available using the <code>import</code> keyword. For example,</p>
 <pre><code class="language-javascript">import color
@@ -3234,6 +3318,25 @@ is called whenever an object is created.</p>
 <pre><code class="language-javascript">import color for HueMap, Red
 </code></pre>
 <p>which imports only the <code>HueMap</code> class and the <code>Red</code> variable.</p>
+<p>You can also import a module using the 'as' keyword to place the symbols in a specified namespace:</p>
+<pre><code class="language-javascript">import color as col 
+</code></pre>
+<p>You can then use refer to specific symbols like this:</p>
+<pre><code class="language-javascript">print col.Red 
+</code></pre>
+<p>(See the help topic 'namespaces' for more information.)</p>
+<h2 id="namespaces"><a class="header" href="#namespaces">Namespaces</a></h2>
+<p>A namespace is a collection of symbols that is imported from a module.
+You identify a namespace using the 'as' keyword when importing the module like this:</p>
+<pre><code class="language-javascript">import color as col // 'col' is the namespace
+</code></pre>
+<p>Everything defined by the module with a unique symbol, including classes, functions and global variables, can be identified using the namespace, e.g.</p>
+<pre><code class="language-javascript">print col.Red 
+</code></pre>
+<p>Since the symbols are only are defined in the namespace you imported them into, you can't refer to them directly:</p>
+<pre><code class="language-javascript">print Red 
+</code></pre>
+<p>Using namespaces is recommended, becuase it helps prevent conflicts between modules.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="help"><a class="header" href="#help">Help</a></h1>
 <p>Morpho provides an online help system. To get help about a topic called <code>topicname</code>, type</p>
 <pre><code class="language-javascript">help topicname
@@ -3252,6 +3355,121 @@ is called whenever an object is created.</p>
 <p>A useful feature is that, if an error occurs, simply type <code>help</code> to get more information about the error.</p>
 <h1 id="quit"><a class="header" href="#quit">Quit</a></h1>
 <p>The <code>quit</code> CLI command quits <code>morpho</code> run in interactive mode and returns to the shell.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="errors"><a class="header" href="#errors">Errors</a></h1>
+<p>When an error occurs in running a morpho program, an error message is displayed together with an explanation of where in the program that the error happened.</p>
+<p>You can make your own custom errors using the <code>Error</code> class:</p>
+<pre><code class="language-javascript">var myerr = Error("Tag", "A message")
+</code></pre>
+<p>Use the <code>throw</code> method to raise the error, interrupting execution unless the error is caught:</p>
+<pre><code class="language-javascript">myerr.throw() 
+</code></pre>
+<p>or</p>
+<pre><code class="language-javascript">myerr.throw("A custom message") 
+</code></pre>
+<p>You can also use the <code>warning</code> method to alert the user of a potential issue that doesn't need the program to be interrupted.</p>
+<pre><code class="language-javascript">myerr.warning() 
+</code></pre>
+<h2 id="alloc"><a class="header" href="#alloc">Alloc</a></h2>
+<p>This error may occur when creating new objects or resizing them. It typically indicates that the computer is under memory pressure.</p>
+<h2 id="intrnl"><a class="header" href="#intrnl">Intrnl</a></h2>
+<p>This error indicates an internal problem with morpho. Please contact the developers for support.</p>
+<h2 id="invldop"><a class="header" href="#invldop">InvldOp</a></h2>
+<p>This error occurs when an operator like <code>+</code> or <code>-</code> is given operands that it doesn't understand. For example,</p>
+<pre><code class="language-javascript">print "Hello" * "Goodbye" // Causes 'InvldOp'
+</code></pre>
+<p>causes this error because the multiplication operator doesn't know how to multiply strings.</p>
+<p>If the operands are objects, this means that the objects don't provide a method for the requested operation, e.g. for</p>
+<pre><code class="language-javascript">print object1 / object2
+</code></pre>
+<p><code>object1</code> would need to provide a <code>div()</code> method that can successfully handle <code>object2</code>.</p>
+<h2 id="cnctfld"><a class="header" href="#cnctfld">CnctFld</a></h2>
+<p>This error occurs when concatenation of strings or other objects fails, typically because of low memory.</p>
+<h2 id="uncallable"><a class="header" href="#uncallable">Uncallable</a></h2>
+<p>This error occurs when you try to call something that isn't a method or a function. Here, we initialize a variable with a string and call it:</p>
+<pre><code class="language-javascript">var f = "Not a function"
+f() // Causes 'Uncallable'
+</code></pre>
+<h2 id="glblrtrn"><a class="header" href="#glblrtrn">GlblRtrn</a></h2>
+<p>This error occurs when morpho encounters a <code>return</code> keyword outside of a function or method definition.</p>
+<h2 id="instfail"><a class="header" href="#instfail">InstFail</a></h2>
+<p>This error occurs when morpho tried to create a new object, but something went wrong.</p>
+<h2 id="notanobj"><a class="header" href="#notanobj">NotAnObj</a></h2>
+<p>This error occurs if you try to access a property of something that isn't an object:</p>
+<pre><code class="language-javascript">var a = 1
+a.size = 5
+</code></pre>
+<h2 id="objlcksprp"><a class="header" href="#objlcksprp">ObjLcksPrp</a></h2>
+<p>This error occurs if you try to access a property or method that hasn't been defined for an object:</p>
+<pre><code class="language-javascript">var a = Object()
+print a.pifflepaffle
+</code></pre>
+<p>or</p>
+<pre><code class="language-javascript">print a.foo()
+</code></pre>
+<h2 id="noinit"><a class="header" href="#noinit">NoInit</a></h2>
+<p>This error can occur if you try to create a new object from a class that doesn't have an <code>init</code> method:</p>
+<pre><code class="language-javascript">class Foo { }
+var a = Foo(0.3)
+</code></pre>
+<p>Here, the argument to <code>Foo</code> causes the <code>NoInit</code> error because no <code>init</code> method is available to process it.</p>
+<h2 id="notaninst"><a class="header" href="#notaninst">NotAnInst</a></h2>
+<p>This error occurs if you try to invoke a method on something that isn't an object:</p>
+<pre><code class="language-javascript">var a = 4
+print a.foo()
+</code></pre>
+<h2 id="clsslcksmthd"><a class="header" href="#clsslcksmthd">ClssLcksMthd</a></h2>
+<p>This error occurs if you try to invoke a method on a class that doesn't exist:</p>
+<pre><code class="language-javascript">class Foo { }
+print Foo.foo()
+</code></pre>
+<h2 id="invldargs"><a class="header" href="#invldargs">InvldArgs</a></h2>
+<p>This error occurs if you call a function with the wrong number of arguments:</p>
+<pre><code class="language-javascript">fn f(x) { return x }
+f(1,2)
+</code></pre>
+<h2 id="notindxbl"><a class="header" href="#notindxbl">NotIndxbl</a></h2>
+<p>This error occurs if you try to index something that isn't a collection:</p>
+<pre><code class="language-javascript">var a = 0.3
+print a[1]
+</code></pre>
+<h2 id="indxbnds"><a class="header" href="#indxbnds">IndxBnds</a></h2>
+<p>This error can occur when selecting an entry from a collection object (such as a list) if the index supplied is bigger than the number of entries:</p>
+<pre><code class="language-javascript">var a = [1,2,3]
+print a[10]
+</code></pre>
+<h2 id="nonnmindx"><a class="header" href="#nonnmindx">NonNmIndx</a></h2>
+<p>This error occurs if you try to index an array with a non-numerical index:</p>
+<pre><code class="language-javascript">var a[2,2]
+print a["foo","bar"]
+</code></pre>
+<h2 id="arraydim"><a class="header" href="#arraydim">ArrayDim</a></h2>
+<p>[tagarraydim]: # arraydim</p>
+<p>This error occurs if you try to index an array with the wrong number of indices:</p>
+<pre><code class="language-javascript">var a[2,2]
+print a[1]
+</code></pre>
+<h2 id="dbgquit"><a class="header" href="#dbgquit">DbgQuit</a></h2>
+<p>This notification is generated after selecting <code>Quit</code> within the debugger. Execution of the program is halted and control returns to the user.</p>
+<h2 id="symblundf"><a class="header" href="#symblundf">SymblUndf</a></h2>
+<p>This error occurs if you refer to something that has not been previously declared, for example trying to use a variable of call a function that doesn't exist. It's possible that the symbol is spelt incorrectly, or that the capitalization doesn't match the definition (<em>morpho</em> symbols are case-sensitive).</p>
+<p>A common problem is to try to assign to a variable that hasn't yet been declared:</p>
+<pre><code class="language-javascript">a = 5
+</code></pre>
+<p>To fix this, prefix with <code>var</code>:</p>
+<pre><code class="language-javascript">var a = 5
+</code></pre>
+<h2 id="mtrxincmptbl"><a class="header" href="#mtrxincmptbl">MtrxIncmptbl</a></h2>
+<p>This error occurs when an arithmetic operation is performed on two 'incompatible' matrices. For example, two matrices must have the same dimensions, i.e. the same number of rows and columns, to be added or subtracted,</p>
+<pre><code class="language-javascript">var a = Matrix([[1,2],[3,4]])
+var b = Matrix([[1]])
+print a+b // generates a `MtrxIncmptbl` error.
+</code></pre>
+<p>Or to be multiplied together, the number of columns of the left hand matrix must equal the number of rows of the right hand matrix.</p>
+<pre><code class="language-javascript">var a = Matrix([[1,2],[3,4]])
+var b = Matrix([1,2])
+print a*b // ok
+print b*a // generates a `MtrxIncmptbl` error.
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="builtin-functions"><a class="header" href="#builtin-functions">Builtin functions</a></h1>
 <p>Morpho provides a number of built-in functions.</p>
 <h2 id="random"><a class="header" href="#random">Random</a></h2>
@@ -3332,6 +3550,12 @@ print isnumber(Object()) // expect: false
 <h2 id="abs"><a class="header" href="#abs">Abs</a></h2>
 <p>Returns the absolute value of a number:</p>
 <pre><code class="language-javascript">print abs(-10) // prints 10 
+</code></pre>
+<h2 id="sign"><a class="header" href="#sign">Sign</a></h2>
+<p>Gives the sign of a number:</p>
+<pre><code class="language-javascript">print sign(4) // expect: 1
+print sign(-10.0) // expect: -1
+print sign(0) // expect: 0
 </code></pre>
 <h2 id="arctan"><a class="header" href="#arctan">Arctan</a></h2>
 <p>Returns the arctangent of an input value that lies from <code>-Inf</code> to <code>Inf</code>. You can use one argument:</p>
@@ -3418,7 +3642,7 @@ var c[nv,nv,nv]
 <p>Values can be retrieved with appropriate indices:</p>
 <pre><code class="language-javascript">print a[0,0]
 </code></pre>
-<p>Array can be indexed with slices:</p>
+<p>Arrays can be indexed with slices:</p>
 <pre><code>print a[[0,2,4],2]
 print a[1,0..2]
 </code></pre>
@@ -3562,6 +3786,12 @@ var b = Matrix([[a,0],[0,a]]) // produces a 4x4 matrix
 <p>Once a matrix is created, you can use all the regular arithmetic operators with matrix operands, e.g.</p>
 <pre><code class="language-javascript">a+b
 a*b
+</code></pre>
+<p>You can retrieved individual matrix entries with specified indices:</p>
+<pre><code class="language-javascript">print a[0,0]
+</code></pre>
+<p>or create a submatrix using slices:</p>
+<pre><code>print a[0..1,0..1]
 </code></pre>
 <p>The division operator is used to solve a linear system, e.g.</p>
 <pre><code class="language-javascript">var a = Matrix([[1,2],[3,4]])
@@ -3719,6 +3949,30 @@ a[0] = 4
 </code></pre>
 <p>gives</p>
 <pre><code class="language-javascript">[ 1, 2, 3 ]
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tuple"><a class="header" href="#tuple">Tuple</a></h1>
+<p>Tuples are collection objects that contain a sequence of values each associated with an integer index. Unlike Lists, they can't be changed after creation.</p>
+<p>Create a tuple like this:</p>
+<pre><code class="language-javascript">var tuple = (1, 2, 3)
+</code></pre>
+<p>Look up values using index notation:</p>
+<pre><code class="language-javascript">tuple[0]
+</code></pre>
+<p>Indexing can also be done with slices:</p>
+<pre><code>tuple[0..2]
+</code></pre>
+<p>Loop over elements of a tuple:</p>
+<pre><code class="language-javascript">for (i in tuple) print i
+</code></pre>
+<h2 id="ismember-1"><a class="header" href="#ismember-1">ismember</a></h2>
+<p>Tests if a value is a member of a tuple:</p>
+<pre><code class="language-javascript">var tuple = (1,2,3)
+print tuple.ismember(1) // expect: true
+</code></pre>
+<h2 id="join"><a class="header" href="#join">Join</a></h2>
+<p>Join two lists together:</p>
+<pre><code class="language-javascript">var t1 = (1,2,3), t2 = (4, 5, 6)
+print t1.join(t2) // expect: (1,2,3,4,5,6)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="computational-geometry"><a class="header" href="#computational-geometry">Computational Geometry</a></h2>
 <p>This section provides the documentation for meshes, selections, fields and functionals.</p>
@@ -3891,6 +4145,7 @@ print gauss.total(mesh, selection=bnd) // expect: 2*Pi
 <pre><code class="language-javascript">var la=LineIntegral(fn (x, n) n.inner(tangent()), n)
 </code></pre>
 <p>where <code>n</code> is a vector field. The local interpolated value of this field is passed to your integrand function. More than one field can be used; they are passed as arguments to the integrand function in the order you supply them to <code>LineIntegral</code>.</p>
+<p>The gradient of a field is available within an integrand function using the <code>gradient()</code> function.</p>
 <h2 id="areaintegral"><a class="header" href="#areaintegral">AreaIntegral</a></h2>
 <p>The <code>AreaIntegral</code> functional computes the area integral of a function. You supply an integrand function that takes a position matrix as an argument.</p>
 <p>To compute integral(x*y) over an area element:</p>
@@ -3899,7 +4154,11 @@ print gauss.total(mesh, selection=bnd) // expect: 2*Pi
 <p>You can also integrate functions that involve fields:</p>
 <pre><code class="language-javascript">var la=AreaIntegral(fn (x, phi) phi^2, phi)
 </code></pre>
+<p>The local facet normal can be accessed in an integrand using the <code>normal()</code> function:</p>
+<pre><code class="language-javascript">var la=AreaIntegral(fn (x) x.inner(normal())^2)
+</code></pre>
 <p>More than one field can be used; they are passed as arguments to the integrand function in the order you supply them to <code>AreaIntegral</code>.</p>
+<p>The gradient of a field is available within an integrand function using the <code>gradient()</code> function.</p>
 <h2 id="volumeintegral"><a class="header" href="#volumeintegral">VolumeIntegral</a></h2>
 <p>The <code>VolumeIntegral</code> functional computes the volume integral of a function. You supply an integrand function that takes a position matrix as an argument.</p>
 <p>To compute integral(x<em>y</em>z) over an volume element:</p>
@@ -3909,6 +4168,7 @@ print gauss.total(mesh, selection=bnd) // expect: 2*Pi
 <pre><code class="language-javascript">var la=VolumeIntegral(fn (x, phi) phi^2, phi)
 </code></pre>
 <p>More than one field can be used; they are passed as arguments to the integrand function in the order you supply them to <code>VolumeIntegral</code>.</p>
+<p>The gradient of a field is available within an integrand function using the <code>gradient()</code> function.</p>
 <h2 id="hydrogel"><a class="header" href="#hydrogel">Hydrogel</a></h2>
 <p>The <code>Hydrogel</code> functional computes the Flory-Rehner energy over an element:</p>
 <pre><code class="language-javascript">(a*phi*log(phi) + b*(1-phi)+log(1-phi) + c*phi*(1-phi))*V + 
@@ -4068,6 +4328,17 @@ f.close()
 <p>Get a list of a folder's contents:</p>
 <pre><code class="language-javascript">print Folder.contents("path/folder")
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json"><a class="header" href="#json">JSON</a></h1>
+<p>The <code>JSON</code> class provides import and export functionality for the JSON (JavaScript Object Notation) interchange file format as defined by IETF RFC 7159.</p>
+<p>To parse a string that contains JSON, use the <code>parse</code> method:</p>
+<pre><code class="language-javascript">var a = JSON.parse("[1,2,3,4]")
+print a // expect: [ 1, 2, 3, 4 ]
+</code></pre>
+<p>Elements in the JSON string are converted to equivalent morpho values.</p>
+<p>To convert basic data types to JSON, use the <code>tostring</code> method:</p>
+<pre><code class="language-javascript">var b = JSON.tostring([1,2,3])
+</code></pre>
+<p>The exporter supports <code>nil</code>, boolean values <code>true</code> and <code>false</code>, numbers, <code>String</code>s as well as <code>List</code> and <code>Dictionary</code> objects that may contain any of the supported types.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="modules-1"><a class="header" href="#modules-1">Modules</a></h2>
 <p>This section provides the documentation for the various standard modules shipped with Morpho.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="color"><a class="header" href="#color">Color</a></h1>
@@ -4138,6 +4409,15 @@ It is perceptually uniform and intended to be improve the accessibility of visua
 It is perceptually uniform and intended to be improve the accessibility of visualizations for viewers with color vision deficiency.</p>
 <h2 id="plasmamap"><a class="header" href="#plasmamap">PlasmaMap</a></h2>
 <p><code>InfernoMap</code> is a <code>Colormap</code> that displays a blue-red-yellow sequence. It is perceptually uniform and intended to be improve the accessibility of visualizations for viewers with color vision deficiency.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
+<p>The constants module contains a number of useful mathematical constants. Import it like any other module:</p>
+<pre><code class="language-javascript">import constants
+</code></pre>
+<p>Available constants:</p>
+<ul>
+<li><code>E</code> the base of natural logarithms.</li>
+<li><code>Pi</code> ratio of the perimeter of a circle to its diameter.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="delaunay-1"><a class="header" href="#delaunay-1">Delaunay</a></h1>
 <p>The <code>delaunay</code> module creates Delaunay triangulations from point clouds. It is dimensionally independent, so generates tetrahedra in 3D and higher order simplices beyond.</p>
 <p>To use the module, first import it:</p>
@@ -4374,7 +4654,7 @@ print pt.location
 <pre><code class="language-javascript">var node = tree.insert(Matrix([0,0,0]))
 </code></pre>
 <p>Note that, for performance reasons, if the set of points is known ahead of time, it is generally better to build the tree using the constructor function KDTree rather than one-by-one with insert.</p>
-<h2 id="ismember-1"><a class="header" href="#ismember-1">Ismember</a></h2>
+<h2 id="ismember-2"><a class="header" href="#ismember-2">Ismember</a></h2>
 <p>Checks if a point is a member of a k-d tree. Returns <code>true</code> or <code>false</code>.</p>
 <pre><code class="language-javascript">print tree.ismember(Matrix([0,0,0]))
 </code></pre>
@@ -4577,6 +4857,11 @@ Show(plotmesh(m))
 <p>Attempts to equiangulate a mesh, exchanging elements to improve their regularity.</p>
 <pre><code class="language-javascript">equiangulate(mesh)
 </code></pre>
+<p>This function takes optional arguments:</p>
+<ul>
+<li><code>quiet</code>: Set to true to silence messages.</li>
+<li><code>fix</code>: Supply a <code>Selection</code> containing edges that should not be modified by equiangulation.</li>
+</ul>
 <p><em>Note</em> this function modifies the mesh in place; it does not create a new mesh.</p>
 <h2 id="changemeshdimension"><a class="header" href="#changemeshdimension">ChangeMeshDimension</a></h2>
 <p>Changes the dimension in which a mesh is embedded. For example, you may have created a mesh in 2D that you now wish to use in 3D.</p>
@@ -4823,10 +5108,12 @@ plane.</p>
 <p>These attributes can also be set directly for the <code>POVRaytracer</code> object:</p>
 <pre><code class="language-javascript">pov.look_at = Matrix([0,0,1])
 </code></pre>
-<p>The <code>render</code> method supports two optional boolean arguments:</p>
+<p>The <code>render</code> method supports a few optional boolean arguments:</p>
 <ul>
 <li><code>quiet</code> - whether to suppress the parser and render statistics from <code>povray</code> or not (<code>false</code> by default)</li>
 <li><code>display</code> - whether to turn on the graphic display while rendering or not (<code>true</code> by default)</li>
+<li><code>shadowless</code> - whether to turn off the shadows while rendering (<code>false</code> by default)</li>
+<li><code>transparent</code> - whether to render the graphic with a transparent background in the output PNG (<code>false</code> by default)</li>
 </ul>
 <h1 id="camera"><a class="header" href="#camera">Camera</a></h1>
 <p>The <code>Camera</code> object can be initialized as follows:</p>
@@ -4850,9 +5137,10 @@ attributes after instantiation:</p>
 plane.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vtk"><a class="header" href="#vtk">VTK</a></h1>
 <p>The vtk module contains classes to allow I/O of meshes and fields using
-the VTK Legacy Format.</p>
+the VTK Legacy Format. Note that this currently only supports scalar or 2D/3D vector (column matrix) fields that live on the vertices ( shape <code>[1,0,0]</code>). Support for
+tensorial fields and fields on cells coming soon.</p>
 <h2 id="vtkexporter"><a class="header" href="#vtkexporter">VTKExporter</a></h2>
-<p>This class can be used to export the field(s) and/or at a given state
+<p>This class can be used to export the field(s) and/or a mesh at a given state
 to a single .vtk file. To use it, import the <code>vtk</code> module:</p>
 <pre><code class="language-javascript">import vtk
 </code></pre>
@@ -4880,7 +5168,7 @@ in the VTK file. This name is required to be a character
 string without embedded whitespace. If not provided, the name would be
 either "scalars" or "vectors" depending on the field type**.</li>
 </ul>
-<p>** Note that this currently only supports scalar or vector (column
+<p>** Note that this currently only supports scalar or 2D/3D vector (column
 matrix) fields that live on the vertices ( shape <code>[1,0,0]</code>). Support for
 tensorial fields and fields on cells coming soon.</p>
 <p>Minimal example:</p>
@@ -4938,6 +5226,85 @@ import meshtools
 </code></pre>
 <pre><code class="language-javascript">var g = vtkI.field("g")
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="about-this-online-version"><a class="header" href="#about-this-online-version">About this online version</a></h1>
+<p>This is a conversion of the <a href="https://github.com/Morpho-lang/morpho">Morpho</a> manual from the original <a href="https://github.com/Morpho-lang/morpho-manual">LyX/TeX</a> to an <code>mdBook</code> format.</p>
+<p><em>Morpho</em> is designed by Prof. Timothy J. Atherton at Tufts University. This conversion is my hobby-work done during my time at Tufts as a postdoctoral scholar with him.</p>
+<p>Here are my few design goals for this conversion. Some are already met, some are a work in progress:</p>
+<ul>
+<li>Faithfully reproduce all the content of the manual (done)</li>
+<li>Emphasize accessibility, especially of the math content (wip)</li>
+<li>Ensure easy extension in the future by streamlining the automation. (some portions are very much not streamlined right now!)</li>
+</ul>
+<p>I found <code>mdBook</code> very easy to use and was able to set-up the basic website without any use of HTML/CSS. I am open to suggestions to move this to another tool.</p>
+<p>To build the book, you need to have <a href="https://github.com/rust-lang/mdBook"><code>mdbook</code></a> installed. You can install it with <code>cargo</code>:</p>
+<pre><code class="language-bash">cargo install mdbook
+</code></pre>
+<p>Then, you need to generate the figures and the reference section by running the <code>build.py</code> script:</p>
+<pre><code class="language-bash">python build.py
+</code></pre>
+<p>(Make sure to change the <code>libmorphofolder</code> path to your local libmorpho folder in the <code>build.py</code> script. In the future, we will auto-download the help from GitHub.)</p>
+<p>Finally, you can build the book by running <code>mdbook</code>:</p>
+<pre><code class="language-bash">mdbook build
+</code></pre>
+<p>This will generate the HTML files in the <code>book</code> directory. You can view the book by opening the <code>index.html</code> file in your browser.</p>
+<p>To preview the book, you can run the following command:</p>
+<pre><code class="language-bash">mdbook serve --open
+</code></pre>
+<h2 id="authoring-guidelines"><a class="header" href="#authoring-guidelines">Authoring Guidelines</a></h2>
+<p>The general guidelines for writing a book with <code>mdBook</code> can be found in their <a href="https://rust-lang.github.io/mdBook/index.html">user guide</a>.</p>
+<p>Equations are handled using slightly modified MathJax:</p>
+<ul>
+<li>
+<p>Inline equations are delimited by <code>\\(</code> and <code>\\)</code> (same as <code>mdBook</code> default).</p>
+</li>
+<li>
+<p>Block equations are delimited by <code>$$</code> and <code>$$</code>.</p>
+</li>
+<li>
+<p>Auto-numbering and cross-referencing support is limited, numbering not including chapter and section numbers, and cross-referencing limited to within a single <code>.md</code> file.</p>
+<ul>
+<li>Labeling an equation is same as in TeX:</li>
+</ul>
+<pre><code>    $$
+    \begin{equation}
+    y = m x + c
+    \label{eq:linear}
+    \end{equation}
+    $$
+</code></pre>
+<ul>
+<li>Cross-referencing within the document can be done by <code>\eqref</code>:</li>
+</ul>
+<pre><code>    The linear equation is given by Eq. \eqref{eq:linear}.
+</code></pre>
+<ul>
+<li>See the <a href="examples/electrostatics.html">Electrostatics example</a> for usage.</li>
+</ul>
+</li>
+<li>
+<p>Morpho code is syntax-highlighted using the JavaScript syntax for now:</p>
+</li>
+</ul>
+<pre><code class="language-markdown">```javascript
+    var a = 1
+```
+</code></pre>
+<p>renders to</p>
+<pre><code class="language-javascript">    var a = 1
+</code></pre>
+<h2 id="generating-the-markdown-files-from-the-original-manual"><a class="header" href="#generating-the-markdown-files-from-the-original-manual">Generating the MarkDown files from the original manual</a></h2>
+<p>This mdBook was generated by a series of conversions of the <a href="https://github.com/Morpho-lang/morpho/blob/main/manual/src/manual.lyx">original LyX file</a>.</p>
+<ol>
+<li>Export the LyX file as a <code>.tex</code> file</li>
+<li>Convert it to markdown with MathJax using Pandoc using the following command:</li>
+</ol>
+<pre><code class="language-bash">    pandoc -s -f latex -t markdown --mathjax manual.tex -o morpho-manual.md
+</code></pre>
+<ol start="3">
+<li>Replace <code>$...$</code> with <code>\\(...\\)</code> within this MarkDown file to make the inline math compatible with MathJax (I used a small <code>re</code> script available on the GitHub repository under <code>src/replacedollars.py</code>).</li>
+</ol>
+<h1 id="contributing"><a class="header" href="#contributing">Contributing</a></h1>
+<p>Contributions are absolutely welcome! Check out the <a href="https://github.com/joshichaitanya3/morpho-manual/issues">Issues</a> on GitHub or make a pull request!</p>
 
                     </main>
 
