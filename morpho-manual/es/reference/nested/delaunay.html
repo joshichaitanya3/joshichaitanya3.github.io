@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="es" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Delaunay - Morpho Manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/css/language-picker.css">
+
+        <!-- MathJax -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            TeX: { 
+                equationNumbers: { 
+                    autoNumber: "AMS",
+                }
+            }
+        });
+        </script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../foreword.html">Introducción</a></li><li class="chapter-item "><a href="../../overview.html"><strong aria-hidden="true">1.</strong> Descripción general</a></li><li class="chapter-item "><a href="../../installing_morpho.html"><strong aria-hidden="true">2.</strong> Instalación de Morpho</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../installing/homebrew.html"><strong aria-hidden="true">2.1.</strong> Instalación via homebrew</a></li><li class="chapter-item "><a href="../../installing/source.html"><strong aria-hidden="true">2.2.</strong> Instalación con el código fuente</a></li><li class="chapter-item "><a href="../../installing/wsl.html"><strong aria-hidden="true">2.3.</strong> Windows a través del subsistema de Windows para Linux (WSL)</a></li><li class="chapter-item "><a href="../../installing/updating.html"><strong aria-hidden="true">2.4.</strong> Actualización de morpho</a></li><li class="chapter-item "><a href="../../installing/uninstalling.html"><strong aria-hidden="true">2.5.</strong> Desinstalación de morpho</a></li></ol></li><li class="chapter-item "><a href="../../using_morpho.html"><strong aria-hidden="true">3.</strong> Usando Morpho</a></li><li class="chapter-item "><a href="../../tutorial.html"><strong aria-hidden="true">4.</strong> Tutorial</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../tutorial/importing_modules.html"><strong aria-hidden="true">4.1.</strong> Importación de módulos</a></li><li class="chapter-item "><a href="../../tutorial/morpho_language.html"><strong aria-hidden="true">4.2.</strong> El lenguaje Morpho</a></li><li class="chapter-item "><a href="../../tutorial/creating_the_initial_mesh.html"><strong aria-hidden="true">4.3.</strong> Creación de la malla inicial</a></li><li class="chapter-item "><a href="../../tutorial/selections.html"><strong aria-hidden="true">4.4.</strong> Selecciones</a></li><li class="chapter-item "><a href="../../tutorial/fields.html"><strong aria-hidden="true">4.5.</strong> Campos</a></li><li class="chapter-item "><a href="../../tutorial/defining_the_problem.html"><strong aria-hidden="true">4.6.</strong> Definición del problema</a></li><li class="chapter-item "><a href="../../tutorial/performing_the_optimization.html"><strong aria-hidden="true">4.7.</strong> Realizando la optimización</a></li><li class="chapter-item "><a href="../../tutorial/visualizing_the_results.html"><strong aria-hidden="true">4.8.</strong> Visualización de los resultados</a></li><li class="chapter-item "><a href="../../tutorial/refinement.html"><strong aria-hidden="true">4.9.</strong> Refinamiento</a></li><li class="chapter-item "><a href="../../tutorial/next_steps.html"><strong aria-hidden="true">4.10.</strong> Siguientes pasos</a></li></ol></li><li class="chapter-item "><a href="../../working_with_meshes.html"><strong aria-hidden="true">5.</strong> Trabajando con mallas</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../working_with_meshes/meshgen_module.html"><strong aria-hidden="true">5.1.</strong> El módulo meshgen</a></li><li class="chapter-item "><a href="../../working_with_meshes/meshtools_module.html"><strong aria-hidden="true">5.2.</strong> El módulo meshtools</a></li><li class="chapter-item "><a href="../../working_with_meshes/vtk_module.html"><strong aria-hidden="true">5.3.</strong> El módulo vtk</a></li><li class="chapter-item "><a href="../../working_with_meshes/merging_meshes.html"><strong aria-hidden="true">5.4.</strong> Uniendo mallas</a></li><li class="chapter-item "><a href="../../working_with_meshes/slicing_meshes.html"><strong aria-hidden="true">5.5.</strong> Seleccionando mallas</a></li></ol></li><li class="chapter-item "><a href="../../visualization.html"><strong aria-hidden="true">6.</strong> Visualización</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../visualization/plot_module.html"><strong aria-hidden="true">6.1.</strong> El módulo de visualización</a></li><li class="chapter-item "><a href="../../visualization/graphics_module.html"><strong aria-hidden="true">6.2.</strong> El módulo de gráficos</a></li><li class="chapter-item "><a href="../../visualization/povray_module.html"><strong aria-hidden="true">6.3.</strong> El módulo povray</a></li></ol></li><li class="chapter-item "><a href="../../examples.html"><strong aria-hidden="true">7.</strong> Ejemplos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../examples/catenoid.html"><strong aria-hidden="true">7.1.</strong> Catenoide</a></li><li class="chapter-item "><a href="../../examples/cholesteric.html"><strong aria-hidden="true">7.2.</strong> Colestérico</a></li><li class="chapter-item "><a href="../../examples/cube.html"><strong aria-hidden="true">7.3.</strong> Cubo</a></li><li class="chapter-item "><a href="../../examples/delaunay.html"><strong aria-hidden="true">7.4.</strong> Delaunay</a></li><li class="chapter-item "><a href="../../examples/dla.html"><strong aria-hidden="true">7.5.</strong> DLA</a></li><li class="chapter-item "><a href="../../examples/electrostatics.html"><strong aria-hidden="true">7.6.</strong> Electrostática</a></li><li class="chapter-item "><a href="../../examples/implicitmesh.html"><strong aria-hidden="true">7.7.</strong> Implicitmesh</a></li><li class="chapter-item "><a href="../../examples/meshgen.html"><strong aria-hidden="true">7.8.</strong> Meshgen</a></li><li class="chapter-item "><a href="../../examples/meshslice.html"><strong aria-hidden="true">7.9.</strong> Meshslice</a></li><li class="chapter-item "><a href="../../examples/plot.html"><strong aria-hidden="true">7.10.</strong> Plot</a></li><li class="chapter-item "><a href="../../examples/povray.html"><strong aria-hidden="true">7.11.</strong> Povray</a></li><li class="chapter-item "><a href="../../examples/qtensor.html"><strong aria-hidden="true">7.12.</strong> QTensor</a></li><li class="chapter-item "><a href="../../examples/thomson.html"><strong aria-hidden="true">7.13.</strong> Thomson</a></li><li class="chapter-item "><a href="../../examples/wrap.html"><strong aria-hidden="true">7.14.</strong> Envolver</a></li></ol></li><li class="chapter-item expanded "><a href="../../reference.html"><strong aria-hidden="true">8.</strong> Referencias</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/language.html"><strong aria-hidden="true">8.1.</strong> Idioma</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/nested/syntax.html"><strong aria-hidden="true">8.1.1.</strong> Sintaxis</a></li><li class="chapter-item "><a href="../../reference/nested/values.html"><strong aria-hidden="true">8.1.2.</strong> Valores</a></li><li class="chapter-item "><a href="../../reference/nested/variables.html"><strong aria-hidden="true">8.1.3.</strong> Variables</a></li><li class="chapter-item "><a href="../../reference/nested/controlflow.html"><strong aria-hidden="true">8.1.4.</strong> Flujo de control</a></li><li class="chapter-item "><a href="../../reference/nested/functions.html"><strong aria-hidden="true">8.1.5.</strong> Funciones</a></li><li class="chapter-item "><a href="../../reference/nested/classes.html"><strong aria-hidden="true">8.1.6.</strong> Clases</a></li><li class="chapter-item "><a href="../../reference/nested/modules.html"><strong aria-hidden="true">8.1.7.</strong> Módulos</a></li><li class="chapter-item "><a href="../../reference/nested/help.html"><strong aria-hidden="true">8.1.8.</strong> Ayuda</a></li><li class="chapter-item "><a href="../../reference/nested/errors.html"><strong aria-hidden="true">8.1.9.</strong> Errores</a></li><li class="chapter-item "><a href="../../reference/nested/builtin.html"><strong aria-hidden="true">8.1.10.</strong> Funciones integradas</a></li></ol></li><li class="chapter-item "><a href="../../reference/data_types.html"><strong aria-hidden="true">8.2.</strong> Tipos de datos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/nested/array.html"><strong aria-hidden="true">8.2.1.</strong> Array</a></li><li class="chapter-item "><a href="../../reference/nested/complex.html"><strong aria-hidden="true">8.2.2.</strong> Complejo</a></li><li class="chapter-item "><a href="../../reference/nested/list.html"><strong aria-hidden="true">8.2.3.</strong> Lista</a></li><li class="chapter-item "><a href="../../reference/nested/matrix.html"><strong aria-hidden="true">8.2.4.</strong> Matriz</a></li><li class="chapter-item "><a href="../../reference/nested/range.html"><strong aria-hidden="true">8.2.5.</strong> Rango</a></li><li class="chapter-item "><a href="../../reference/nested/sparse.html"><strong aria-hidden="true">8.2.6.</strong> Sparse</a></li><li class="chapter-item "><a href="../../reference/nested/string.html"><strong aria-hidden="true">8.2.7.</strong> Cuerda (String)</a></li><li class="chapter-item "><a href="../../reference/nested/tuple.html"><strong aria-hidden="true">8.2.8.</strong> Tupla</a></li></ol></li><li class="chapter-item "><a href="../../reference/computational_geometry.html"><strong aria-hidden="true">8.3.</strong> Geometría Computacional</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/nested/field.html"><strong aria-hidden="true">8.3.1.</strong> Campo</a></li><li class="chapter-item "><a href="../../reference/nested/functionals.html"><strong aria-hidden="true">8.3.2.</strong> Funcionales</a></li><li class="chapter-item "><a href="../../reference/nested/mesh.html"><strong aria-hidden="true">8.3.3.</strong> Malla</a></li><li class="chapter-item "><a href="../../reference/nested/selection.html"><strong aria-hidden="true">8.3.4.</strong> Selección</a></li></ol></li><li class="chapter-item "><a href="../../reference/io.html"><strong aria-hidden="true">8.4.</strong> E/S</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/nested/file.html"><strong aria-hidden="true">8.4.1.</strong> Archivo</a></li><li class="chapter-item "><a href="../../reference/nested/json.html"><strong aria-hidden="true">8.4.2.</strong> JSON</a></li></ol></li><li class="chapter-item expanded "><a href="../../reference/modules.html"><strong aria-hidden="true">8.5.</strong> Módulos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../reference/nested/color.html"><strong aria-hidden="true">8.5.1.</strong> Color</a></li><li class="chapter-item "><a href="../../reference/nested/constants.html"><strong aria-hidden="true">8.5.2.</strong> Constantes</a></li><li class="chapter-item expanded "><a href="../../reference/nested/delaunay.html" class="active"><strong aria-hidden="true">8.5.3.</strong> Delaunay</a></li><li class="chapter-item "><a href="../../reference/nested/graphics.html"><strong aria-hidden="true">8.5.4.</strong> Gráficos</a></li><li class="chapter-item "><a href="../../reference/nested/implicitmesh.html"><strong aria-hidden="true">8.5.5.</strong> Implicitmesh</a></li><li class="chapter-item "><a href="../../reference/nested/kdtree.html"><strong aria-hidden="true">8.5.6.</strong> KDTree</a></li><li class="chapter-item "><a href="../../reference/nested/meshgen.html"><strong aria-hidden="true">8.5.7.</strong> MeshGen</a></li><li class="chapter-item "><a href="../../reference/nested/meshslice.html"><strong aria-hidden="true">8.5.8.</strong> Meshslice</a></li><li class="chapter-item "><a href="../../reference/nested/meshtools.html"><strong aria-hidden="true">8.5.9.</strong> Meshtools</a></li><li class="chapter-item "><a href="../../reference/nested/optimize.html"><strong aria-hidden="true">8.5.10.</strong> Optimizar</a></li><li class="chapter-item "><a href="../../reference/nested/plot.html"><strong aria-hidden="true">8.5.11.</strong> Plot</a></li><li class="chapter-item "><a href="../../reference/nested/povray.html"><strong aria-hidden="true">8.5.12.</strong> POVRay</a></li><li class="chapter-item "><a href="../../reference/nested/vtk.html"><strong aria-hidden="true">8.5.13.</strong> VTK</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item "><a href="../../mdbook_notes.html">Acerca de esta versión en línea</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Morpho Manual</h1>
+
+                    <div class="right-buttons">
+                        <button id="language-toggle" class="icon-button" type="button"
+                                title="Change language" aria-label="Change language"
+                                aria-haspopup="true" aria-expanded="false"
+                                aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="en">English</a>
+                          </button></li>
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="es">Spanish (Español)</a>
+                          </button></li>
+                        </ul>
+                        <script>
+                          let langToggle = document.getElementById("language-toggle");
+                          let langList = document.getElementById("language-list");
+                          langToggle.addEventListener("click", (event) => {
+                              langList.style.display = langList.style.display == "block" ? "none" : "block";
+                          });
+                          let selectedLang = document.getElementById("es");
+                          selectedLang.parentNode.classList.add("theme-selected");
+
+                          // The path to the root, taking the current
+                          // language into account.
+                          let full_path_to_root = "../../../";
+                          // The page path (mdbook only gives us
+                          // access to the path to the Markdown file).
+                          let path = "reference/nested/delaunay.md".replace(/\.md$/, ".html");
+                          for (let lang of langList.querySelectorAll("a")) {
+                              if (lang.id == "en") {
+                                  lang.href = `${full_path_to_root}${path}`;
+                              } else {
+                                  lang.href = `${full_path_to_root}${lang.id}/${path}`;
+                              }
+                          }
+                        </script>
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/joshichaitanya3/morpho-manual" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="delaunay"><a class="header" href="#delaunay">Delaunay</a></h1>
+<p>El módulo <code>delaunay</code> crea triangulaciones de Delaunay a partir de nubes de puntos. Es dimensionalmente independiente, por lo que genera tetraedros en 3D y simplificaciones de orden superior más allá.</p>
+<p>Para usar el módulo, primero impórtelo:</p>
+<pre><code class="language-javascript">import delaunay
+</code></pre>
+<p>Para crear una triangulación de Delaunary a partir de una lista de puntos:</p>
+<pre><code class="language-javascript">var pts = []
+for (i in 0...100) pts.append(Matrix([random(), random()]))
+var del=Delaunay(pts)
+print del.triangulate()
+</code></pre>
+<p>El módulo también proporciona <code>DelaunayMesh</code> para crear directamente mallas a partir de triangulaciones de Delaunay.</p>
+<h2 id="triangulate"><a class="header" href="#triangulate">Triangulate</a></h2>
+<p>El método de <code>triangulación</code> realiza la triangulación de Delaunay. Para usarlo, primero construya un objeto <code>Delaunay</code> con la nube de puntos de interés:</p>
+<pre><code class="language-javascript">var del=Delaunay(pts)
+</code></pre>
+<p>A continuación, llame a <code>triangular</code>:</p>
+<pre><code class="language-javascript">var tri = del.triangulate()
+</code></pre>
+<p>Esto devuelve una lista de triángulos <code>[ [i, j, k], ... ] </code>.</p>
+<h2 id="circumsphere-circunsfera"><a class="header" href="#circumsphere-circunsfera">Circumsphere (Circunsfera)</a></h2>
+<p>La clase <code>Circumsphere</code> calcula la circunsfera de un conjunto de puntos, es decir, una esfera tal que todos los puntos están en la superficie de la esfera. Es utilizado internamente por el módulo <code>delaunay</code>.</p>
+<p>Cree una <code>Circumsphere</code> a partir de una lista de puntos y un triángulo especificado por índices en esa lista:</p>
+<pre><code class="language-javascript">var sph = Circumsphere(pts, [i,j,k]) 
+</code></pre>
+<p>Pruebe si un punto arbitrario está dentro de la <code>Circumsphere</code> o no:</p>
+<pre><code class="language-javascript">print sph.pointinsphere(pt)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../reference/nested/constants.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../reference/nested/graphics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../reference/nested/constants.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../reference/nested/graphics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
